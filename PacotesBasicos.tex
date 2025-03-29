@@ -20,10 +20,13 @@
 \usepackage{adjustbox}							% Pacote de ajuste de boxes
 \usepackage{subcaption}							% Inclusão de Subfiguras e sublegendas		
 \usepackage{enumitem}							% Personalização de listas
+\usepackage{longtable}
+
 \usepackage{siunitx}							% Grandezas e unidades
 \usepackage[section]{placeins}					% Manter as figuras delimitadas na respectiva seção com a opção [section]
 \usepackage{multirow}							% Multi colunas nas tabelas
 \usepackage{array,tabularx} 					% Pacotes de tabelas
+\usepackage{longtable}							% Tabelas longas
 \usepackage{booktabs}							% Pacote de tabela profissonal
 \usepackage{rotating}							% Rotacionar figuras e tabelas
 \usepackage{xfrac}								% Fazer frações n/d em linha
@@ -34,6 +37,7 @@
 \usepackage[american, cuteinductors,smartlabels, fulldiode, siunitx, americanvoltages, oldvoltagedirection, smartlabels]{circuitikz}						% Pacote de circuitos elétricos
 \usepackage{chemformula}						% Pacote para fórmulas químicas
 \usepackage{chngcntr}							% Pacte usado para deixar numeração de equações sequencial (UDESC/CCT)
+\usepackage{makecell} % Add this line at the beginning of the document
 \counterwithout{equation}{chapter}
 % fonte: https://latex.org/forum/viewtopic.php?t=15392
 
@@ -144,18 +148,21 @@
 % CONFIGURAÇÕES DE PACOTES
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backrefpagesname}{}
+% \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 % Texto padrão antes do número das páginas
 \renewcommand{\backref}{}
 % Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-	Nenhuma citação no texto.%
-	\or
-	Citado na página #2.%
-	\else
-	Citado #1 vezes nas páginas #2.%
-	\fi}%
+% \renewcommand*{\backrefalt}[4]{
+% 	\ifcase #1 %
+% 	Nenhuma citação no texto.%
+% 	\or
+% 	Citado na página #2.%
+% 	\else
+% 	Citado #1 vezes nas páginas #2.%
+% 	\fi}%
+
+\renewcommand*{\backrefalt}[4]{}%
 
 % alterando o aspecto da cor azul
 %\definecolor{blue}{RGB}{41,5,195}

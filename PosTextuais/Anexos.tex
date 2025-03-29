@@ -8,12 +8,79 @@
 % ---
 \begin{anexosenv}
 
-% Imprime uma página indicando o início dos anexos
-%\partanexos
+	% Imprime uma página indicando o início dos anexos
+	%\partanexos
 
-% ---
-\chapter{TÍTULO}
-% ---
+	% ---
+	\chapter{Variáveis de controle analisadas por Caplan}
+
+	\begin{longtable}{|>{\raggedright\arraybackslash}p{4cm}
+        |>{\raggedright\arraybackslash}p{8cm}
+        |>{\raggedright\arraybackslash}p{4cm}|}
+\caption{Variáveis de Controle e Codificação (Caplan, 2002)}
+\label{tab:caplan_controls} \\
+\hline
+\textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+\textbf{Econ} & – & 1 se economista, 0 caso contrário \\
+\hline
+\textbf{Black} & Qual é a sua raça? Branco, negro, asiático ou outra? & 1 se negro, 0 caso contrário \\
+\hline
+\textbf{Asian} & Idem & 1 se asiático, 0 caso contrário \\
+\hline
+\textbf{Othrace} & Idem & 1 se outra raça, 0 caso contrário \\
+\hline
+\textbf{Age} & – & 1996 - ano de nascimento \\
+\hline
+\textbf{Male} & – & 1 se homem, 0 caso contrário \\
+\hline
+\textbf{Jobsecurity} & Qual o seu nível de preocupação com a possibilidade de perder o emprego no próximo ano? &
+3 = “Nada preocupado”; 2 = “Pouco preocupado”; 1 = “Um pouco preocupado”; 0 = “Muito preocupado” \\
+\hline
+\textbf{Yourlast5} & Nos últimos 5 anos, a renda da sua família cresceu mais rápido, igual ou mais devagar que o custo de vida? &
+2 = “Cresceu”; 1 = “Igual”; 0 = “Caiu” \\
+\hline
+\textbf{Yournext5} & Nos próximos 5 anos, sua renda crescerá mais rápido, igual ou mais devagar que o custo de vida? &
+2 = “Crescerá mais rápido”; 1 = “Igual”; 0 = “Mais devagar” \\
+\hline
+\textbf{Income} & Qual a renda total anual da sua família (antes dos impostos)? &
+1 = Até \$10.000; 2 = \$10.001–\$19.999; 3 = \$20.000–\$24.999; 4 = \$25.000–\$29.999; 5 = \$30.000–\$39.999;
+6 = \$40.000–\$49.999; 7 = \$50.000–\$74.999; 8 = \$75.000–\$99.999; 9 = \$100.000 ou mais \\
+\hline
+\textbf{Dem} & Você se considera democrata? & 1 se sim, 0 caso contrário \\
+\hline
+\textbf{Rep} & Você se considera republicano? & 1 se sim, 0 caso contrário \\
+\hline
+\textbf{Indep} & Você se considera independente? & 1 se sim, 0 caso contrário \\
+\hline
+\textbf{Othparty} & Você pertence a outro partido? & 1 se sim, 0 caso contrário \\
+\hline
+\textbf{Ideology} & Como você se classifica ideologicamente? &
+-2 = “Muito liberal”; -1 = “Liberal”; 0 = “Moderado”; 1 = “Conservador”; 2 = “Muito conservador”; 3 = “Não pensa nesses termos” \\
+\hline
+\textbf{Othideol} & Dummy para ideologia indefinida & 1 se Ideology = 3, 0 caso contrário \\
+\hline
+\textbf{Education} & Qual o maior nível de escolaridade que você concluiu? &
+1 = Fundamental (1ª–8ª); 2 = Ensino médio incompleto; 3 = Ensino médio completo;
+4 = Técnico/profissionalizante; 5 = Superior incompleto; 6 = Superior completo; 7 = Pós-graduação \\
+\end{longtable}
+
+\vspace{2mm}
+\noindent\textbf{Fonte:} Elaborado pelo autor com base em \citeonline{Systematically_Biased_Beliefs_about_Economics}.
+	% ---
 
 
 
