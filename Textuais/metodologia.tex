@@ -1,0 +1,89 @@
+\chapter{Como Medimos a Irracionalidade Política}
+
+Este capítulo apresenta o desenho metodológico da pesquisa, articulando os procedimentos de coleta e análise de dados utilizados para investigar a presença e a magnitude de vieses cognitivos nas percepções econômicas dos eleitores brasileiros. O objetivo é testar, de forma rigorosa, a hipótese de que tais vieses são sistemáticos e afetam diretamente o julgamento político em contextos democráticos.
+
+\section{Desenho da Pesquisa}
+
+A estratégia metodológica adotada combina três eixos principais:
+\begin{enumerate}[label=\alph*)]
+    \item análise histórica da persistência de percepções econômicas enviesadas, com base na história do pensamento econômico;
+    \item adaptação da \textit{Survey of Americans and Economists on the Economy} (SAEE) ao contexto institucional e cultural brasileiro;
+    \item aplicação de modelos econométricos (\textit{logit} binário e ordenado) para estimar, sob controle estatístico, o impacto de fatores individuais sobre a propensão a adotar crenças divergentes do consenso técnico.
+\end{enumerate}
+
+\section{Coleta e Amostragem}
+
+A amostragem foi do tipo não probabilística, com estratificação em dois grupos principais:
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Grupo de controle}: cidadãos sem formação formal em Economia;
+    \item \textbf{Grupo de tratamento}: economistas ou estudantes da área econômica.
+\end{enumerate}
+
+A coleta de dados ocorreu de forma online, empregando três estratégias complementares: a técnica de bola de neve (\textit{snowball sampling}), parcerias institucionais com conselhos profissionais e divulgação aberta em redes sociais e acadêmicas. A meta amostral mínima foi definida por meio da fórmula de Cochran, com um mínimo de 175 respondentes e alvo superior de 600 no grupo controle, assegurando poder estatístico para as comparações.
+
+\section{Instrumento de Pesquisa}
+
+O questionário aplicado divide-se em duas seções principais:
+\begin{itemize}
+    \item \textbf{Seção A}: coleta de variáveis demográficas, socioeconômicas e ideológicas;
+    \item \textbf{Seção B}: 36 afirmações relacionadas a temas econômicos relevantes (tributação, comércio, tecnologia, previdência, intervenção estatal, entre outros), adaptadas da SAEE ao contexto brasileiro. As respostas foram registradas em escalas do tipo Likert, variando de acordo com a complexidade e nuance de cada questão.
+\end{itemize}
+
+\section{Modelo Estatístico}
+
+Utiliza-se regressão \textit{logit} (binária ou ordenada) para modelar a probabilidade de adesão a uma crença tecnicamente correta. A escolha entre as versões depende da natureza da variável dependente: binária para respostas dicotômicas (ex.: concorda vs. discorda) e ordenada para escalas com múltiplos níveis. A formulação geral dos modelos é dada por:
+
+\begin{equation}
+P(y_i = 1 \mid X_i) = \frac{e^{X_i \beta}}{1 + e^{X_i \beta}}
+\end{equation}
+
+\begin{equation}
+P(y_i \leq j \mid X_i) = \frac{1}{1 + e^{-(\tau_j - X_i \beta)}}
+\end{equation}
+
+As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver Anexo~\ref{anexo:A}). Os modelos foram ajustados por meio do algoritmo L-BFGS, adequado para estimação de modelos com múltiplos parâmetros.
+
+\section{O Conceito de Público Esclarecido}
+
+Conforme fundamentado na Seção~\ref{sec:vieses_auxiliares}, define-se como \textit{público esclarecido} uma simulação contrafactual baseada nos modelos logit estimados para cada questão do questionário. A ideia central consiste em prever, para cada economista da amostra, qual seria sua resposta esperada caso não possuísse formação em Economia, mantendo-se constantes todas as demais características individuais.
+
+Na prática, os modelos incluem a variável indicadora de formação econômica como uma das regressoras. Após a estimação, calcula-se a probabilidade predita de cada resposta alternativa sob o cenário contrafactual em que todos os indivíduos têm o mesmo nível de conhecimento técnico, sem alterar renda, ideologia, escolaridade ou outras covariáveis. O valor esperado dessas respostas define, para cada item, a média do público esclarecido.
+
+Essa estratégia permite isolar o efeito marginal da formação econômica sobre a percepção dos respondentes, controlando para fatores sociais, ideológicos e cognitivos. Ao comparar as médias preditas entre o público geral, os economistas e o público esclarecido, torna-se possível avaliar empiricamente se o conhecimento técnico efetivamente corrige os vieses cognitivos previamente identificados.
+
+\section{Etapas Analíticas}
+
+A análise empírica foi conduzida em cinco etapas principais:
+\begin{enumerate}
+    \item Ajuste de modelos logit ordenados para cada variável dependente do questionário;
+    \item Cálculo da probabilidade predita de resposta correta para três grupos: público geral, economistas e público esclarecido (simulado);
+    \item Comparação das médias entre os grupos e geração de gráficos explicativos por variável;
+    \item Estimativas adicionais por tipo de viés, agrupando as variáveis em blocos conceituais (ex.: antimercado, antiestrangeiro, etc.);
+    \item Testes de robustez com especificações alternativas e controle para outliers.
+\end{enumerate}
+
+\section{Critério de Refutabilidade}
+
+Este estudo adota o princípio epistemológico da falseabilidade como critério de cientificidade, conforme proposto por \citeonline{popperlogic}. Em vez de buscar confirmações para as hipóteses formuladas, parte-se do pressuposto de que toda proposição científica deve ser logicamente testável e empiricamente refutável. As hipóteses centrais serão submetidas a testes estatísticos com base em modelos logit, e consideradas refutadas caso os dados empíricos revelem padrões incompatíveis com suas previsões.
+
+Mais especificamente, as hipóteses serão rejeitadas nos seguintes cenários:
+
+\begin{itemize}
+    \item Caso a formação em Economia não apresente impacto estatisticamente significativo sobre a incidência de vieses nas respostas, refuta-se a hipótese H1;
+    \item Caso não se observem diferenças sistemáticas entre as respostas do público geral e do público esclarecido simulado, refuta-se H2;
+    \item Caso variáveis estruturais como ideologia política, escolaridade ou renda não se associem de forma estatisticamente significativa à ocorrência de vieses cognitivos, refuta-se H7;
+    \item Caso as respostas do grupo controle (não economistas) não revelem padrões sistemáticos de viés (antimercado, antiestrangeiro, antitrabalho ou pessimista), refutam-se as hipóteses H3 a H6.
+\end{itemize}
+
+Rejeita-se, portanto, qualquer pretensão de verificação definitiva: mesmo que uma hipótese não seja refutada, ela será considerada apenas corroborada de forma provisória pelos dados disponíveis. Os resultados serão interpretados com base na severidade dos testes empíricos enfrentados, e não na frequência de confirmações observadas, em consonância com a lógica da ciência proposta pelo autor.
+
+
+\section{Contribuições da Metodologia}
+
+A abordagem aqui descrita permite:
+\begin{itemize}
+    \item Medir objetivamente a distância entre opinião popular e consenso técnico;
+    \item Identificar os determinantes estruturais dos vieses cognitivos;
+    \item Estimar simulações de política pública com base em maior esclarecimento técnico;
+    \item Posicionar o estudo na fronteira da \textit{Economia Política Comportamental}, com diálogo entre econometria, história do pensamento econômico, psicologia cognitiva e teoria política.
+\end{itemize}
