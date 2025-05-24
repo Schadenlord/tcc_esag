@@ -12,76 +12,164 @@
 	%\partanexos
 
 	% ---
-	\chapter{Variáveis de controle analisadas por Caplan}
+% \chapter{Variáveis de controle analisadas por Caplan}
 
-	\begin{longtable}{|>{\raggedright\arraybackslash}p{4cm}
-        |>{\raggedright\arraybackslash}p{8cm}
-        |>{\raggedright\arraybackslash}p{4cm}|}
-\caption{Variáveis de Controle e Codificação (Caplan, 2002)}
-\label{tab:caplan_controls} \\
-\hline
-\textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
-\hline
-\endfirsthead
+% \begin{longtable}{|>{\raggedright\arraybackslash}p{4cm}
+%         |>{\raggedright\arraybackslash}p{8cm}
+%         |>{\raggedright\arraybackslash}p{4cm}|}
+% \caption{Variáveis de Controle e Codificação (Caplan, 2002)}
+% \label{tab:caplan_controls} \\
+% \hline
+% \textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
+% \hline
+% \endfirsthead
 
-\hline
-\textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
-\hline
-\endhead
+% \hline
+% \textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
+% \hline
+% \endhead
 
-\hline
-\endfoot
+% \hline
+% \endfoot
 
-\hline
-\endlastfoot
+% \hline
+% \endlastfoot
 
-\textbf{Econ} & – & 1 se economista, 0 caso contrário \\
-\hline
-\textbf{Black} & Qual é a sua raça? Branco, negro, asiático ou outra? & 1 se negro, 0 caso contrário \\
-\hline
-\textbf{Asian} & Idem & 1 se asiático, 0 caso contrário \\
-\hline
-\textbf{Othrace} & Idem & 1 se outra raça, 0 caso contrário \\
-\hline
-\textbf{Age} & – & 1996 - ano de nascimento \\
-\hline
-\textbf{Male} & – & 1 se homem, 0 caso contrário \\
-\hline
-\textbf{Jobsecurity} & Qual o seu nível de preocupação com a possibilidade de perder o emprego no próximo ano? &
-3 = “Nada preocupado”; 2 = “Pouco preocupado”; 1 = “Um pouco preocupado”; 0 = “Muito preocupado” \\
-\hline
-\textbf{Yourlast5} & Nos últimos 5 anos, a renda da sua família cresceu mais rápido, igual ou mais devagar que o custo de vida? &
-2 = “Cresceu”; 1 = “Igual”; 0 = “Caiu” \\
-\hline
-\textbf{Yournext5} & Nos próximos 5 anos, sua renda crescerá mais rápido, igual ou mais devagar que o custo de vida? &
-2 = “Crescerá mais rápido”; 1 = “Igual”; 0 = “Mais devagar” \\
-\hline
-\textbf{Income} & Qual a renda total anual da sua família (antes dos impostos)? &
-1 = Até \$10.000; 2 = \$10.001–\$19.999; 3 = \$20.000–\$24.999; 4 = \$25.000–\$29.999; 5 = \$30.000–\$39.999;
-6 = \$40.000–\$49.999; 7 = \$50.000–\$74.999; 8 = \$75.000–\$99.999; 9 = \$100.000 ou mais \\
-\hline
-\textbf{Dem} & Você se considera democrata? & 1 se sim, 0 caso contrário \\
-\hline
-\textbf{Rep} & Você se considera republicano? & 1 se sim, 0 caso contrário \\
-\hline
-\textbf{Indep} & Você se considera independente? & 1 se sim, 0 caso contrário \\
-\hline
-\textbf{Othparty} & Você pertence a outro partido? & 1 se sim, 0 caso contrário \\
-\hline
-\textbf{Ideology} & Como você se classifica ideologicamente? &
--2 = “Muito liberal”; -1 = “Liberal”; 0 = “Moderado”; 1 = “Conservador”; 2 = “Muito conservador”; 3 = “Não pensa nesses termos” \\
-\hline
-\textbf{Othideol} & Dummy para ideologia indefinida & 1 se Ideology = 3, 0 caso contrário \\
-\hline
-\textbf{Education} & Qual o maior nível de escolaridade que você concluiu? &
-1 = Fundamental (1ª–8ª); 2 = Ensino médio incompleto; 3 = Ensino médio completo;
-4 = Técnico/profissionalizante; 5 = Superior incompleto; 6 = Superior completo; 7 = Pós-graduação \\
+% \textbf{Econ} & – & 1 se economista, 0 caso contrário \\
+% \hline
+% \textbf{Black} & Qual é a sua raça? Branco, negro, asiático ou outra? & 1 se negro, 0 caso contrário \\
+% \hline
+% \textbf{Asian} & Idem & 1 se asiático, 0 caso contrário \\
+% \hline
+% \textbf{Othrace} & Idem & 1 se outra raça, 0 caso contrário \\
+% \hline
+% \textbf{Age} & – & 1996 - ano de nascimento \\
+% \hline
+% \textbf{Male} & – & 1 se homem, 0 caso contrário \\
+% \hline
+% \textbf{Jobsecurity} & Qual o seu nível de preocupação com a possibilidade de perder o emprego no próximo ano? &
+% 3 = “Nada preocupado”; 2 = “Pouco preocupado”; 1 = “Um pouco preocupado”; 0 = “Muito preocupado” \\
+% \hline
+% \textbf{Yourlast5} & Nos últimos 5 anos, a renda da sua família cresceu mais rápido, igual ou mais devagar que o custo de vida? &
+% 2 = “Cresceu”; 1 = “Igual”; 0 = “Caiu” \\
+% \hline
+% \textbf{Yournext5} & Nos próximos 5 anos, sua renda crescerá mais rápido, igual ou mais devagar que o custo de vida? &
+% 2 = “Crescerá mais rápido”; 1 = “Igual”; 0 = “Mais devagar” \\
+% \hline
+% \textbf{Income} & Qual a renda total anual da sua família (antes dos impostos)? &
+% 1 = Até \$10.000; 2 = \$10.001–\$19.999; 3 = \$20.000–\$24.999; 4 = \$25.000–\$29.999; 5 = \$30.000–\$39.999;
+% 6 = \$40.000–\$49.999; 7 = \$50.000–\$74.999; 8 = \$75.000–\$99.999; 9 = \$100.000 ou mais \\
+% \hline
+% \textbf{Dem} & Você se considera democrata? & 1 se sim, 0 caso contrário \\
+% \hline
+% \textbf{Rep} & Você se considera republicano? & 1 se sim, 0 caso contrário \\
+% \hline
+% \textbf{Indep} & Você se considera independente? & 1 se sim, 0 caso contrário \\
+% \hline
+% \textbf{Othparty} & Você pertence a outro partido? & 1 se sim, 0 caso contrário \\
+% \hline
+% \textbf{Ideology} & Como você se classifica ideologicamente? &
+% -2 = “Muito liberal”; -1 = “Liberal”; 0 = “Moderado”; 1 = “Conservador”; 2 = “Muito conservador”; 3 = “Não pensa nesses termos” \\
+% \hline
+% \textbf{Othideol} & Dummy para ideologia indefinida & 1 se Ideology = 3, 0 caso contrário \\
+% \hline
+% \textbf{Education} & Qual o maior nível de escolaridade que você concluiu? &
+% 1 = Fundamental (1ª–8ª); 2 = Ensino médio incompleto; 3 = Ensino médio completo;
+% 4 = Técnico/profissionalizante; 5 = Superior incompleto; 6 = Superior completo; 7 = Pós-graduação \\
+% \end{longtable}
+
+% \vspace{2mm}
+% \noindent\textbf{Fonte:} Elaborado pelo autor com base em \citeonline{Systematically_Biased_Beliefs_about_Economics}.
+% 	% ---
+
+\chapter{Variáveis analisadas}
+\label{anexo:A}
+
+\renewcommand{\arraystretch}{1.3}
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{4cm} 
+                  |>{\raggedright\arraybackslash}p{8cm} 
+                  |>{\raggedright\arraybackslash}p{4cm}|}
+    \caption{Variáveis de Controle e Codificação}
+    \label{tab:control_variables} \\
+    \hline
+    \textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
+    \hline
+    \endfirsthead
+
+    \hline
+    \textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
+    \hline
+    \endhead
+
+    \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    \textbf{econ} & Qual seu nível de formação em Ciências Econômicas? & 
+    1 = Doutorado ou mais; 0 = Não economista \\ 
+    \hline
+    \textbf{sex} & Qual seu Gênero & 
+    1 se Homem, 0 caso contrário \\ 
+    \hline
+    \textbf{black} & Qual é a sua raça? Branco, negro, asiático ou outra? & 1 se negro, 0 caso contrário \\ 
+    \hline
+    \textbf{asian} & Idem & 1 se asiático, 0 caso contrário \\ 
+    \hline
+    \textbf{othrace} & Idem & 1 se outra raça, 0 caso contrário \\   \hline
+    \textbf{age} & Qual é o seu ano de nascimento? & 
+    2025 - resposta \\
+    \hline
+    \textbf{school} & Qual o seu nível de escolaridade? & 
+    1 = Fundamental incompleto; 
+    2 = Fundamental completo; 
+    3 = Médio incompleto; 
+    4 = Médio completo; 
+    5 = Superior incompleto; 
+    6 = Superior completo; 
+    7 = Pós-graduação \\ 
+    \hline
+    \textbf{brregion} & Em qual região do Brasil você reside? & 
+    1 = Norte; 
+    2 = Nordeste; 
+    3 = Centro--Oeste; 
+    4 = Sudeste; 
+    5 = Sul \\ 
+    \hline
+    \textbf{clt}\footnote{A variável ``clt'' foi codificada conforme uma escala de dependência estatal, variando de servidores públicos (maior dependência) a empresários (maior autonomia econômica). A literatura mostra que servidores públicos tendem a adotar posições mais à esquerda e favoráveis à expansão do Estado por razões ideológicas e de interesse próprio \cite{jensen2009political}. Por outro lado, a autonomia e a estrutura de tarefas no trabalho moldam preferências políticas mais pró-mercado e individualistas, sobretudo entre empresários e profissionais autônomos \cite{kitschelt2014occupations}. Além disso, a heterogeneidade entre os autônomos — especialmente entre os precários e os mais estáveis — também influencia a orientação política, justificando distinções internas nessa categoria \cite{jansen2016self}.}  & Qual o seu vínculo empregatício? & 
+    -4 = Servidor Público;  
+    -3 = Aposentado;        
+    -2 = Estudante;         
+    -1 = Desempregado;      
+    0 = Sem carteira;      
+    1 = CLT;               
+    2 = Autônomo;          
+    3 = Empresário;        
+    4 = Outro             
+    \\ 
+    \hline
+    \textbf{financearea} & Você trabalha com economia, finanças, contabilidade ou áreas correlatas? & 
+    1 = Sim; 0 = Não \\ 
+    \hline
+    \textbf{politicalarea} & Você trabalha com política ou áreas correlatas? & 
+    1 = Sim; 0 = Não \\ 
+    \hline
+    \textbf{politicallife} & Você se considera uma pessoa politicamente engajada? & 
+    1 = Sim; 0 = Não \\ 
+    \hline
+    \textbf{politicalnews} & Você costuma acompanhar notícias sobre economia e política? & 
+    1 = Sim; 0 = Não \\ 
+    \hline
+    \textbf{ideol} & Com qual espectro político você mais se identifica? & 
+    -2 = Extrema-esquerda; 
+    -1 = Esquerda; 
+    0 = Centro; 
+    1 = Direita; 
+    2 = Extrema-direita; 
+    3 = Independente; 
+    0 = Sem opinião \\ 
 \end{longtable}
-
-\vspace{2mm}
-\noindent\textbf{Fonte:} Elaborado pelo autor com base em \citeonline{Systematically_Biased_Beliefs_about_Economics}.
-	% ---
-
-
 
 \end{anexosenv}
