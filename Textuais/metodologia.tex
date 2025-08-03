@@ -1,14 +1,18 @@
 \chapter{Como Medimos a Irracionalidade Política}
 
-Este capítulo apresenta o desenho metodológico da pesquisa, articulando os procedimentos de coleta e análise de dados utilizados para investigar a presença e a magnitude de vieses cognitivos nas percepções econômicas dos eleitores brasileiros. O objetivo é testar, de forma rigorosa, a hipótese de que tais vieses são sistemáticos e afetam diretamente o julgamento político em contextos democráticos.
+Todos os dados analisados neste trabalho foram coletados diretamente pelo autor deste TCC, na condição de assistente de pesquisa, e pela orientadora, como pesquisadora responsável, no âmbito do projeto intitulado \textit{“Econometria Comportamental na Política Pública: Análise de Vieses Cognitivos Políticos”}, aprovado pelo Comitê de Ética em Pesquisa com Seres Humanos da Universidade do Estado de Santa Catarina (UDESC). O projeto foi submetido e apreciado pela Plataforma Brasil, sob o número de processo \textbf{CAAE: 89374225.9.0000.0118}, tendo recebido o Parecer Consubstanciado nº 7.719.326, em conformidade com a Resolução nº 510/2016 do Conselho Nacional de Saúde e a legislação vigente sobre pesquisa com seres humanos.
+
+Os dados primários utilizados neste TCC são de autoria exclusiva dos pesquisadores, tendo sido obtidos por meio de survey aplicado a participantes voluntários, todos maiores de 18 anos e residentes no Brasil, mediante aceitação do Termo de Consentimento Livre e Esclarecido (TCLE). Todo o processo garantiu anonimato, sigilo das informações, ausência de coleta de dados sensíveis e a possibilidade de desistência a qualquer momento, sem prejuízo aos participantes. O armazenamento e a manipulação dos dados respeitaram integralmente as exigências da Lei Geral de Proteção de Dados Pessoais (LGPD), com acesso restrito ao autor e à orientadora da pesquisa.
+
+Dessa forma, este trabalho adota os mais elevados padrões de ética em pesquisa científica, assegurando total transparência quanto à procedência, integridade e responsabilidade sobre os dados analisados.
 
 \section{Desenho da Pesquisa}
 
 A estratégia metodológica adotada combina três eixos principais:
 \begin{enumerate}[label=\alph*)]
-    \item análise histórica da persistência de percepções econômicas enviesadas, com base na história do pensamento econômico;
-    \item adaptação da \textit{Survey of Americans and Economists on the Economy} (SAEE) ao contexto institucional e cultural brasileiro;
-    \item aplicação de modelos econométricos (\textit{logit} binário e ordenado) para estimar, sob controle estatístico, o impacto de fatores individuais sobre a propensão a adotar crenças divergentes do consenso técnico.
+    \item uma análise histórico-teórica da persistência de crenças econômicas enviesadas, com ênfase na literatura de economia comportamental, história do pensamento econômico e racionalidade limitada;
+    \item adaptação da \textit{Survey of Americans and Economists on the Economy} (SAEE) para o contexto institucional e cultural brasileiro, com revisão por especialistas e pré-teste de aplicabilidade ["PREENCHA AQUI com dados do pré-teste"];
+    \item aplicação de modelos econométricos (\textit{logit} binário e ordenado) para estimar, sob controle de variáveis demográficas, econômicas e ideológicas, o impacto marginal de fatores individuais na propensão a adotar crenças divergentes do consenso técnico.
 \end{enumerate}
 
 \section{Coleta e Amostragem}
@@ -19,7 +23,15 @@ A amostragem foi do tipo não probabilística, com estratificação em dois grup
     \item \textbf{Grupo de tratamento}: economistas ou estudantes da área econômica.
 \end{enumerate}
 
-A coleta de dados ocorreu de forma online, empregando três estratégias complementares: a técnica de bola de neve (\textit{snowball sampling}), parcerias institucionais com conselhos profissionais e divulgação aberta em redes sociais e acadêmicas. A meta amostral mínima foi definida por meio da fórmula de Cochran, com um mínimo de 175 respondentes e alvo superior de 600 no grupo controle, assegurando poder estatístico para as comparações.
+A coleta de dados ocorreu entre ["PREENCHA AQUI com datas da coleta"], por meio de questionário online. Três estratégias de recrutamento foram empregadas:
+
+\begin{enumerate}[label=\alph*)]
+    \item amostragem em bola de neve, iniciada por respondentes-semente com diversidade regional e ideológica;
+    \item parcerias institucionais, com conselhos profissionais e universidades;
+    \item divulgação em redes sociais e fóruns acadêmicos, com segmentação por área de atuação.
+\end{enumerate}
+
+A meta amostral mínima, calculada pela fórmula de Cochran (1977), estabeleceu um mínimo de 175 respondentes, com objetivo superior de 600 no grupo controle, garantindo poder estatístico para comparações com 95\% de confiança e 80\% de poder.
 
 \section{Instrumento de Pesquisa}
 
@@ -28,6 +40,8 @@ O questionário aplicado divide-se em duas seções principais:
     \item \textbf{Seção A}: coleta de variáveis demográficas, socioeconômicas e ideológicas;
     \item \textbf{Seção B}: 36 afirmações relacionadas a temas econômicos relevantes (tributação, comércio, tecnologia, previdência, intervenção estatal, entre outros), adaptadas da SAEE ao contexto brasileiro. As respostas foram registradas em escalas do tipo Likert, variando de acordo com a complexidade e nuance de cada questão.
 \end{itemize}
+
+As respostas foram registradas em escalas do tipo Likert (3 a 5 pontos), adaptadas ao grau de nuance necessário a cada questão. O instrumento foi submetido à avaliação semântica por especialistas e validado por ["PREENCHA AQUI com número de participantes do pré-teste ou especialistas"].
 
 \section{Modelo Estatístico}
 
@@ -47,19 +61,62 @@ As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça
 
 Conforme fundamentado na Seção~\ref{sec:vieses_auxiliares}, define-se como \textit{público esclarecido} uma simulação contrafactual baseada nos modelos logit estimados para cada questão do questionário. A ideia central consiste em prever, para cada economista da amostra, qual seria sua resposta esperada caso não possuísse formação em Economia, mantendo-se constantes todas as demais características individuais.
 
-Na prática, os modelos incluem a variável indicadora de formação econômica como uma das regressoras. Após a estimação, calcula-se a probabilidade predita de cada resposta alternativa sob o cenário contrafactual em que todos os indivíduos têm o mesmo nível de conhecimento técnico, sem alterar renda, ideologia, escolaridade ou outras covariáveis. O valor esperado dessas respostas define, para cada item, a média do público esclarecido.
+Na prática, os modelos econométricos incluem uma variável indicadora de formação econômica como uma das regressoras explicativas. Após a estimação dos parâmetros do modelo, constrói-se um cenário contrafactual no qual todos os indivíduos que têm formação em Economia (isto é, o grupo de economistas) são simulados como se não a tivessem — mantendo-se constantes variáveis como renda, ideologia, escolaridade, gênero, idade, entre outras. A resposta média predita nesse cenário define o comportamento esperado do público esclarecido para cada item.
 
-Essa estratégia permite isolar o efeito marginal da formação econômica sobre a percepção dos respondentes, controlando para fatores sociais, ideológicos e cognitivos. Ao comparar as médias preditas entre o público geral, os economistas e o público esclarecido, torna-se possível avaliar empiricamente se o conhecimento técnico efetivamente corrige os vieses cognitivos previamente identificados.
+A formulação matemática varia conforme a natureza da variável dependente.
+
+\subsection{Modelo Logit Binário}
+
+Para variáveis dicotômicas (ex.: concorda vs. discorda), a probabilidade contrafactual de resposta tecnicamente correta é dada por:
+
+\[
+\hat{Y}_i^{(\text{contrafactual})} = \mathbb{P}(Y_i = 1 \mid X_i, \text{Econ}_i = 0) = \frac{e^{X_i^\prime \beta - \beta_{\text{econ}}}}{1 + e^{X_i^\prime \beta - \beta_{\text{econ}}}}
+\]
+
+\noindent onde:
+\begin{itemize}
+  \item \( X_i \) representa o vetor de covariáveis observadas do indivíduo \( i \),
+  \item \( \beta \) é o vetor de coeficientes estimados no modelo logit,
+  \item \( \beta_{\text{econ}} \) é o coeficiente estimado da variável binária de formação econômica.
+\end{itemize}
+
+\subsection{Modelo Logit Ordenado}
+
+Para variáveis com múltiplos níveis ordenados (ex.: escalas tipo Likert), calcula-se a probabilidade predita de cada categoria e, com base nela, a média esperada:
+
+\[
+\hat{Y}_i^{(\text{contrafactual})} = \sum_{j=1}^J j \cdot \mathbb{P}(Y_i = j \mid X_i, \text{Econ}_i = 0) = \sum_{j=1}^J j \cdot \left[ \Lambda(\tau_j - X_i^\prime \beta^*) - \Lambda(\tau_{j-1} - X_i^\prime \beta^*) \right]
+\]
+
+\noindent onde:
+\begin{itemize}
+  \item \( J \) é o número de categorias da resposta,
+  \item \( \tau_j \) são os limiares estimados do modelo ordenado,
+  \item \( \Lambda(\cdot) \) é a função logística acumulada,
+  \item \( \beta^* = \beta - \beta_{\text{econ}} \cdot d \), com \( d = 1 \) para simular ausência de formação econômica.
+\end{itemize}
+
+\bigskip
+
+Essa estratégia permite isolar o efeito marginal da formação técnica sobre a percepção dos respondentes, controlando para fatores sociais, ideológicos e cognitivos. Ao comparar as médias preditas entre o público geral, os economistas e o público esclarecido, torna-se possível avaliar empiricamente se o conhecimento técnico efetivamente corrige os vieses cognitivos previamente identificados. Essa abordagem contribui para refutar interpretações reducionistas que atribuem as divergências exclusivamente à ideologia ou à renda, reforçando a hipótese de que a racionalidade política pode ser sistematicamente afetada por déficits de formação econômica específica.
+
 
 \section{Etapas Analíticas}
 
-A análise empírica foi conduzida em cinco etapas principais:
-\begin{enumerate}
-    \item Ajuste de modelos logit ordenados para cada variável dependente do questionário;
-    \item Cálculo da probabilidade predita de resposta correta para três grupos: público geral, economistas e público esclarecido (simulado);
-    \item Comparação das médias entre os grupos e geração de gráficos explicativos por variável;
-    \item Estimativas adicionais por tipo de viés, agrupando as variáveis em blocos conceituais (ex.: antimercado, antiestrangeiro, etc.);
-    \item Testes de robustez com especificações alternativas e controle para outliers.
+A análise empírica foi conduzida em seis etapas principais:
+
+\begin{enumerate}[label=\alph*)]
+    \item cálculo da média das respostas para cada pergunta, separando os grupos de economistas e público geral;
+    
+    \item ajuste de modelos \textit{logit} binário ou ordenado, conforme a natureza da variável dependente (respostas dicotômicas ou em escala Likert), com controle para variáveis sociodemográficas e ideológicas; os coeficientes estimados foram avaliados por meio de testes z para verificar sua significância estatística, replicando a estratégia utilizada por \citeonline{Systematically_Biased_Beliefs_about_Economics};
+    
+    \item simulação contrafactual do \textit{público esclarecido}, por meio da predição estatística de respostas dos economistas sob a condição de não possuírem formação em Economia, mantendo constantes as demais variáveis individuais; essa simulação permite isolar o efeito marginal da variável ``formação econômica'' em diferentes perfis sociodemográficos;
+    
+    \item cálculo da média das probabilidades preditas para cada grupo e geração de gráficos explicativos, com escalas padronizadas e comparações visuais diretas;
+    
+    \item agregação das variáveis em blocos conceituais (por tipo de viés: antimercado, antiestrangeiro, antitrabalho e pessimista);
+    
+    \item interpretação e discussão dos resultados, com base nas diferenças empíricas observadas entre os grupos e suas implicações cognitivas e políticas; foram conduzidas análises complementares com e sem variáveis de controle para testar a robustez das estimativas.
 \end{enumerate}
 
 \section{Critério de Refutabilidade}
@@ -81,9 +138,9 @@ Rejeita-se, portanto, qualquer pretensão de verificação definitiva: mesmo que
 \section{Contribuições da Metodologia}
 
 A abordagem aqui descrita permite:
-\begin{itemize}
-    \item Medir objetivamente a distância entre opinião popular e consenso técnico;
-    \item Identificar os determinantes estruturais dos vieses cognitivos;
-    \item Estimar simulações de política pública com base em maior esclarecimento técnico;
-    \item Posicionar o estudo na fronteira da \textit{Economia Política Comportamental}, com diálogo entre econometria, história do pensamento econômico, psicologia cognitiva e teoria política.
-\end{itemize}
+\begin{enumerate}[label=\alph*)]
+    \item medir objetivamente a distância entre opinião popular e consenso técnico;
+    \item identificar os determinantes estruturais dos vieses cognitivos;
+    \item estimar simulações de política pública com base em maior esclarecimento técnico;
+    \item posicionar o estudo na fronteira da \textit{Economia Política Comportamental}, com diálogo entre econometria, história do pensamento econômico, psicologia cognitiva e teoria política.
+\end{enumerate}
