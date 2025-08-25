@@ -53,6 +53,11 @@
 
 %\numberwithin{equation}{section}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}} % “−” → sinal de menos
+\DeclareUnicodeCharacter{2013}{--}             % “–” → en-dash
+
 
 % Cabecalho cabeçalho somente com numeração de página 10pt
 \makepagestyle{PagNumReduzida}
