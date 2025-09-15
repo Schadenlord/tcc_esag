@@ -62,65 +62,53 @@ Com base nos dados coletados e na metodologia aplicada, este estudo propõe as s
 
 \begin{enumerate}[label=\alph*)]
 
-    \item \textbf{H1 - Eleitores brasileiros apresentam vieses sistemáticos que distorcem sua percepção sobre fenômenos econômicos.}  
-    Se os vieses cognitivos forem relevantes, os dados coletados devem revelar padrões recorrentes de julgamento econômico que divergem de princípios amplamente consensuais na literatura econômica. Caso não haja tais padrões, a hipótese será refutada \cite{The_Myth_of_the_Rational_Voter, blendon1997};
-    % Caplan (2007) e Blendon et al. (1997) mostram que os eleitores tendem a divergir sistematicamente dos economistas em temas centrais de política econômica, revelando padrões consistentes de julgamento enviesado.
+  \item \textbf{H1 — Eleitores brasileiros exibem vieses sistemáticos que distorcem sua percepção de fenômenos econômicos.} 
+  Se os vieses forem relevantes, os dados devem revelar padrões recorrentes de julgamento econômico divergentes de princípios amplamente consensuais na literatura e das posições típicas de economistas. A hipótese é refutada na ausência desses padrões \cite{The_Myth_of_the_Rational_Voter,blendon1997}.
 
-    \item \textbf{H2 - O conhecimento econômico reduz a probabilidade de manifestação de vieses cognitivos.}  
-    Se o conhecimento econômico atua como mitigador de vieses, então eleitores com maior escolaridade ou maior familiaridade com conceitos econômicos devem apresentar menor adesão a padrões enviesados. Caso não haja correlação significativa, a hipótese será refutada \cite{downs1957economic, Judgment_under_Uncertainty};
-    % Downs (1957) sustenta que eleitores optam racionalmente por permanecer desinformados; Kahneman e Tversky (1974) argumentam que educação pode mitigar os atalhos heurísticos que distorcem julgamentos econômicos. Tomara que aqui seja refutado.
+  \item \textbf{H2 — Conhecimento econômico específico reduz a probabilidade de manifestação de vieses cognitivos.} 
+  Se a literacia econômica mitiga vieses, indivíduos com \emph{formação econômica avançada} tendem a exibir maior probabilidade de resposta tecnicamente correta, \emph{controladas} as demais covariáveis. 
+  \textit{Operacionalização única:} \texttt{econ} $\in\{0,1\}$, onde $1 =$ \emph{pós-graduação em Economia} (mestrado ou superior) e $0 =$ demais.\footnote{Adota-se um corte \emph{conservador} para reduzir erro de mensuração do construto “conhecimento econômico”. A graduação em Economia é heterogênea entre instituições (carga/ênfases) e inclui casos de formação incompleta, elevando falsos positivos. A pós-graduação, por sua vez, tende a envolver exposição mais intensa ao núcleo técnico (micro, macro, métodos/econometria) e tempo de estudo maior, aumentando a validade de construto. O \emph{threshold} torna o teste de H2 mais severo (no sentido popperiano) e evita atribuir “conhecimento” a contato superficial com a disciplina.}
+  \textit{Critério de refutação:} H2 é refutada se o coeficiente de \texttt{econ} não indicar maior acurácia e não alcançar significância de modo consistente no conjunto de itens (modelos logit/ordered logit) \cite{downs1957economic,Judgment_under_Uncertainty}.
 
-    \item \textbf{H3 - O viés antimercado está associado ao apoio a políticas intervencionistas.}  
-    Se o viés antimercado estiver presente, eleitores que expressam desconfiança em relação ao livre mercado devem mostrar maior apoio a políticas de regulação, controle ou proteção estatal. Caso não haja correlação, a hipótese será refutada \cite{The_Myth_of_the_Rational_Voter, sowell2004applied};
-    % Caplan (2007) identifica o viés antimercado como central nas crenças populares; Sowell (2004) mostra como o desconhecimento da lógica de mercado leva à demanda por controles ineficientes.
+  \item \textbf{H3 — O viés antimercado está associado ao apoio a políticas intervencionistas.}
+  Se presente, eleitores com maior desconfiança em relação ao livre mercado tenderão a apoiar regulação, controle e proteção estatal. A ausência dessa correlação refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,sowell2004applied}.
 
-    \item \textbf{H4 - O viés antiestrangeiro está associado ao apoio a restrições comerciais e migratórias.}  
-    Se esse viés for relevante, eleitores que expressam preocupação com a concorrência estrangeira devem mostrar maior apoio a barreiras ao comércio exterior e à imigração. Se não houver correlação, a hipótese será refutada \cite{The_Myth_of_the_Rational_Voter, bhagwati2003free};
-    % Caplan (2007) destaca a tendência de superestimar o dano causado por estrangeiros; Bhagwati (2003) demonstra os ganhos do comércio internacional e critica o protecionismo como resposta emocional.
+  \item \textbf{H4 — O viés antiestrangeiro está associado ao apoio a restrições comerciais e migratórias.}
+  Se relevante, maior preocupação com a concorrência externa implicará maior apoio a barreiras ao comércio e à imigração. A hipótese é refutada se tal padrão não emergir \cite{The_Myth_of_the_Rational_Voter,bhagwati2003free}.
 
-    \item \textbf{H5 - O viés antitrabalho está associado ao apoio a políticas que priorizam a criação direta de empregos.}  
-    Se os eleitores supervalorizam a criação de empregos como um fim em si, eles devem tender a apoiar propostas que desincentivam automação, realocação produtiva ou reestruturação de setores. Se não houver esse padrão, a hipótese será refutada \cite{The_Myth_of_the_Rational_Voter, landsburg2012armchair};
-    % Segundo Caplan (2007), esse viés decorre da visão sentimental do trabalho como valor intrínseco; Landsburg (2012) observa que o público muitas vezes ignora os ganhos de produtividade associados à destruição criativa.
+  \item \textbf{H5 — O viés antitrabalho está associado ao apoio a políticas que priorizam a criação direta de empregos.}
+  Se os eleitores supervalorizam “empregos” como fim em si, tenderão a apoiar propostas que desincentivam automação, realocação produtiva e reestruturação setorial. A inexistência desse padrão refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,landsburg2012armchair}.
 
-    \item \textbf{H6 - O viés pessimista leva a avaliações econômicas mais negativas do que os dados indicam.}  
-    Se o viés pessimista estiver presente, os eleitores tenderão a avaliar negativamente o desempenho econômico nacional mesmo em contextos de indicadores positivos. Se a percepção estiver alinhada com os dados, a hipótese será refutada \cite{The_Myth_of_the_Rational_Voter, easterbrook2004progress};
-    % Caplan (2007) argumenta que os eleitores tendem a subestimar o progresso econômico; Easterbrook (2004) mostra que, apesar de avanços reais, a percepção popular frequentemente é de estagnação ou retrocesso.
+  \item \textbf{H6 — O viés pessimista leva a avaliações econômicas mais negativas do que os dados indicam.}
+  Se presente, os eleitores avaliarão o desempenho econômico nacional de forma mais negativa do que sugerem os indicadores disponíveis. A convergência entre percepção e dados refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,easterbrook2004progress}.
 
-    \item \textbf{H7 - A filiação ideológica influencia a aceitação de evidências econômicas.}  
-    Se a ideologia interfere na interpretação de dados econômicos, eleitores de diferentes espectros políticos tenderão a responder de forma distinta a evidências empíricas, mesmo quando essas forem tecnicamente robustas. Se não houver esse padrão, a hipótese será refutada \cite{The_Myth_of_the_Rational_Voter, kahan2012polarization}.
-    % Caplan (2007) menciona o viés de confirmação ideológica; Kahan (2012) mostra que mesmo indivíduos com alta capacidade analítica distorcem evidências para se manterem consistentes com sua ideologia.
-
-    % \item \textbf{H8 - Economistas também podem ser influenciados por vieses ideológicos ou autoindulgentes.}  ver se realmente coloco aqui ou deixo somente esses vieses na metodologia 
-    % Se os economistas não forem epistemicamente neutros, então suas recomendações de política pública devem refletir, ao menos em parte, preferências normativas, alinhamentos ideológicos ou pressões institucionais. Caso os dados indiquem que a formação técnica é o único determinante das posições econômicas, a hipótese será refutada \cite{The_Myth_of_the_Rational_Voter, Hausman_McPherson_Satz_2016}.  
-    % Embora Caplan (2007) reconheça que os economistas são menos propensos a certos vieses, ele admite que ideologia também afeta esse grupo; Hausman et al. (2016) destacam que o juízo técnico frequentemente incorpora valores morais e pressupostos normativos.
+  \item \textbf{H7 — A filiação ideológica influencia a aceitação de evidências econômicas.}
+  Se a ideologia interfere na interpretação de dados, diferentes espectros políticos exibirão respostas distintas frente a evidências empíricas, mesmo quando tecnicamente robustas. A ausência desse padrão refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,kahan2012polarization}.
 
 \end{enumerate}
 
-
-\section{Objetivo Geral}
+\section{Objetivo Geral}\label{sec:objetivo-geral}
 
 Investigar os principais vieses cognitivos na percepção econômica dos eleitores brasileiros, por meio da aplicação de um \textit{survey} experimental adaptado ao contexto nacional, com base na literatura de economia política comportamental.
 
-\section{Objetivos Específicos}
+\section{Objetivos Específicos}\label{sec:objetivos-especificos}
 
-% duas frases antes das alineas
+% duas frases antes das alíneas
 
 Como desdobramento do objetivo geral, temos desdobramentos específicos que visam aprofundar a compreensão dos vieses cognitivos na percepção econômica dos eleitores brasileiros. Esses objetivos devem ser alcançados de forma sistemática e rigorosa, utilizando uma abordagem empírica que permita a coleta e análise de dados relevantes. Os objetivos específicos são:
 
 \begin{enumerate}[label=\alph*)]
-    \item identificar, com base na literatura sobre economia comportamental e economia política, os principais vieses cognitivos relacionados à percepção econômica, adaptando-os ao contexto brasileiro;
+    \item \label{obj:a} identificar, com base na literatura sobre economia comportamental e economia política, os principais vieses cognitivos relacionados à percepção econômica, adaptando-os ao contexto brasileiro;
 
-    \item construir e aplicar um survey experimental junto a eleitores brasileiros, inspirado na metodologia da \textit{Survey of Americans and Economists on the Economy} (SAEE), com questionário adaptado à realidade institucional e cultural do país;
+    \item \label{obj:b} construir e aplicar um survey experimental junto a eleitores brasileiros, inspirado na metodologia da \textit{Survey of Americans and Economists on the Economy} (SAEE), com questionário adaptado à realidade institucional e cultural do país;
 
-    \item mapear a presença e frequência dos vieses econômicos entre os eleitores, com base nos dados coletados, utilizando análises estatísticas e modelos empíricos apropriados;
+    \item \label{obj:c} mapear a presença e frequência dos vieses econômicos entre os eleitores, com base nos dados coletados, utilizando análises estatísticas e modelos empíricos apropriados;
 
-    \item identificar padrões de discrepância entre as percepções econômicas dos eleitores brasileiros e os consensos identificados na literatura econômica, investigando possíveis determinantes contextuais e cognitivos dessas diferenças;
+    \item \label{obj:d} identificar padrões de discrepância entre as percepções econômicas dos eleitores brasileiros e os consensos identificados na literatura econômica, investigando possíveis determinantes contextuais e cognitivos dessas diferenças;
 
-    \item explorar a associação entre a presença de vieses econômicos e variáveis sociodemográficas, educacionais e institucionais, buscando compreender fatores relacionados à formação dessas percepções.
-
-    % \item contribuir para o avanço da economia política comportamental por meio da produção de evidências empíricas sobre como vieses cognitivos influenciam a percepção econômica dos eleitores da democracia brasileira.
-
+    \item \label{obj:e} explorar a associação entre a presença de vieses econômicos e variáveis sociodemográficas, educacionais e institucionais, buscando compreender fatores relacionados à formação dessas percepções.
 \end{enumerate}
+
 
 \section{Justificativa e Relevância do Estudo}
 % % deve enfatizar que o problema não é ignorância aleatória, mas crenças sistematicamente erradas, o que gera políticas ruins mesmo quando os eleitores estão bem informados.

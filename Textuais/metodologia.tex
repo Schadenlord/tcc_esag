@@ -13,7 +13,7 @@ A estratégia metodológica adotada combina três eixos principais:
     \item aplicação de modelos econométricos (\textit{logit} binário e multinomial/ordenado) para estimar, sob controle de variáveis demográficas, socioeconômicas e ideológicas, o impacto marginal de fatores individuais na propensão a adotar crenças divergentes do consenso técnico. As análises serão conduzidas em \texttt{Python}, utilizando pacotes como \texttt{pandas}, \texttt{statsmodels} e \texttt{scikit-learn}, assegurando reprodutibilidade dos resultados.
 \end{enumerate}
 
-\subsection{Escopo inferencial e princípios-ponte}
+\subsection{Escopo inferencial e princípios-ponte}\label{sec:escopo-inferencial}
 
 Este estudo tem propósito analítico (testar relações condicionais) e não visa estimativas descritivas de prevalência populacional. Interpretamos os coeficientes como \textit{associações condicionais} sob hipóteses explícitas de modelo, com validade externa limitada ao quadro amostral; trata-se de inferência positiva/explicativa, não causal nem normativa \cite{hausman2008}.
 
@@ -25,7 +25,7 @@ Para ligar teoria e dados, explicitamos \textit{princípios-ponte}:
     \item a expectativa de sinal. Mantemos a mesma família de modelos (logit binário/ordenado) em todos os itens para garantir \textit{comparabilidade} e reduzir arbitrariedade de especificação, em linha com a ideia de confronto teoria–dados e congruência de modelos \cite{stigum2003}.
 \end{enumerate}
 
-\section{Coleta e Amostragem}
+\section{Coleta e Amostragem}\label{sec:coleta-amostragem}
 
 A amostragem foi do tipo não probabilística, com estratificação em dois grupos principais:
 \begin{enumerate}[label=\alph*)]
@@ -34,7 +34,6 @@ A amostragem foi do tipo não probabilística, com estratificação em dois grup
 \end{enumerate}
 
 A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de questionário estruturado em plataforma digital (\textit{Google Forms}). Três estratégias de recrutamento foram empregadas:
-
 \begin{enumerate}[label=\alph*)]
     \item amostragem em bola de neve, iniciada por respondentes-semente com diversidade regional e ideológica;
     \item parcerias institucionais, com apoio de docentes e redes acadêmicas de Economia;
@@ -42,6 +41,9 @@ A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de questioná
 \end{enumerate}
 
 Embora a meta amostral mínima tenha sido definida com base em parâmetros estatísticos (pelo menos 175 respondentes), a pesquisa buscou ampliar o número de observações especialmente no grupo controle, visando maior robustez estatística para comparações com 95\% de confiança e 80\% de poder.
+
+\subsection{Tamanho amostral e composição.}
+No total, o \textit{survey} obteve respostas válidas de \textbf{\(n \approx 172\)} participantes.\footnote{O \(n\) efetivo por item/modelo varia ligeiramente devido a não resposta item-a-item; a Tabela-Síntese Mestra (\autoref{apendice:tabela_sintese}) indica média próxima de 172 observações por questão.} Desses, aproximadamente \textbf{X\%} (\(\approx N_1\)) compuseram o \textbf{grupo de controle} (não economistas) e \textbf{Y\%} (\(\approx N_2\)) o \textbf{grupo com formação em Economia} (graduação ou pós em curso/concluída). O subgrupo de economistas é \textit{menor} em relação ao controle, o que recomenda cautela na leitura de efeitos específicos desse termo, como discutido na seção de robustez e limitações (Seção~4.3). Em termos de transparência, os modelos ordenados consolidados no Apêndice~\ref{apendice:tabela_sintese} mantêm lista idêntica de covariáveis, e reportam o \(n\) por item.
 
 \subsection{Âmbito de validade externa}
 A amostragem não probabilística é apropriada ao objetivo de teste de hipóteses sob severidade; os resultados são corroborações provisórias de relações condicionais no recorte estudado, não estimativas representativas da população. Declaramos explicitamente os limites de generalização e separamos descrição positiva de juízos normativos \cite{hausman2008}.
@@ -58,7 +60,7 @@ O questionário aplicado dividiu-se em três blocos principais:
 
 As respostas foram registradas em escalas do tipo Likert (3 a 5 pontos), adaptadas conforme a nuance de cada questão. O instrumento foi submetido à revisão semântica por dois especialistas em políticas públicas e economia política e passou por um pré-teste com 15 participantes voluntários, que avaliaram clareza, aplicabilidade e tempo médio de resposta (cerca de 7 minutos), resultando em ajustes pontuais de redação e formato.
 
-\section{Modelo Estatístico}
+\section{Modelo Estatístico}\label{sec:modelo-estatistico}
 
 Utiliza-se regressão \textit{logit} (binária ou ordenada) para modelar a probabilidade de adesão a uma crença tecnicamente correta. A escolha entre as versões depende da natureza da variável dependente: binária para respostas dicotômicas (ex.: concorda vs. discorda) e ordenada para escalas com múltiplos níveis. A formulação geral dos modelos é dada por:
 
@@ -74,9 +76,14 @@ P(y_i \leq j \mid X_i) = \frac{1}{1 + e^{-(\tau_j - X_i \beta)}}
 
 As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver Anexo~\ref{anexo:A}). Os modelos foram ajustados por meio do algoritmo L-BFGS, adequado para estimação de modelos com múltiplos parâmetros.
 
-\subsection{Pressupostos, comparabilidade e inferência}
-A opção por especificações paralelas entre itens cria uma “régua comum” de mensuração, permitindo atribuir diferenças de resultados ao conteúdo substantivo das questões e não à troca de modelo. No caso do logit ordenado, avaliamos a hipótese de chances proporcionais (teste padrão de paralelismo); diante de indícios locais, mantivemos a especificação por razão de comparabilidade transversal entre DVs. Erros-padrão são robustos à heteroscedasticidade. Essas escolhas privilegiam parcimônia, comparabilidade e \textit{congruência} no sentido de abranger rivais plausíveis \cite{stigum2003}.
+\subsection{Pressupostos, comparabilidade e inferência}\label{sec:pressupostos-inferencia}
+A opção por especificações paralelas entre itens cria uma “régua comum” de mensuração, permitindo atribuir diferenças de resultados ao conteúdo substantivo das questões e não à troca de modelo. 
 
+Nos modelos de \textit{logit ordenado}, assumimos a hipótese de \textit{chances proporcionais}. Não implementamos teste formal por item (p.\,ex., Brant); em seu lugar, realizamos uma \textit{avaliação heurística} da plausibilidade do pressuposto, verificando a \textit{ordenação dos cutpoints} retornados pelo ajuste e a \textit{estabilidade/convergência} mediante \textit{fallback} de otimizadores (\textit{lbfgs} $\rightarrow$ \textit{bfgs} $\rightarrow$ \textit{powell}). Itens com inversão de limiares ou falha de convergência foram rotulados como \textit{não estimáveis/instáveis} e excluídos de interpretação substantiva.
+
+Quanto à \textit{multicolinearidade}, adotou-se mitigação estrutural (remoção de colunas constantes/raras e monitoramento da estabilidade de sinais e erros-padrão); medidas formais (p.\,ex., VIF) não foram computadas nesta versão. Os erros-padrão reportados são os \textit{padrão do estimador}. 
+
+Essas escolhas foram realizadas para privilegiar parcimônia, comparabilidade e \textit{congruência} --- no sentido de alinhar teoria e dados por meio de \textit{princípios-ponte} e modelos empiricamente admissíveis/encompassantes, conforme a metodologia proposta por \citeonline{stigum2003}.
 
 \section{O Conceito de Público Esclarecido}
 
