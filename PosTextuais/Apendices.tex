@@ -16,6 +16,7 @@
 % ----------------------------------------------------------
 \chapter{Quadro Síntese das Abordagens sobre (I)Racionalidade Humana e Política}
 % ----------------------------------------------------------
+\label{apendice:quadro_iracionalidade}
 
 % no preâmbulo:
 % \usepackage{longtable,booktabs,caption}
@@ -24,7 +25,7 @@
  \captionsetup{type=quadro}%       <- opcional, mantém o rótulo "Quadro"
  \begin{longtable}{p{0.15\textwidth} p{0.23\textwidth} p{0.34\textwidth} p{0.20\textwidth}}
  \caption{Quadro Síntese – (I)Racionalidade Humana e Política: Principais Abordagens}
- \label{apendice:quadro_iracionalidade}\\
+ \\
 
  \toprule
  \textbf{Autor/Obra (Ano)} & \textbf{Tópico/Conceito Central} & \textbf{Principais Contribuições e Evidências} & \textbf{Relação com o TCC} \\
@@ -57,93 +58,90 @@
 }
 
 \chapter{Variáveis analisadas}
-\label{anexo:A}
+\label{apencice:variaveis_analisadas}
 
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.25}
 
-\begin{longtable}{|>{\raggedright\arraybackslash}p{4cm} 
-                  |>{\raggedright\arraybackslash}p{8cm} 
-                  |>{\raggedright\arraybackslash}p{4cm}|}
-    \caption{Variáveis de Controle e Codificação}
-    \label{tab:control_variables} \\
-    \hline
-    \textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
-    \hline
-    \endfirsthead
+\begin{longtable}{@{}%
+  >{\raggedright\arraybackslash}p{4cm}%
+  >{\raggedright\arraybackslash}p{4cm}%
+  >{\raggedright\arraybackslash}p{7cm}@{}}
+\caption{Variáveis de controle e codificação (modelos logit binário/ordenado)}
+\label{tab:control_variables}\\
 
-    \hline
-    \textbf{Variável} & \textbf{Pergunta} & \textbf{Codificação} \\
-    \hline
-    \endhead
+\toprule
+\textbf{Variável (no modelo)} & \textbf{Pergunta no questionário} & \textbf{Codificação adotada} \\
+\midrule
+\endfirsthead
 
-    \hline
-    \endfoot
+\toprule
+\textbf{Variável (no modelo)} & \textbf{Pergunta no questionário} & \textbf{Codificação adotada} \\
+\midrule
+\endhead
 
-    \hline
-    \endlastfoot
+\midrule
+\multicolumn{3}{r}{\small Continuação na próxima página} \\
+\endfoot
 
-    \textbf{econ} & Qual seu nível de formação em Ciências Econômicas? & 
-    1 = Doutorado ou mais; 0 = Não economista \\ 
-    \hline
-    \textbf{sex} & Qual seu Gênero & 
-    1 se Homem, 0 caso contrário \\ 
-    \hline
-    \textbf{black} & Qual é a sua raça? Branco, negro, asiático ou outra? & 1 se negro, 0 caso contrário \\ 
-    \hline
-    \textbf{asian} & Idem & 1 se asiático, 0 caso contrário \\ 
-    \hline
-    \textbf{othrace} & Idem & 1 se outra raça, 0 caso contrário \\   \hline
-    \textbf{age} & Qual é o seu ano de nascimento? & 
-    2025 - resposta \\
-    \hline
-    \textbf{school} & Qual o seu nível de escolaridade? & 
-    1 = Fundamental incompleto; 
-    2 = Fundamental completo; 
-    3 = Médio incompleto; 
-    4 = Médio completo; 
-    5 = Superior incompleto; 
-    6 = Superior completo; 
-    7 = Pós-graduação \\ 
-    \hline
-    \textbf{brregion} & Em qual região do Brasil você reside? & 
-    1 = Norte; 
-    2 = Nordeste; 
-    3 = Centro--Oeste; 
-    4 = Sudeste; 
-    5 = Sul \\ 
-    \hline
-    \textbf{clt}\footnote{A variável ``clt'' foi codificada conforme uma escala de dependência estatal, variando de servidores públicos (maior dependência) a empresários (maior autonomia econômica). A literatura mostra que servidores públicos tendem a adotar posições mais à esquerda e favoráveis à expansão do Estado por razões ideológicas e de interesse próprio \cite{jensen2009political}. Por outro lado, a autonomia e a estrutura de tarefas no trabalho moldam preferências políticas mais pró-mercado e individualistas, sobretudo entre empresários e profissionais autônomos \cite{kitschelt2014occupations}. Além disso, a heterogeneidade entre os autônomos — especialmente entre os precários e os mais estáveis — também influencia a orientação política, justificando distinções internas nessa categoria \cite{jansen2016self}.}  & Qual o seu vínculo empregatício? & 
-    -4 = Servidor Público;  
-    -3 = Aposentado;        
-    -2 = Estudante;         
-    -1 = Desempregado;      
-    0 = Sem carteira;      
-    1 = CLT;               
-    2 = Autônomo;          
-    3 = Empresário;        
-    4 = Outro             
-    \\ 
-    \hline
-    \textbf{financearea} & Você trabalha com economia, finanças, contabilidade ou áreas correlatas? & 
-    1 = Sim; 0 = Não \\ 
-    \hline
-    \textbf{politicalarea} & Você trabalha com política ou áreas correlatas? & 
-    1 = Sim; 0 = Não \\ 
-    \hline
-    \textbf{politicallife} & Você se considera uma pessoa politicamente engajada? & 
-    1 = Sim; 0 = Não \\ 
-    \hline
-    \textbf{politicalnews} & Você costuma acompanhar notícias sobre economia e política? & 
-    1 = Sim; 0 = Não \\ 
-    \hline
-    \textbf{ideol} & Com qual espectro político você mais se identifica? & 
-    -2 = Extrema-esquerda; 
-    -1 = Esquerda; 
-    0 = Centro; 
-    1 = Direita; 
-    2 = Extrema-direita; 
-    3 = Independente; 
-    0 = Sem opinião \\ 
+\bottomrule
+\multicolumn{3}{@{}l}{\footnotesize \textit{Fonte: Elaboração própria.}}\\
+\endlastfoot
+
+    % ------------------ ECON / FORMAÇÃO ------------------
+    \texttt{econ} & Qual seu nível de formação em Ciências Econômicas? & 
+    Variável derivada (não dummificada). \newline
+    \emph{Regra}: $1$ se \textit{Mestrado em Economia} ou \textit{Doutorado em Economia}; $0$ para demais respostas (inclui \textit{Graduação em Economia}, \textit{Não tenho formação} e cursos lato sensu/MBAs). \newline
+    \emph{Obs.}: limiar severo para capturar \emph{conhecimento técnico} (ver \autoref{sec:hipoteses}). \\ \hline
+
+    % ------------------ SEXO ------------------
+    \texttt{Você é homem?{\_}Sim} & Você é homem? &
+    Dummy binária gerada por \texttt{get\_dummies} (\texttt{drop\_first=True}). \newline
+    \emph{Regra}: $1=\text{Sim}$; $0=\text{Não}$. \\ \hline
+
+    % --- RAÇA (dummies): acrescentar a base explícita
+    \texttt{Com qual grupo racial/étnico você mais se identifica?{\_}\{Branco, Negro, Outro\}} &
+    Com qual grupo racial/étnico você mais se identifica? &
+    Conjunto de dummies com \texttt{drop\_first=True}. \newline
+    \emph{Regra}: colunas no modelo: \texttt{\_Branco}, \texttt{\_Negro}, \texttt{\_Outro}. \newline
+    \emph{Categoria de referência (omitida)}: \textit{Asiático}. \\ \hline
+
+    % --- ESCOLARIDADE (dummies): acrescentar a base explícita
+    \texttt{Qual seu nível de escolaridade?{\_}
+    \{EF~Incompleto, EM~Completo, EM~Incompleto, ES~Completo, ES~Incompleto, Pós-graduação\}} &
+    Qual seu nível de escolaridade? &
+    Conjunto de dummies com \texttt{drop\_first=True}. \newline
+    \emph{Regra}: colunas no modelo: \texttt{EF Incompleto}, \texttt{EM Completo}, \texttt{EM Incompleto}, \texttt{ES Completo}, \texttt{ES Incompleto}, \texttt{Pós-graduação}. \newline
+    \emph{Categoria de referência (omitida)}: \textit{Ensino Fundamental Completo}. \\ \hline
+
+    % --- FAIXA ETÁRIA (dummies): acrescentar a base explícita
+    \texttt{Qual é a sua faixa etária?{\_}\{Até 18, 26–35, 36–45, 46–55, 56–65, 66+\}} &
+    Qual é a sua faixa etária? &
+    Conjunto de dummies com \texttt{drop\_first=True}. \newline
+    \emph{Regra}: colunas no modelo: \texttt{\_Até 18 anos}, \texttt{\_26 a 35 anos}, \texttt{\_36 a 45 anos}, \texttt{\_46 a 55 anos}, \texttt{\_56 a 65 anos}, \texttt{\_66 anos ou mais}. \newline
+    \emph{Categoria de referência (omitida)}: \textit{19 a 25 anos}. \\ \hline
+
+    % ------------------ ENGJTO POLÍTICO ------------------
+    \texttt{Você se considera uma pessoa politicamente engajada?{\_}Sim} &
+    Você se considera uma pessoa politicamente engajada? &
+    Dummy binária com \texttt{drop\_first=True}. \newline
+    \emph{Regra}: $1=\text{Sim}$; $0=\text{Não}$. \\ \hline
+
+    % --- IDEOLOGIA (escala): explicitar a colisão Centro/Sem opinião
+    \texttt{Com qual espectro político você mais se identifica?} &
+    Com qual espectro político você mais se identifica? &
+    Variável ordinal/numerizada: \newline
+    \quad $-2=$ Extrema-esquerda; $-1=$ Esquerda; $0=$ Centro; $1=$ Direita; $2=$ Extrema-direita; $3=$ Independente; $0=$ Sem opinião. \newline
+    \emph{Obs.:} ``Sem opinião'' foi recodificada como $0$ (mesmo valor de \textit{Centro}). \\ \hline
+
+    % ------------------ VÍNCULO EMPREGATÍCIO (escala) ------------------
+    \texttt{Qual é o seu vínculo empregatício?}\footnote{A variável de vinculo empregatício foi codificada em escala de dependência estatal, de servidores públicos (maior dependência) a empresários (maior autonomia econômica). A literatura mostra que servidores públicos tendem a posições mais à esquerda e favoráveis à expansão do Estado por razões ideológicas e de interesse próprio \cite{jensen2009political}; já a autonomia e a estrutura das tarefas moldam preferências mais pró-mercado e individualistas, especialmente entre empresários e autônomos \cite{kitschelt2014occupations}. Por fim, a heterogeneidade dos autônomos (precários vs. estáveis) também afeta a orientação política, justificando distinções internas na categoria \cite{jansen2016self}.} &
+    Qual é o seu vínculo empregatício? &
+    Variável ordinal/numerizada (mapeamento fixo): \newline
+    $-4=$ Servidor público;\quad $-3=$ Aposentado;\quad $-2=$ Estudante;\newline
+    $-1=$ Desempregado;\quad $0=$ Empregado sem carteira;\quad $1=$ CLT;\newline
+    $2=$ Autônomo;\quad $3=$ Empresário;\quad $4=$ Outro. \newline
+    (Usada no modelo como numérica.) \\ \hline
+
 \end{longtable}
 
 \begin{landscape}
@@ -157,13 +155,14 @@
 
 \begin{ThreePartTable}
 \begin{TableNotes}[flushleft]\footnotesize
-\item \textit{\textbf{Notas gerais:}} Valores de $\beta$ e $p$ entre parênteses. Coeficientes em \textbf{negrito} indicam $p<0{,}05$. ``Econ'' refere-se à dummy de formação em Economia. Em ``Controles'', listam-se apenas efeitos consistentes ($p<0{,}10$ e sinal estável entre especificações). Médias: escala normalizada da pesquisa.
+\item \textit{\textbf{Notas gerais:}} Tabela elaborada pelo autor com base nos modelos da \autoref{sec:modelo-estatistico} (contrafactual da \autoref{sec:publico_esclarecido}). \newline Valores de $\beta$ e $p$ entre parênteses. Coeficientes em \textbf{negrito} indicam $p<0{,}05$. ``Econ'' refere-se à dummy de formação em Economia. Em ``Controles'', listam-se apenas efeitos consistentes ($p<0{,}10$ e sinal estável entre especificações). Médias: escala normalizada da pesquisa.
 \item \textbf{``n/a''} indica que o modelo não foi reportado: \textit{n/a (não estimável)} quando a estimação falhou (p.\,ex., falta de variação na DV, separação quase-perfeita, colinearidade perfeita ou não convergência); \textit{n/a (não estável)} quando os resultados variaram de forma sensível a perturbações razoáveis (p.\,ex., limiares mal ordenados, erros-padrão inflados), não atendendo ao critério mínimo de estabilidade.
 \item \textbf{``(nenhum)''} na coluna \emph{Controles} significa que, embora os controles tenham sido incluídos no modelo, nenhum apresentou associação estatisticamente significativa a $10\%$ \emph{com sinal estável}; por isso nenhum controle é destacado na síntese.
 \item \textbf{Sinal ``$+$''/``$-$'':} refere-se ao \emph{sinal do coeficiente} estimado. Em logit ordenado, com a escala ordenada de menor para maior, $\beta>0$ (``$+$'') desloca a probabilidade para categorias mais altas da DV; $\beta<0$ (``$-$'') desloca para categorias mais baixas (interpretação: maior/menor concordância quando a escala é crescente).
 \end{TableNotes}
 
 \begin{longtable}{%
+  >{\centering\arraybackslash}p{0.5cm}
   >{\RaggedRight\arraybackslash}p{3.0cm}
   >{\centering\arraybackslash}p{0.6cm}
   >{\RaggedRight\arraybackslash}p{2cm}
@@ -174,129 +173,132 @@
   >{\centering\arraybackslash}p{1.2cm}
   >{\centering\arraybackslash}p{1.4cm}
   >{\RaggedRight\arraybackslash}p{4.5cm}}
-\caption{Tabela-Síntese Mestra — Resultados dos Modelos Ordenados (37 DVs)}\label{tab:resultados_ordenados}\\
+\caption{Tabela-Síntese Mestra — Resultados dos Modelos Ordenados (52 DVs)}\label{tab:resultados_ordenados}\\
 \toprule
-\textbf{DV (Pergunta)} & \textbf{N} & \textbf{Modelo} & \textbf{Espectro político} & \textbf{Formação em Economia} & \textbf{Controles ($p<0{,}10$; sinal)} & \textbf{Média (econ=0)} & \textbf{Média (econ=1)} & \textbf{Média contraf.} & \textbf{Leitura}\\
+\textbf{No.} & \textbf{DV (Pergunta)} & \textbf{N} & \textbf{Modelo} & \textbf{Espectro político} & \textbf{Formação em Economia} & \textbf{Controles ($p<0{,}10$; sinal)} & \textbf{Média (econ=0)} & \textbf{Média (econ=1)} & \textbf{Média contraf.} & \textbf{Leitura}\\
 \midrule
 \endfirsthead
 
-\multicolumn{10}{l}{\footnotesize \textit{(continuação)}}\\
+\multicolumn{11}{l}{\footnotesize \textit{(continuação)}}\\
 \toprule
-\textbf{DV (Pergunta)} & \textbf{N} & \textbf{Modelo} & \textbf{Espectro político} & \textbf{Formação em Economia} & \textbf{Controles ($p<0{,}10$; sinal)} & \textbf{Média (econ=0)} & \textbf{Média (econ=1)} & \textbf{Média contraf.} & \textbf{Leitura}\\
+\textbf{No.} & \textbf{DV (Pergunta)} & \textbf{N} & \textbf{Modelo} & \textbf{Espectro político} & \textbf{Formação em Economia} & \textbf{Controles ($p<0{,}10$; sinal)} & \textbf{Média (econ=0)} & \textbf{Média (econ=1)} & \textbf{Média contraf.} & \textbf{Leitura}\\
 \midrule
 \endhead
 
 \midrule
-\multicolumn{9}{r}{\footnotesize \textit{continua na próxima página}}\\
+\multicolumn{10}{r}{\footnotesize \textit{continua na próxima página}}\\
 \endfoot
 
 \bottomrule
 \endlastfoot
 
-Os impostos são muito altos & 172 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0,674}$; $p = 0{,}000$) & $-0{,}893$; $p = 0{,}150$ & Qual é a sua faixa etária? 26 a 35 anos: $-$; Qual é a sua faixa etária? 36 a 45 anos: $-$; Qual é a sua faixa etária? Até 18 anos: $-$ & 1{,}445 & 1{,}235 & 1{,}459 & Percepção amplamente compartilhada; economistas concordam quase tanto; direita intensifica levemente.\\
+1 & Os impostos são muito altos & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}686}$; $p = 0{,}000$) & $-1{,}008$; $p = 0{,}150$ & (nenhum) & 1{,}470 & 1{,}235 & 1{,}488 & Percepção amplamente compartilhada; economistas concordam quase tanto; direita intensifica levemente.\\
 
-O déficit federal é grande demais (dívida pública) & 171 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}731}$; $p = 0{,}000$) & $-1{,}449$; $p = \mathbf{0{,}026}$ & (nenhum) & 1{,}513 & 1{,}118 & 1{,}501 & Público vê excesso; economistas menos alarmistas; formação técnica atenua preocupação.\\
+2 & O déficit federal é grande demais (Dívida pública) & 182 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}708}$; $p = 0{,}000$) & $\mathbf{-1{,}461}$; $p = 0{,}026$ & (nenhum) & 1{,}521 & 1{,}118 & 1{,}503 & Público vê excesso; economistas menos alarmistas; formação técnica atenua preocupação.\\
 
-O gasto com ajuda externa é alto demais & 172 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}256}$; $p = 0{,}031$) & $-1{,}332$; $p = \mathbf{0{,}031}$ & Você é homem? Sim: $-$; Qual é a sua faixa etária? 46 a 55 anos: + & 0{,}832 & 0{,}412 & 0{,}864 & Grande viés no público; economistas discordam amplamente; formação corrige.\\
+3 & O gasto com ajuda externa é alto demais & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}246}$; $p = 0{,}034$) & $\mathbf{-1{,}443}$; $p = 0{,}018$ & Você é homem? Sim: $-$; Qual é a sua faixa etária? 46 a 55 anos: $+$ & 0{,}861 & 0{,}412 & 0{,}901 & Grande viés no público; economistas discordam amplamente; formação corrige.\\
 
-Temos imigrantes demais & 172 & Logit ord.\ (limiares ok) & + ($\beta = 0{,}009$; $p = 0{,}958$) & $-0{,}351$; $p = 0{,}633$ & Qual é a sua faixa etária? 46 a 55 anos: +; Qual é a sua faixa etária? 66 anos ou mais: + & 0{,}239 & 0{,}235 & 0{,}327 & Sem diferença ideológica/ formação; ausência de viés sistemático.\\
+4 & Temos imigrantes demais & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = 0{,}047$; $p = 0{,}762$) & $-0{,}515$; $p = 0{,}473$ & Qual é a sua faixa etária? 46 a 55 anos: $+$; Qual é a sua faixa etária? 66 anos ou mais: $+$ & 0{,}241 & 0{,}235 & 0{,}363 & Sem diferença ideológica/ formação; ausência de viés sistemático.\\
 
-Há deduções demais para as empresas (Impostos) & 173 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}259}$; $p = 0{,}028$) & $0{,}789$; $p = 0{,}161$ & Qual é a sua faixa etária? Até 18 anos: $-$ & 1{,}058 & 1{,}294 & 0{,}987 & Leigos e economistas veem deduções elevadas; sem diferença robusta por formação.\\
+5 & Há deduções demais para as empresas (Impostos) & 184 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}284}$; $p = 0{,}015$) & $0{,}642$; $p = 0{,}247$ & Qual é a sua faixa etária? Até 18 anos: $-$ & 1{,}096 & 1{,}294 & 1{,}038 & Leigos e economistas veem deduções elevadas; sem diferença robusta por formação.\\
 
-A educação e a qualificação profissional são inadequadas & 172 & Logit ord.\ (limiares ok) & + ($\beta = 0{,}075$; $p = 0{,}553$) & $0{,}765$; $p = 0{,}234$ & Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}471 & 1{,}706 & 1{,}485 & Convergência: ambos veem insuficiência; sem viés a corrigir.\\
+6 & A educação e a qualificação profissional são inadequadas & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = 0{,}096$; $p = 0{,}431$) & $0{,}730$; $p = 0{,}248$ & Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}482 & 1{,}706 & 1{,}487 & Convergência: ambos veem insuficiência; sem viés a corrigir.\\
 
-A seguridade social atende pessoas demais & 173 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}477}$; $p = 0{,}000$) & $-0{,}976$; $p = 0{,}108$ & Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual é a sua faixa etária? 26 a 35 anos: $-$ & 0{,}801 & 0{,}647 & 0{,}920 & Público acha que atende “demais”; direita acentua fortemente essa visão.\\
+7 & A seguridade social (Previdência) atende pessoas demais & 184 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}523}$; $p = 0{,}000$) & $-1{,}024$; $p = 0{,}086$ & Qual é a sua faixa etária? 26 a 35 anos: $-$ & 0{,}832 & 0{,}647 & 0{,}943 & Público acha que atende “demais”; direita acentua fortemente essa visão.\\
 
-Ações afirmativas dão vantagens demais & 172 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}479}$; $p = 0{,}002$) & $-0{,}362$; $p = 0{,}644$ & (nenhum) & 0{,}316 & 0{,}176 & 0{,}259 & Viés ideológico marcante: direita aumenta crença contrária às cotas.\\
+8 & Mulheres e minorias têm vantagens demais por causa das ações afirmativas (cotas) & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}464}$; $p = 0{,}002$) & $-0{,}446$; $p = 0{,}567$ & Qual é a sua faixa etária? 56 a 65 anos: $+$ & 0{,}349 & 0{,}176 & 0{,}271 & Viés ideológico marcante: direita aumenta crença contrária às cotas.\\
 
-O governo regulamenta muito os negócios & 173 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{1{,}015}$; $p = 0{,}000$) & $-0{,}978$; $p = 0{,}120$ & Você é homem? Sim: +; Qual seu nível de escolaridade? Ensino Médio Completo: +; Qual seu nível de escolaridade? Pós-graduação: +; Qual é a sua faixa etária? 36 a 45 anos: $-$ & 1{,}147 & 0{,}941 & 1{,}183 & Viés anti-regulação em ambos; homens mais propensos; direita reforça.\\
+9 & As pessoas não dão valor ao trabalho duro & 184 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}288}$; $p = 0{,}018$) & $-0{,}277$; $p = 0{,}638$ & Qual é o seu vínculo empregatício? : $-$; Qual é a sua faixa etária? 46 a 55 anos: $+$ & 0{,}677 & 0{,}588 & 0{,}715 & Direita tende a concordar mais; economistas não diferem significativamente.\\
 
-As pessoas não poupam o bastante & 173 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}248}$; $p = 0{,}041$) & $-0{,}340$; $p = 0{,}563$ & Você é homem? Sim: +; Qual é a sua faixa etária? 46 a 55 anos: +; Qual é a sua faixa etária? 66 anos ou mais: +; Qual é a sua faixa etária? Até 18 anos: + & 0{,}987 & 0{,}941 & 1{,}033 & Consenso de insuficiência de poupança; direita atribui mais culpa.\\
+10 & O governo regulamenta muito os negócios & 184 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}994}$; $p = 0{,}000$) & $-1{,}067$; $p = 0{,}087$ & Você é homem? Sim: $+$; Qual seu nível de escolaridade? Ensino Médio Completo: $+$; Qual seu nível de escolaridade? Pós-graduação: $+$; Qual é a sua faixa etária? 66 anos ou mais: $-$ & 1{,}192 & 0{,}941 & 1{,}213 & Viés anti-regulação em ambos; homens mais propensos; direita reforça.\\
 
-As empresas lucram demais & 172 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}852}$; $p = 0{,}000$) & $-0{,}298$; $p = 0{,}653$ & Qual é o seu vínculo empregatício?: $-$; Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual seu nível de escolaridade? Ensino Médio Incompleto: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$; Qual é a sua faixa etária? 46 a 55 anos: +; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 0{,}523 & 0{,}706 & 0{,}848 & Viés anti-lucro (esquerda) contraposto por economistas; correção técnica.\\
+11 & As pessoas não poupam o bastante & 184 & Logit ord.\ (limiares ok) & $+$ ($\beta = 0{,}214$; $p = 0{,}065$) & $-0{,}506$; $p = 0{,}378$ & Você é homem? Sim: $+$; Qual é a sua faixa etária? 46 a 55 anos: $+$; Qual é a sua faixa etária? 66 anos ou mais: $+$ & 1{,}006 & 0{,}941 & 1{,}101 & Consenso de insuficiência de poupança; direita atribui mais culpa.\\
 
-Altos executivos ganham demais & 172 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}662}$; $p = 0{,}000$) & $-0{,}469$; $p = 0{,}421$ & Qual é o seu vínculo empregatício?: $-$; Você é homem? Sim: $-$; Com qual grupo racial/étnico você mais se identifica? Negro: +; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$ & 0{,}714 & 0{,}750 & 0{,}878 & Público mais crítico; economistas discordam; homens menos críticos.\\
+12 & As empresas lucram demais & 183 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}788}$; $p = 0{,}000$) & $-0{,}422$; $p = 0{,}517$ & Qual é o seu vínculo empregatício? : $-$; Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual seu nível de escolaridade? Ensino Médio Incompleto: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$; Qual é a sua faixa etária? 46 a 55 anos: $+$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 0{,}512 & 0{,}706 & 0{,}884 & Viés anti-lucro (esquerda) contraposto por economistas; correção técnica.\\
 
-A produtividade aumenta devagar demais & 172 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}032$; $p = 0{,}797$) & $\mathbf{1{,}753}$; $p = 0{,}010$ & Você é homem? Sim: +; Qual é a sua faixa etária? 26 a 35 anos: $-$ & 1{,}110 & 1{,}750 & 1{,}279 & Convergência; economistas mais preocupados (efeito de formação).\\
+13 & Altos executivos ganham demais & 183 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}634}$; $p = 0{,}000$) & $-0{,}623$; $p = 0{,}283$ & Qual é o seu vínculo empregatício? : $-$; Você é homem? Sim: $-$ & 0{,}705 & 0{,}765 & 0{,}992 & Público mais crítico; economistas discordam; homens menos críticos.\\
 
-A tecnologia causa demissões & 169 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}182$; $p = 0{,}193$) & $-0{,}259$; $p = 0{,}681$ & (nenhum) & 0{,}422 & 0{,}562 & 0{,}658 & Leve discordância; economistas discordam mais; sem viés ludista forte.\\
+14 & A produtividade está aumentando devagar demais & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = 0{,}009$; $p = 0{,}937$) & $\mathbf{1{,}722}$; $p = 0{,}010$ & Você é homem? Sim: $+$; Qual é a sua faixa etária? 26 a 35 anos: $-$ & 1{,}114 & 1{,}765 & 1{,}239 & Convergência; economistas mais preocupados (efeito de formação).\\
 
-Empresas estão enviando funcionários ao exterior & 170 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}139$; $p = 0{,}352$) & $1{,}394$; $p = 0{,}047$ & (nenhum) & 0{,}297 & 0{,}438 & 0{,}171 & Leigos pouco veem fuga; economistas notam mais (atenção técnica ao fenômeno).\\
+15 & A tecnologia causa demissões & 183 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}148$; $p = 0{,}261$) & $-0{,}231$; $p = 0{,}697$ & Qual é o seu vínculo empregatício? : $-$; Qual é a sua faixa etária? 46 a 55 anos: $+$ & 0{,}434 & 0{,}588 & 0{,}680 & Leve discordância; economistas discordam mais; sem viés ludista forte.\\
 
-Empresas estão reduzindo postos de trabalho & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}265}$; $p = 0{,}030$) & $0{,}095$; $p = 0{,}872$ & (nenhum) & 0{,}658 & 0{,}875 & 0{,}852 & Ambos percebem cortes; esquerda enfatiza mais (espectro negativo).\\
+16 & As empresas estão enviando funcionários ao estrangeiro & 184 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}151$; $p = 0{,}293$) & $1{,}166$; $p = 0{,}081$ & Qual é o seu vínculo empregatício? : $-$; Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$; Qual é a sua faixa etária? 26 a 35 anos: $-$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 0{,}299 & 0{,}412 & 0{,}188 & Leigos pouco veem fuga; economistas notam mais (atenção técnica ao fenômeno).\\
 
-Empresas investem pouco em qualificação & 170 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}394}$; $p = 0{,}001$) & $0{,}262$; $p = 0{,}654$ & (nenhum) & 1{,}071 & 1{,}312 & 1{,}218 & Crítica compartilhada, mais forte à esquerda; formação não mitiga.\\
+17 & As empresas estão reduzindo os postos de trabalho & 184 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}263}$; $p = 0{,}028$) & $0{,}128$; $p = 0{,}821$ & Qual é o seu vínculo empregatício? : $-$ & 0{,}659 & 0{,}941 & 0{,}903 & Ambos percebem cortes; esquerda enfatiza mais (espectro negativo).\\
 
-Apoio a corte de impostos & 173 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}968}$; $p = 0{,}000$) & $-0{,}249$; $p = 0{,}520$ & (nenhum) & 1{,}660 & 1{,}353 & 1{,}469 & Forte apoio geral; direita apoia mais; sem diferença robusta por formação.\\
+18 & As empresas não investem o suficiente em educação e qualificação profissional & 183 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}398}$; $p = 0{,}001$) & $-0{,}016$; $p = 0{,}978$ & Qual é o seu vínculo empregatício? : $-$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}084 & 1{,}294 & 1{,}287 & Crítica compartilhada, mais forte à esquerda; formação não mitiga.\\
 
-Mais mulheres na força de trabalho (positivo) & 173 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}688}$; $p = 0{,}000$) & $0{,}612$; $p = 0{,}425$ & Você é homem? Sim: $-$; Qual é a sua faixa etária? 26 a 35 anos: +; Qual é a sua faixa etária? 36 a 45 anos: + & 1{,}423 & 1{,}765 & 1{,}661 & Apoio geral; homens menos favoráveis; esquerda apoia mais.\\
+19 & Corte de impostos & 184 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}938}$; $p = 0{,}000$) & $\mathbf{-0{,}348}$; $p = 0{,}000$ & (nenhum) & 1{,}659 & 1{,}353 & 1{,}496 & Forte apoio geral; direita apoia mais; sem diferença robusta por formação.\\
 
-Aumento do uso de tecnologia (positivo) & 171 & n/a (não estimável) & n/a & n/a (modelo não convergiu) & (nenhum) & 1{,}923 & 2{,}000 & 1{,}878 & Quase consenso pró-tecnologia; falta de variação impediu estimação.\\
+20 & Mais mulheres na força de trabalho & 184 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}710}$; $p = 0{,}000$) & $0{,}511$; $p = 0{,}510$ & Você é homem? Sim: $-$; Qual é a sua faixa etária? 26 a 35 anos: $+$; Qual é a sua faixa etária? 36 a 45 anos: $+$; Qual é a sua faixa etária? 46 a 55 anos: $+$ & 1{,}407 & 1{,}765 & 1{,}681 & Apoio geral; homens menos favoráveis; esquerda apoia mais.\\
 
-Acordos comerciais (positivo) & 171 & n/a (não estimável) & n/a & n/a (modelo não convergiu) & (nenhum) & 1{,}916 & 1{,}875 & 1{,}950 & Abertura bem vista por ambos; sem efeitos identificáveis.\\
+21 & Aumento do uso de tecnologia no trabalho & 184 & n/a (não estimável) & n/a & n/a (modelo não convergiu) & (nenhum) & 1{,}922 & 2{,}000 & 1{,}890 & Quase consenso pró-tecnologia; falta de variação impediu estimação.\\
 
-Redução recente de postos em grandes empresas & 170 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}520}$; $p = 0{,}000$) & $-1{,}008$; $p = 0{,}154$ & (nenhum) & 0{,}526 & 0{,}250 & 0{,}491 & Leigos percebem mais demissões; direita eleva essa percepção.\\
+22 & Acordos comerciais com outros países & 184 & n/a (não estimável) & n/a & n/a (modelo não convergiu) & (nenhum) & 1{,}916 & 1{,}882 & 1{,}963 & Abertura bem vista por ambos; sem efeitos identificáveis.\\
 
-Acordos comerciais: bons/ruins para a economia & 169 & n/a (não estável) & n/a & n/a (modelo não estável) & (nenhum) & 1{,}688 & 1{,}800 & 1{,}772 & Maioria acha bons; sem influência consistente de ideologia/formação.\\
+23 & Redução recente dos postos de trabalho em grandes empresas & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}458}$; $p = 0{,}000$) & $-0{,}932$; $p = 0{,}170$ & (nenhum) & 0{,}524 & 0{,}235 & 0{,}454 & Leigos percebem mais demissões; direita eleva essa percepção.\\
 
-Maior responsável por alta dos combustíveis & 169 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}304}$; $p = 0{,}010$) & $0{,}343$; $p = 0{,}559$ & (nenhum) & 0{,}908 & 1{,}125 & 0{,}972 & Público culpa mais governo; economistas distribuem causas (mercado externo etc.).\\
+24 & Algumas pessoas dizem que, para ter uma vida confortável, a família média deve ter dois assalariados em tempo integral. Você concorda com isso, ou acha que a família média pode viver confortavelmente com apenas um assalariado em tempo integral? & 183 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}324}$; $p = 0{,}007$) & $0{,}146$; $p = 0{,}789$ & Qual é o seu vínculo empregatício? : $+$; Qual é a sua faixa etária? 46 a 55 anos: $-$; Você se considera uma pessoa politicamente engajada? Sim: $+$ & 1{,}289 & 1{,}176 & 1{,}099 & Maioria concorda que duas rendas são necessárias; direita reforça essa necessidade; formação não altera percepção.\\
 
-Nível dos preços dos combustíveis & 171 & n/a (não estável) & n/a & n/a (modelo não estável) & (nenhum) & 1{,}858 & 1{,}750 & 1{,}848 & Quase unanimidade: combustíveis altos; falta variação.\\
+25 & Você acha que os acordos comerciais entre o Brasil e outros países, por seu impacto no emprego, são bons, ruins ou indiferentes para a economia? & 182 & n/a (não estável) & n/a & n/a (modelo não estável) & (nenhum) & 1{,}693 & 1{,}812 & 1{,}783 & Maioria acha bons; sem influência consistente de ideologia/formação.\\
 
-Quanto o presidente pode melhorar a economia & 167 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}264}$; $p = 0{,}042$) & $0{,}119$; $p = 0{,}854$ & (nenhum) & 1{,}434 & 1{,}600 & 1{,}544 & Ambos atribuem algum poder; direita atribui mais.\\
+26 & Quem você considera o maior responsável pelo aumento dos preços dos combustíveis? & 182 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}319}$; $p = 0{,}005$) & $0{,}328$; $p = 0{,}558$ & Qual é a sua faixa etária? 26 a 35 anos: $+$; Qual é a sua faixa etária? 36 a 45 anos: $+$; Qual é a sua faixa etária? Até 18 anos: $+$ & 0{,}885 & 1{,}118 & 0{,}961 & Público culpa mais governo; economistas distribuem causas (mercado externo etc.).\\
 
-Novos postos de trabalho pagam bem/mal & 168 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}669}$; $p = 0{,}000$) & $0{,}102$; $p = 0{,}877$ & Escolaridade (EM compl., Pós-grad.: +) & 0{,}526 & 0{,}500 & 0{,}483 & Consenso: pagam mal; direita um pouco mais otimista; mais escolarizados menos pessimistas.\\
+27 & Você acha que os preços dos combustíveis são altos demais, baixos demais ou no nível certo? & 184 & n/a (não estável) & n/a & n/a (modelo não estável) & (nenhum) & 1{,}868 & 1{,}765 & 1{,}852 & Quase unanimidade: combustíveis altos; falta variação.\\
 
-Desigualdade hoje vs. 20 anos atrás & 170 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}288}$; $p = 0{,}020$) & $-0{,}318$; $p = 0{,}594$ & (nenhum) & 1{,}318 & 1{,}062 & 1{,}180 & Público crê que aumentou; esquerda acentua; economistas menos pessimistas.\\
+28 & Você acha que o presidente pode fazer muito, pouco ou que está além da capacidade de ele melhorar a economia? & 180 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}264}$; $p = 0{,}042$) & $0{,}119$; $p = 0{,}854$ & (nenhum) & 1{,}434 & 1{,}600 & 1{,}544 & Ambos atribuem algum poder; direita atribui mais.\\
 
-Rendas familiares vs. custo de vida (20 anos) & 169 & Logit ord.\ (limiares ok) & + ($\beta = 0{,}221$; $p = 0{,}097$) & $1{,}111$; $p = 0{,}096$ & Faixa etária (46--55: $-$; $p = 0{,}018$) & 0{,}536 & 0{,}750 & 0{,}388 & Público mais pessimista; formação reduz pessimismo sobre renda real.\\
+29 & Você acha que os novos postos de trabalho do país pagam bem ou mal? & 181 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}669}$; $p = 0{,}000$) & $0{,}102$; $p = 0{,}877$ & Escolaridade (EM compl., Pós-grad.: $+$) & 0{,}526 & 0{,}500 & 0{,}483 & Consenso: pagam mal; direita um pouco mais otimista; mais escolarizados menos pessimistas.\\
 
-Salários vs. custo de vida (20 anos) & 168 & n/a (não estável) & n/a & n/a (modelo não estável) & (nenhum) & 0{,}421 & 0{,}625 & 0{,}243 & Ambos veem salários atrás; economistas um pouco menos pessimistas.\\
+30 & A desigualdade entre ricos e pobres, comparada a 20 anos atrás, está: & 183 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}288}$; $p = 0{,}020$) & $-0{,}318$; $p = 0{,}594$ & (nenhum) & 1{,}318 & 1{,}062 & 1{,}180 & Público crê que aumentou; esquerda acentua; economistas menos pessimistas.\\
 
-Padrão de vida nos próximos 5 anos & 165 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}172$; $p = 0{,}157$) & $0{,}427$; $p = 0{,}485$ & Faixa etária (46--55: $-$; $p = 0{,}016$) & 0{,}671 & 0{,}562 & 0{,}448 & Pessimismo moderado compartilhado; economistas levemente menos pessimistas.\\
+31 & Nos últimos 20 anos, você acha que, em geral, as rendas familiares dos brasileiros médios têm aumentado mais rapidamente do que o custo de vida, têm se mantido aproximadamente no nível do custo de vida, ou têm ficado atrás do custo de vida? & 182 & Logit ord.\ (limiares ok) & $+$ ($\beta = 0{,}221$; $p = 0{,}097$) & $1{,}111$; $p = 0{,}096$ & Faixa etária (46--55: $-$) & 0{,}536 & 0{,}750 & 0{,}388 & Público mais pessimista; formação reduz pessimismo sobre renda real.\\
 
-Padrão de vida dos filhos vs. dos pais & 169 & Logit ord.\ (limiares ok) & + ($\beta = 0{,}229$; $p = 0{,}082$) & $0{,}268$; $p = 0{,}647$ & Faixa etária (36--45: $-$; $p = 0{,}084$) & 1{,}425 & 1{,}250 & 1{,}154 & Divisão equilibrada; sem viés extremo; economistas um pouco menos otimistas.\\
+32 & Pensando apenas nos salários do trabalhador brasileiro médio, você acha que, nos últimos 20 anos, eles têm aumentado mais rapidamente do que o custo de vida, têm se mantido aproximadamente no mesmo nível do custo de vida, ou têm ficado atrás do custo de vida? & 181 & n/a (não estável) & n/a & n/a (modelo não estável) & (nenhum) & 0{,}390 & 0{,}588 & 0{,}219 & Ambos veem salários atrás; economistas um pouco menos pessimistas.\\
 
-Filhos $<$ 30: padrão de vida futuro & 128 & n/a (não estável) & n/a & n/a (N menor) & (nenhum) & 1{,}553 & 1{,}357 & 1{,}331 & Leve otimismo; economistas menos otimistas; sem significância robusta.\\
+33 & Nos próximos cinco anos, você acha que o padrão de vida do cidadão médio vai subir, cair ou se manter aproximadamente o mesmo? & 178 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}172$; $p = 0{,}157$) & $0{,}427$; $p = 0{,}485$ & Faixa etária (46--55: $-$) & 0{,}671 & 0{,}562 & 0{,}448 & Pessimismo moderado compartilhado; economistas levemente menos pessimistas.\\
 
-Reforma da Previdência é necessária & 169 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}542}$; $p = 0{,}000$) & $-0{,}843$; $p = 0{,}186$ & Escolaridade (Sup. Incompl., Pós: +) & 1{,}556 & 1{,}188 & 1{,}460 & Apoio geral; direita e maior escolaridade elevam apoio; economistas majoritariamente favoráveis.\\
+34 & Você espera que a geração de seus filhos desfrute de um padrão de vida mais alto ou mais baixo do que a sua geração, ou acha que será aproximadamente o mesmo? & 182 & Logit ord.\ (limiares ok) & $+$ ($\beta = 0{,}229$; $p = 0{,}082$) & $0{,}268$; $p = 0{,}647$ & Faixa etária (36--45: $-$) & 1{,}425 & 1{,}250 & 1{,}154 & Divisão equilibrada; sem viés extremo; economistas um pouco menos otimistas.\\
 
-Reforma trabalhista é necessária & 169 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}657}$; $p = 0{,}000$) & $-0{,}722$; $p = 0{,}252$ & Escolaridade (EM compl., Sup. compl./incompl., Pós: +) & 1{,}503 & 1{,}188 & 1{,}426 & Apoio em ambos; direita e escolaridade elevam apoio.\\
+35 & (Se você tem filhos com menos de 30 anos) Quando eles atingirem a sua idade, você espera que eles desfrutem de um padrão de vida mais alto ou mais baixo do que o seu agora, ou espera que seja aproximadamente o mesmo? & 138 & n/a (não estável) & n/a & n/a (N menor) & (nenhum) & 1{,}553 & 1{,}357 & 1{,}331 & Leve otimismo; economistas menos otimistas; sem significância robusta.\\
 
-Reforma tributária é necessária & 171 & Logit ord.\ (limiares ok) & + ($\beta = 0{,}212$; $p = 0{,}332$) & $0{,}751$; $p = 0{,}540$ & Escolaridade (EM compl., Sup. compl.: +) & 1{,}810 & 1{,}938 & 1{,}877 & Quase unanimidade pró-reforma; sem diferenças ideológicas/ formação significativas.\\
+36 & A reforma da previdência é necessária & 169 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}542}$; $p = 0{,}000$) & $-0{,}843$; $p = 0{,}186$ & Escolaridade (Sup. Incompl., Pós: $+$) & 1{,}556 & 1{,}188 & 1{,}460 & Apoio geral; direita e maior escolaridade elevam apoio; economistas majoritariamente favoráveis.\\
 
-A privatização de estatais é benéfica & 172 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}945}$; $p = 0{,}000$) & $-0{,}995$; $p = 0{,}142$ & Qual é o seu vínculo empregatício?: +; Qual é a sua faixa etária? 46 a 55 anos: + & 1{,}039 & 0{,}882 & 1{,}075 & Apoio generalizado à privatização; direita apoia muito mais; economistas concordam em grau semelhante.\\
+37 & A reforma trabalhista é necessária & 169 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}657}$; $p = 0{,}000$) & $-0{,}722$; $p = 0{,}252$ & Escolaridade (EM compl., Sup. compl./incompl., Pós: $+$) & 1{,}503 & 1{,}188 & 1{,}426 & Apoio em ambos; direita e escolaridade elevam apoio.\\
 
-Produtos importados são benéficos para a economia & 171 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}455}$; $p = 0{,}001$) & $\mathbf{1{,}627}$; $p = 0{,}018$ & Qual seu nível de escolaridade? Ensino Médio Incompleto: $-$; Qual é a sua faixa etária? 36 a 45 anos: $-$ & 1{,}279 & 1{,}588 & 1{,}224 & Consenso de que importações são benéficas; economistas concordam ainda mais; direita apoia mais o livre-comércio.\\
+38 & A reforma tributária é necessária & 171 & Logit ord.\ (limiares ok) & $+$ ($\beta = 0{,}212$; $p = 0{,}332$) & $0{,}751$; $p = 0{,}540$ & Escolaridade (EM compl., Sup. compl.: $+$) & 1{,}810 & 1{,}938 & 1{,}877 & Quase unanimidade pró-reforma; sem diferenças ideológicas/ formação significativas.\\
 
-A corrupção é a principal causa dos problemas econômicos & 171 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}725}$; $p = 0{,}000$) & $-0{,}991$; $p = 0{,}110$ & Você é homem? Sim: $-$; Com qual grupo racial/étnico você mais se identifica? Outro: +; Qual é a sua faixa etária? 46 a 55 anos: +; Qual é a sua faixa etária? 66 anos ou mais: +; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}357 & 0{,}941 & 1{,}205 & Público atribui problemas à corrupção; direita acentua esse foco; economistas relativizam (outros fatores).\\
+39 & A privatização de estatais é benéfica & 172 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}945}$; $p = 0{,}000$) & $-0{,}995$; $p = 0{,}142$ & Qual é o seu vínculo empregatício? : $+$; Qual é a sua faixa etária? 46 a 55 anos: $+$ & 1{,}039 & 0{,}882 & 1{,}075 & Apoio generalizado à privatização; direita apoia muito mais; economistas concordam em grau semelhante.\\
 
-A taxa básica de juros (Selic) está alta demais & 170 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}458}$; $p = 0{,}001$) & $1{,}141$; $p = 0{,}094$ & Qual seu nível de escolaridade? Ensino Superior Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$; Qual é a sua faixa etária? 46 a 55 anos: +; Qual é a sua faixa etária? 66 anos ou mais: +; Qual é a sua faixa etária? Até 18 anos: $-$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}327 & 1{,}765 & 1{,}472 & Quase todos concordam que juros estão altos; economistas endossam essa visão; esquerda se preocupa mais.\\
+40 & Produtos importados são benéficos & 171 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}455}$; $p = 0{,}001$) & $\mathbf{1{,}627}$; $p = 0{,}018$ & Qual seu nível de escolaridade? Ensino Médio Incompleto: $-$; Qual é a sua faixa etária? 36 a 45 anos: $-$ & 1{,}279 & 1{,}588 & 1{,}224 & Consenso de que importações são benéficas; economistas concordam ainda mais; direita apoia mais o livre-comércio.\\
 
-O governo atual sabe o que faz na economia & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-1{,}328}$; $p = 0{,}000$) & $1{,}064$; $p = 0{,}126$ & Qual é o seu vínculo empregatício?: $-$; Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$ & 0{,}494 & 0{,}941 & 0{,}641 & Público descrente da gestão atual; direita muito mais cética; economistas um pouco menos críticos.\\
+41 & A corrupção é a principal causa do subdesenvolvimento & 171 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}725}$; $p = 0{,}000$) & $-0{,}991$; $p = 0{,}110$ & Você é homem? Sim: $-$; Com qual grupo racial/étnico você mais se identifica? Outro: $+$; Qual é a sua faixa etária? 46 a 55 anos: $+$; Qual é a sua faixa etária? 66 anos ou mais: $+$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}357 & 0{,}941 & 1{,}205 & Público atribui problemas à corrupção; direita acentua esse foco; economistas relativizam (outros fatores).\\
 
-O governo deve intervir mais na economia & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}625}$; $p = 0{,}000$) & $-0{,}071$; $p = 0{,}906$ & Você é homem? Sim: $-$; Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$ & 0{,}695 & 0{,}647 & 0{,}709 & Divisão ideológica clara: esquerda defende maior intervenção; direita rejeita; formação não afeta.\\
+42 & A taxa de juros (SELIC) é alta demais & 170 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}458}$; $p = 0{,}001$) & $1{,}141$; $p = 0{,}094$ & Qual seu nível de escolaridade? Ensino Superior Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$; Qual é a sua faixa etária? 46 a 55 anos: $+$; Qual é a sua faixa etária? 66 anos ou mais: $+$; Qual é a sua faixa etária? Até 18 anos: $-$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}327 & 1{,}765 & 1{,}472 & Quase todos concordam que juros estão altos; economistas endossam essa visão; esquerda se preocupa mais.\\
 
-A entrada de estrangeiros no mercado é benéfica para a economia & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}106$; $p = 0{,}386$) & $0{,}675$; $p = 0{,}266$ & Você é homem? Sim: +; Qual seu nível de escolaridade? Ensino Médio Incompleto: $-$; Qual é a sua faixa etária? Até 18 anos: + & 1{,}318 & 1{,}529 & 1{,}346 & Consenso: participação estrangeira é positiva; sem divergências ideológicas ou de formação significativas.\\
+43 & O governo atual sabe lidar com crises econômicas & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-1{,}328}$; $p = 0{,}000$) & $1{,}064$; $p = 0{,}126$ & Qual é o seu vínculo empregatício? : $-$; Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$ & 0{,}494 & 0{,}941 & 0{,}641 & Público descrente da gestão atual; direita muito mais cética; economistas um pouco menos críticos.\\
 
-A indústria nacional deve ser protegida da concorrência estrangeira & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}603}$; $p = 0{,}000$) & $-0{,}639$; $p = 0{,}274$ & Qual é o seu vínculo empregatício?: $-$; Você é homem? Sim: $-$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}214 & 1{,}000 & 1{,}214 & Público tende ao protecionismo; esquerda muito mais favorável; economistas em geral não endossam.\\
+44 & O governo deve intervir para controlar preços & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}625}$; $p = 0{,}000$) & $-0{,}071$; $p = 0{,}906$ & Você é homem? Sim: $-$; Qual seu nível de escolaridade? Ensino Médio Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$ & 0{,}695 & 0{,}647 & 0{,}709 & Divisão ideológica clara: esquerda defende maior intervenção; direita rejeita; formação não afeta.\\
 
-O Brasil tem chance de virar um país desenvolvido & 172 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}316}$; $p = 0{,}010$) & $-0{,}212$; $p = 0{,}704$ & Qual seu nível de escolaridade? Ensino Médio Completo: $-$ & 1{,}406 & 1{,}176 & 1{,}251 & Otimismo moderado; esquerda mais otimista; economistas mais céticos.\\
+45 & A entrada de estrangeiros no mercado de trabalho é benéfica & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = -0{,}106$; $p = 0{,}386$) & $0{,}675$; $p = 0{,}266$ & Você é homem? Sim: $+$; Qual seu nível de escolaridade? Ensino Médio Incompleto: $-$; Qual é a sua faixa etária? Até 18 anos: $+$ & 1{,}318 & 1{,}529 & 1{,}346 & Consenso: participação estrangeira é positiva; sem divergências ideológicas ou de formação significativas.\\
 
-Os lucros empresariais ocorrem à custa dos trabalhadores & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}830}$; $p = 0{,}000$) & $0{,}527$; $p = 0{,}411$ & Qual é o seu vínculo empregatício?: $-$; Você é homem? Sim: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$ & 0{,}916 & 1{,}176 & 0{,}973 & Público dividido; forte clivagem ideológica; economistas não apresentam correção unívoca do viés.\\
+46 & A indústria nacional deve ser protegida & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}603}$; $p = 0{,}000$) & $-0{,}639$; $p = 0{,}274$ & Qual é o seu vínculo empregatício? : $-$; Você é homem? Sim: $-$; Você se considera uma pessoa politicamente engajada? Sim: $-$ & 1{,}214 & 1{,}000 & 1{,}214 & Público tende ao protecionismo; esquerda muito mais favorável; economistas em geral não endossam.\\
 
-A competição entre empresas é benéfica para a economia & 171 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}618}$; $p = 0{,}003$) & $0{,}727$; $p = 0{,}437$ & (nenhum) & 1{,}799 & 1{,}882 & 1{,}781 & Consenso pró-competição; direita reforça ainda mais; formação não altera percepções.\\
+47 & O Brasil tem chance de virar potência econômica & 172 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}316}$; $p = 0{,}010$) & $-0{,}212$; $p = 0{,}704$ & Qual seu nível de escolaridade? Ensino Médio Completo: $-$ & 1{,}406 & 1{,}176 & 1{,}251 & Otimismo moderado; esquerda mais otimista; economistas mais céticos.\\
 
-O Brasil deveria priorizar a redução da desigualdade em vez do crescimento econômico & 170 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}594}$; $p = 0{,}000$) & $-0{,}409$; $p = 0{,}508$ & Qual seu nível de escolaridade? Ensino Superior Completo: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$; Qual é a sua faixa etária? 46 a 55 anos: +; Qual é a sua faixa etária? 66 anos ou mais: +; Qual é a sua faixa etária? Até 18 anos: $-$ & 0{,}876 & 0{,}706 & 0{,}810 & Público tende a priorizar crescimento; esquerda foca mais na igualdade; economistas pró-crescimento.\\
+48 & Lucros empresariais ocorrem às custas dos trabalhadores & 171 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}830}$; $p = 0{,}000$) & $0{,}527$; $p = 0{,}411$ & Qual é o seu vínculo empregatício? : $-$; Você é homem? Sim: $-$; Qual seu nível de escolaridade? Ensino Superior Incompleto: $-$; Qual seu nível de escolaridade? Pós-graduação: $-$ & 0{,}916 & 1{,}176 & 0{,}973 & Público dividido; forte clivagem ideológica; economistas não apresentam correção unívoca do viés.\\
 
-A automação prejudica o mercado de trabalho & 172 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}339}$; $p = 0{,}029$) & $-0{,}505$; $p = 0{,}529$ & Você é homem? Sim: +; Qual é a sua faixa etária? 46 a 55 anos: +; Qual é a sua faixa etária? 66 anos ou mais: + & 0{,}368 & 0{,}235 & 0{,}318 & Ideia de prejuízo da automação amplamente rejeitada; esquerda um pouco mais apreensiva; economistas igualmente despreocupados.\\
+49 & A competição entre empresas beneficia consumidores & 171 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}619}$; $p = 0{,}000$) & $0{,}758$; $p = 0{,}437$ & (nenhum) & 1{,}799 & 1{,}882 & 1{,}781 & Consenso pró-competição; direita reforça ainda mais; formação não altera percepções.\\
 
-O Brasil deveria adotar um modelo econômico mais liberal & 171 & Logit ord.\ (limiares ok) & + ($\beta = \mathbf{0{,}625}$; $p = 0{,}000$) & $0{,}199$; $p = 0{,}744$ & (nenhum) & 1{,}429 & 1{,}471 & 1{,}398 & Apoio majoritário a um modelo mais liberal; direita apoia mais; economistas acompanham esse apoio.\\
+50 & O Brasil deveria priorizar a produção interna mesmo com preços maiores & 170 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}615}$; $p = 0{,}000$) & $-0{,}490$; $p = 0{,}425$ & (nenhum) & 1{,}214 & 1{,}000 & 1{,}154 & Público tende a priorizar preços baixos; esquerda enfatiza produção interna; economistas não apresentam diferença significativa.\\
 
+51 & A automação prejudica o mercado de trabalho & 172 & Logit ord.\ (limiares ok) & $-$ ($\beta = \mathbf{-0{,}337}$; $p = 0{,}029$) & $-0{,}505$; $p = 0{,}529$ & Você é homme? Sim: $+$; Qual é a sua faixa etária? 46 a 55 anos: $+$; Qual é a sua faixa etária? 66 anos ou mais: $+$ & 0{,}368 & 0{,}235 & 0{,}318 & Ideia de prejuízo da automação amplamente rejeitada; esquerda um pouco mais apreensiva; economistas igualmente despreocupados.\\
 
-\bottomrule
-\insertTableNotes
-\end{longtable}
+52 & O Brasil deveria adotar política de livre comércio com outros países & 171 & Logit ord.\ (limiares ok) & $+$ ($\beta = \mathbf{0{,}646}$; $p = 0{,}000$) & $0{,}224$; $p = 0{,}713$ & (nenhum) & 1{,}429 & 1{,}471 & 1{,}398 & Apoio majoritário ao livre-comércio; direita apoia mais; economistas acompanham esse apoio.\\
+
+\bottomrule 
+\insertTableNotes 
+\end{longtable} 
 \end{ThreePartTable}
 
 
