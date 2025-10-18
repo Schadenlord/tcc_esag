@@ -1,4 +1,5 @@
 \chapter{Como Medimos a Irracionalidade Política}
+\label{capitulo_3}
 
 Todos os dados analisados neste trabalho foram coletados diretamente pelo autor deste TCC, na condição de assistente de pesquisa, e pela orientadora, como pesquisadora responsável, no âmbito do projeto intitulado \textit{“Econometria Comportamental na Política Pública: Análise de Vieses Cognitivos Políticos”}, aprovado pelo Comitê de Ética em Pesquisa com Seres Humanos da Universidade do Estado de Santa Catarina (UDESC). O projeto foi submetido e apreciado pela Plataforma Brasil, sob o número de processo \textbf{CAAE: 89374225.9.0000.0118}, tendo recebido o Parecer Consubstanciado nº 7.719.326, em conformidade com a Resolução nº 510/2016 do Conselho Nacional de Saúde e a legislação vigente sobre pesquisa com seres humanos.
 
@@ -42,7 +43,7 @@ A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de questioná
 
 Embora a meta amostral mínima tenha sido definida com base em parâmetros estatísticos (pelo menos 175 respondentes), a pesquisa buscou ampliar o número de observações especialmente no grupo controle, visando maior robustez estatística para comparações com 95\% de confiança e 80\% de poder.
 
-\subsection{Tamanho amostral e composição.}
+\subsection{Tamanho amostral e composição}
 No total, o \textit{survey} obteve respostas válidas de \textbf{\(n \approx 172\)} participantes.\footnote{O \(n\) efetivo por item/modelo varia ligeiramente devido a não resposta item-a-item; a Tabela-Síntese Mestra (\autoref{apendice:tabela_sintese}) indica média próxima de 172 observações por questão.} Desses, aproximadamente \textbf{X\%} (\(\approx N_1\)) compuseram o \textbf{grupo de controle} (não economistas) e \textbf{Y\%} (\(\approx N_2\)) o \textbf{grupo com formação em Economia} (graduação ou pós em curso/concluída). O subgrupo de economistas é \textit{menor} em relação ao controle, o que recomenda cautela na leitura de efeitos específicos desse termo, como discutido na seção de robustez e limitações (Seção~4.3). Em termos de transparência, os modelos ordenados consolidados no Apêndice~\ref{apendice:tabela_sintese} mantêm lista idêntica de covariáveis, e reportam o \(n\) por item.
 
 \subsection{Âmbito de validade externa}
@@ -52,11 +53,11 @@ A amostragem não probabilística é apropriada ao objetivo de teste de hipótes
 \section{Instrumento de Pesquisa}
 
 O questionário aplicado dividiu-se em três blocos principais:
-\begin{itemize}
+\begin{enumerate}[label=\alph*)]
     \item \textbf{Seção A — Características pessoais}: coleta de variáveis demográficas, socioeconômicas e ideológicas (sexo, idade, escolaridade, região, vínculo empregatício, renda familiar e autodeclaração ideológica);
     \item \textbf{Seção B — Percepções econômicas}: proposições adaptadas da \textit{Survey of Americans and Economists on the Economy} (SAEE), contemplando os quatro vieses cognitivos principais descritos por Caplan (2007): antimercado, antiestrangeiro, antitrabalho e pessimista;
     \item \textbf{Seção C — Políticas públicas}: questões relacionadas ao contexto brasileiro, incluindo tributação, previdência, corrupção e taxa de juros.
-\end{itemize}
+\end{enumerate}
 
 As respostas foram registradas em escalas do tipo Likert (3 a 5 pontos), adaptadas conforme a nuance de cada questão. O instrumento foi submetido à revisão semântica por dois especialistas em políticas públicas e economia política e passou por um pré-teste com 15 participantes voluntários, que avaliaram clareza, aplicabilidade e tempo médio de resposta (cerca de 7 minutos), resultando em ajustes pontuais de redação e formato.
 
@@ -101,12 +102,7 @@ Para variáveis dicotômicas (ex.: concorda vs. discorda), a probabilidade contr
 \hat{Y}_i^{(\text{contrafactual})} = \mathbb{P}(Y_i = 1 \mid X_i, \text{Econ}_i = 0) = \frac{e^{X_i^\prime \beta - \beta_{\text{econ}}}}{1 + e^{X_i^\prime \beta - \beta_{\text{econ}}}}
 \]
 
-\noindent onde:
-\begin{itemize}
-  \item \( X_i \) representa o vetor de covariáveis observadas do indivíduo \( i \),
-  \item \( \beta \) é o vetor de coeficientes estimados no modelo logit,
-  \item \( \beta_{\text{econ}} \) é o coeficiente estimado da variável binária de formação econômica.
-\end{itemize}
+\noindent onde $X_i$ representa o vetor de covariáveis observadas do indivíduo $i$; $\beta$ é o vetor de coeficientes estimados no modelo logit; e $\beta_{\text{econ}}$ é o coeficiente estimado da variável binária de formação econômica.
 
 \subsection{Modelo Logit Ordenado}
 
@@ -116,13 +112,8 @@ Para variáveis com múltiplos níveis ordenados (ex.: escalas tipo Likert), cal
 \hat{Y}_i^{(\text{contrafactual})} = \sum_{j=1}^J j \cdot \mathbb{P}(Y_i = j \mid X_i, \text{Econ}_i = 0) = \sum_{j=1}^J j \cdot \left[ \Lambda(\tau_j - X_i^\prime \beta^*) - \Lambda(\tau_{j-1} - X_i^\prime \beta^*) \right]
 \]
 
-\noindent onde:
-\begin{itemize}
-  \item \( J \) é o número de categorias da resposta,
-  \item \( \tau_j \) são os limiares estimados do modelo ordenado,
-  \item \( \Lambda(\cdot) \) é a função logística acumulada,
-  \item \( \beta^* = \beta - \beta_{\text{econ}} \cdot d \), com \( d = 1 \) para simular ausência de formação econômica.
-\end{itemize}
+\noindent onde $J$ é o número de categorias da resposta; $\tau_j$ são os limiares (cutpoints) estimados do modelo ordenado ($j=1,\ldots,J-1$); $\Lambda(\cdot)$ é a função logística acumulada; e $\beta^* = \beta - \beta_{\text{econ}}\, d$, com $d=1$ quando se simula a ausência de formação econômica e $d=0$ para o caso observado.
+
 
 \bigskip
 
@@ -162,12 +153,14 @@ Este estudo adota o princípio epistemológico da falseabilidade como critério 
 
 Mais especificamente, as hipóteses serão rejeitadas nos seguintes cenários:
 
-\begin{itemize}
+\begin{enumerate}[label=\alph*)]
+
     \item Caso a formação em Economia não apresente impacto estatisticamente significativo sobre a incidência de vieses nas respostas, refuta-se a hipótese H1;
     \item Caso não se observem diferenças sistemáticas entre as respostas do público geral e do público esclarecido simulado, refuta-se H2;
     \item Caso variáveis estruturais como ideologia política, escolaridade ou renda não se associem de forma estatisticamente significativa à ocorrência de vieses cognitivos, refuta-se H7;
     \item Caso as respostas do grupo controle (não economistas) não revelem padrões sistemáticos de viés (antimercado, antiestrangeiro, antitrabalho ou pessimista), refutam-se as hipóteses H3 a H6.
-\end{itemize}
+    
+\end{enumerate}
 
 \subsection{Testes severos e corroboração provisória.}
 As hipóteses são formuladas para enfrentar \textit{testes severos}, com resultados interpretados como corroborações provisórias sujeitas a refutação futura. O foco recai menos em confirmacionismo pontual e mais na consistência de padrões sob especificações comparáveis e princípios-ponte explícitos \cite{hausman2008,stigum2003}.
