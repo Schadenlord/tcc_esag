@@ -44,7 +44,9 @@ A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de questioná
 Embora a meta amostral mínima tenha sido definida com base em parâmetros estatísticos (pelo menos 175 respondentes), a pesquisa buscou ampliar o número de observações especialmente no grupo controle, visando maior robustez estatística para comparações com 95\% de confiança e 80\% de poder.
 
 \subsection{Tamanho amostral e composição}
-No total, o \textit{survey} obteve respostas válidas de \textbf{\(n \approx 172\)} participantes.\footnote{O \(n\) efetivo por item/modelo varia ligeiramente devido a não resposta item-a-item; a Tabela-Síntese Mestra (\autoref{apendice:tabela_sintese}) indica média próxima de 172 observações por questão.} Desses, aproximadamente \textbf{X\%} (\(\approx N_1\)) compuseram o \textbf{grupo de controle} (não economistas) e \textbf{Y\%} (\(\approx N_2\)) o \textbf{grupo com formação em Economia} (graduação ou pós em curso/concluída). O subgrupo de economistas é \textit{menor} em relação ao controle, o que recomenda cautela na leitura de efeitos específicos desse termo, como discutido na seção de robustez e limitações (Seção~4.3). Em termos de transparência, os modelos ordenados consolidados no Apêndice~\ref{apendice:tabela_sintese} mantêm lista idêntica de covariáveis, e reportam o \(n\) por item.
+No total, o survey obteve respostas válidas de \(n = 183\) participantes.\footnote{O \(n\) efetivo por item/modelo varia ligeiramente devido a não resposta item a item; a Tabela-Síntese Mestra (\autoref{apendice:tabela_sintese}) indica média de 181{,}8 observações por questão (mediana 183).}
+Desses, \(90{,}7\%\) (\(\approx 166\)) compuseram o grupo de controle (não economistas) e \(9{,}3\%\) (\(\approx 17\)) o grupo de economistas, definido estritamente como formação avançada em Economia com pós-graduação stricto sensu concluída (mestrado ou doutorado).
+O subgrupo de economistas é menor em relação ao controle, o que recomenda cautela na leitura de efeitos específicos desse termo, como discutido na seção de robustez e limitações (\autoref{sec:limitacao_robustez}). Em termos de transparência, os modelos ordenados consolidados no \autoref{apendice:tabela_sintese} mantêm lista idêntica de covariáveis e reportam o \(n\) por item.
 
 \subsection{Âmbito de validade externa}
 A amostragem não probabilística é apropriada ao objetivo de teste de hipóteses sob severidade; os resultados são corroborações provisórias de relações condicionais no recorte estudado, não estimativas representativas da população. Declaramos explicitamente os limites de generalização e separamos descrição positiva de juízos normativos \cite{hausman2008}.
@@ -59,7 +61,7 @@ O questionário aplicado dividiu-se em três blocos principais:
     \item \textbf{Seção C — Políticas públicas}: questões relacionadas ao contexto brasileiro, incluindo tributação, previdência, corrupção e taxa de juros.
 \end{enumerate}
 
-As respostas foram registradas em escalas do tipo Likert (3 a 5 pontos), adaptadas conforme a nuance de cada questão. O instrumento foi submetido à revisão semântica por dois especialistas em políticas públicas e economia política e passou por um pré-teste com 15 participantes voluntários, que avaliaram clareza, aplicabilidade e tempo médio de resposta (cerca de 7 minutos), resultando em ajustes pontuais de redação e formato.
+As respostas foram registradas em escalas do tipo Likert (0 a 2 pontos), adaptadas conforme a nuance de cada questão. O instrumento foi submetido à revisão semântica por dois especialistas em políticas públicas e economia política e passou por um pré-teste com 15 participantes voluntários, que avaliaram clareza, aplicabilidade e tempo médio de resposta (cerca de 7 minutos), resultando em ajustes pontuais de redação e formato.
 
 \section{Modelo Estatístico}\label{sec:modelo-estatistico}
 
@@ -75,7 +77,7 @@ P(y_i \leq j \mid X_i) = \frac{1}{1 + e^{-(\tau_j - X_i \beta)}}
 
 
 
-As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver Anexo~\ref{anexo:A}). Os modelos foram ajustados por meio do algoritmo L-BFGS, adequado para estimação de modelos com múltiplos parâmetros.
+As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver \autoref{apencice:variaveis_analisadas}). Os modelos foram ajustados por meio do algoritmo L-BFGS, adequado para estimação de modelos com múltiplos parâmetros.
 
 \subsection{Pressupostos, comparabilidade e inferência}\label{sec:pressupostos-inferencia}
 A opção por especificações paralelas entre itens cria uma “régua comum” de mensuração, permitindo atribuir diferenças de resultados ao conteúdo substantivo das questões e não à troca de modelo. 
@@ -87,6 +89,7 @@ Quanto à \textit{multicolinearidade}, adotou-se mitigação estrutural (remoç�
 Essas escolhas foram realizadas para privilegiar parcimônia, comparabilidade e \textit{congruência} --- no sentido de alinhar teoria e dados por meio de \textit{princípios-ponte} e modelos empiricamente admissíveis/encompassantes, conforme a metodologia proposta por \citeonline{stigum2003}.
 
 \section{O Conceito de Público Esclarecido}
+\label{sec:publico_esclarecido}
 
 Conforme fundamentado na Seção~\ref{sec:vieses_auxiliares}, define-se como \textit{público esclarecido} uma simulação contrafactual baseada nos modelos logit estimados para cada questão do questionário. A ideia central consiste em prever, para cada economista da amostra, qual seria sua resposta esperada caso não possuísse formação em Economia, mantendo-se constantes todas as demais características individuais.
 
@@ -162,7 +165,7 @@ Mais especificamente, as hipóteses serão rejeitadas nos seguintes cenários:
     
 \end{enumerate}
 
-\subsection{Testes severos e corroboração provisória.}
+\subsection{Testes severos e corroboração provisória}
 As hipóteses são formuladas para enfrentar \textit{testes severos}, com resultados interpretados como corroborações provisórias sujeitas a refutação futura. O foco recai menos em confirmacionismo pontual e mais na consistência de padrões sob especificações comparáveis e princípios-ponte explícitos \cite{hausman2008,stigum2003}.
 
 Rejeita-se, portanto, qualquer pretensão de verificação definitiva: mesmo que uma hipótese não seja refutada, ela será considerada apenas corroborada de forma provisória pelos dados disponíveis. Os resultados serão interpretados com base na severidade dos testes empíricos enfrentados, e não na frequência de confirmações observadas, em consonância com a lógica da ciência proposta pelo autor.
