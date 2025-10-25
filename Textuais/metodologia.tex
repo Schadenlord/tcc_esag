@@ -3,20 +3,20 @@
 
 Todos os dados analisados neste trabalho foram coletados diretamente pelo autor deste TCC, na condição de assistente de pesquisa, e pela orientadora, como pesquisadora responsável, no âmbito do projeto intitulado \textit{“Econometria Comportamental na Política Pública: Análise de Vieses Cognitivos Políticos”}, aprovado pelo Comitê de Ética em Pesquisa com Seres Humanos da Universidade do Estado de Santa Catarina (UDESC). O projeto foi submetido e apreciado pela Plataforma Brasil, sob o número de processo \textbf{CAAE: 89374225.9.0000.0118}, tendo recebido o Parecer Consubstanciado nº 7.719.326, em conformidade com a Resolução nº 510/2016 do Conselho Nacional de Saúde e a legislação vigente sobre pesquisa com seres humanos.
 
-Os dados primários utilizados neste TCC são de autoria exclusiva dos pesquisadores, tendo sido obtidos por meio de survey aplicado a participantes voluntários, todos maiores de 18 anos e residentes no Brasil, mediante aceitação do Termo de Consentimento Livre e Esclarecido (TCLE). Todo o processo garantiu anonimato, sigilo das informações, ausência de coleta de dados sensíveis e a possibilidade de desistência a qualquer momento, sem prejuízo aos participantes. O armazenamento e a manipulação dos dados respeitaram integralmente as exigências da Lei Geral de Proteção de Dados Pessoais (LGPD), com acesso restrito ao autor e à orientadora da pesquisa.
+Os dados primários utilizados neste TCC são de autoria exclusiva dos pesquisadores, tendo sido obtidos por meio de um survey aplicado a participantes voluntários, todos maiores de 18 anos e residentes no Brasil, mediante a aceitação do Termo de Consentimento Livre e Esclarecido (TCLE). Todo o processo garantiu anonimato, sigilo das informações, ausência de coleta de dados sensíveis e a possibilidade de desistência a qualquer momento, sem prejuízo para os participantes. O armazenamento e a manipulação dos dados respeitaram integralmente as exigências da Lei Geral de Proteção de Dados Pessoais (LGPD), com acesso restrito ao autor e à orientadora da pesquisa.
 
 \section{Desenho da Pesquisa}
 
 A estratégia metodológica adotada combina três eixos principais:
 \begin{enumerate}[label=\alph*)]
-    \item uma análise histórico-teórica da persistência de crenças econômicas enviesadas, com ênfase na literatura de economia comportamental, história do pensamento econômico e racionalidade limitada;
-    \item adaptação da \textit{Survey of Americans and Economists on the Economy} (SAEE) para o contexto institucional e cultural brasileiro, aplicada por meio de questionário estruturado em plataforma digital (Google Forms). O instrumento passou por revisão de especialistas em economia política e políticas públicas e foi submetido a um pré-teste com respondentes voluntários, que serviu para avaliar a clareza das perguntas, o tempo de resposta (em média 7 minutos) e a adequação ao contexto brasileiro. Os ajustes realizados após o pré-teste garantiram a validade de conteúdo e a aplicabilidade do questionário;
-    \item aplicação de modelos econométricos (\textit{logit} binário e multinomial/ordenado) para estimar, sob controle de variáveis demográficas, socioeconômicas e ideológicas, o impacto marginal de fatores individuais na propensão a adotar crenças divergentes do consenso técnico. As análises serão conduzidas em \texttt{Python}, utilizando pacotes como \texttt{pandas}, \texttt{statsmodels} e \texttt{scikit-learn}, assegurando reprodutibilidade dos resultados.
+    \item uma análise histórico-teórica da persistência de crenças econômicas enviesadas, com ênfase na literatura de economia comportamental, na história do pensamento econômico e na racionalidade limitada;
+    \item adaptação da \textit{Survey of Americans and Economists on the Economy} (SAEE) para o contexto institucional e cultural brasileiro, aplicada por meio de um questionário estruturado em plataforma digital (Google Forms). O instrumento passou por revisão de especialistas em economia política e políticas públicas e foi submetido a um pré-teste com respondentes voluntários, que serviu para avaliar a clareza das perguntas, o tempo de resposta (em média, 7 minutos) e a adequação ao contexto brasileiro. Os ajustes realizados após o pré-teste garantiram a validade de conteúdo e a aplicabilidade do questionário;
+    \item aplicação de modelos econométricos (\textit{logit} binário e ordenado) para estimar, sob controle de variáveis demográficas, socioeconômicas e ideológicas, o impacto marginal de fatores individuais na propensão a adotar crenças divergentes do consenso técnico. As análises foram conduzidas em \texttt{Python}, utilizando pacotes como \texttt{pandas} \texttt{e statsmodels}, assegurando a reprodutibilidade dos resultados.
 \end{enumerate}
 
 \subsection{Escopo inferencial e princípios-ponte}\label{sec:escopo-inferencial}
 
-Este estudo tem propósito analítico (testar relações condicionais) e não visa estimativas descritivas de prevalência populacional. Interpretamos os coeficientes como \textit{associações condicionais} sob hipóteses explícitas de modelo, com validade externa limitada ao quadro amostral; trata-se de inferência positiva/explicativa, não causal nem normativa \cite{hausman2008}.
+Este estudo tem um propósito analítico (testar relações condicionais) e não visa estimativas descritivas de prevalência populacional. Interpretamos os coeficientes como \textit{associações condicionais} sob hipóteses explícitas de modelo, com validade externa limitada ao quadro amostral; trata-se de inferência positiva/explicativa, não causal nem normativa \cite{hausman2008}.
 
 Para ligar teoria e dados, explicitamos \textit{princípios-ponte}:
 
@@ -34,22 +34,22 @@ A amostragem foi do tipo não probabilística, com estratificação em dois grup
     \item \textbf{Grupo de tratamento}: indivíduos com formação ou em formação superior em Economia.
 \end{enumerate}
 
-A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de questionário estruturado em plataforma digital (\textit{Google Forms}). Três estratégias de recrutamento foram empregadas:
+A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de um questionário estruturado em plataforma digital (\textit{Google Forms}). Três estratégias de recrutamento foram empregadas:
 \begin{enumerate}[label=\alph*)]
-    \item amostragem em bola de neve, iniciada por respondentes-semente com diversidade regional e ideológica;
+    \item A amostragem em bola de neve foi iniciada com respondentes-semente que apresentam diversidade regional e ideológica;
     \item parcerias institucionais, com apoio de docentes e redes acadêmicas de Economia;
     \item divulgação em redes sociais e e-mails institucionais, com segmentação por área de atuação e convite padrão explicativo.
 \end{enumerate}
 
-Embora a meta amostral mínima tenha sido definida com base em parâmetros estatísticos (pelo menos 175 respondentes), a pesquisa buscou ampliar o número de observações especialmente no grupo controle, visando maior robustez estatística para comparações com 95\% de confiança e 80\% de poder.
+Embora a meta amostral mínima tenha sido definida com base em parâmetros estatísticos (pelo menos 175 respondentes), a pesquisa buscou ampliar o número de observações, especialmente no grupo controle, visando maior robustez estatística para comparações com 95\% de confiança e 80\% de poder.
 
 \subsection{Tamanho amostral e composição}
 No total, o survey obteve respostas válidas de \(n = 183\) participantes.\footnote{O \(n\) efetivo por item/modelo varia ligeiramente devido a não resposta item a item; a Tabela-Síntese Mestra (\autoref{apendice:tabela_sintese}) indica média de 181{,}8 observações por questão (mediana 183).}
 Desses, \(90{,}7\%\) (\(\approx 166\)) compuseram o grupo de controle (não economistas) e \(9{,}3\%\) (\(\approx 17\)) o grupo de economistas, definido estritamente como formação avançada em Economia com pós-graduação stricto sensu concluída (mestrado ou doutorado).
-O subgrupo de economistas é menor em relação ao controle, o que recomenda cautela na leitura de efeitos específicos desse termo, como discutido na seção de robustez e limitações (\autoref{sec:limitacao_robustez}). Em termos de transparência, os modelos ordenados consolidados no \autoref{apendice:tabela_sintese} mantêm lista idêntica de covariáveis e reportam o \(n\) por item.
+O subgrupo de economistas é menor em relação ao controle, o que recomenda cautela na leitura de efeitos específicos desse termo, como discutido na seção de robustez e limitações (\autoref{sec:limitacao_robustez}). Em termos de transparência, os modelos ordenados consolidados no \autoref{apendice:tabela_sintese} mantêm a lista idêntica de covariáveis e reportam o \(n\) por item.
 
 \subsection{Âmbito de validade externa}
-A amostragem não probabilística é apropriada ao objetivo de teste de hipóteses sob severidade; os resultados são corroborações provisórias de relações condicionais no recorte estudado, não estimativas representativas da população. Declaramos explicitamente os limites de generalização e separamos descrição positiva de juízos normativos \cite{hausman2008}.
+A amostragem não probabilística é apropriada ao objetivo de teste de hipóteses sob severidade; os resultados são corroborações provisórias de relações condicionais no recorte estudado, não estimativas representativas da população. Declaramos explicitamente os limites de generalização e separaremos a descrição positiva dos juízos normativos \cite{hausman2008}.
 
 
 \section{Instrumento de Pesquisa}
@@ -61,11 +61,11 @@ O questionário aplicado dividiu-se em três blocos principais:
     \item \textbf{Seção C — Políticas públicas}: questões relacionadas ao contexto brasileiro, incluindo tributação, previdência, corrupção e taxa de juros.
 \end{enumerate}
 
-As respostas foram registradas em escalas do tipo Likert (0 a 2 pontos), adaptadas conforme a nuance de cada questão. O instrumento foi submetido à revisão semântica por dois especialistas em políticas públicas e economia política e passou por um pré-teste com 15 participantes voluntários, que avaliaram clareza, aplicabilidade e tempo médio de resposta (cerca de 7 minutos), resultando em ajustes pontuais de redação e formato.
+As respostas foram registradas em escalas do tipo Likert (0 a 2 pontos), adaptadas conforme a nuance de cada questão. O instrumento foi submetido à revisão semântica por dois especialistas em políticas públicas e economia política e passou por um pré-teste com 15 participantes voluntários, que avaliaram a clareza, aplicabilidade e o tempo médio de resposta (cerca de 7 minutos), resultando em ajustes pontuais de redação e formato.
 
 \section{Modelo Estatístico}\label{sec:modelo-estatistico}
 
-Utiliza-se regressão \textit{logit} (binária ou ordenada) para modelar a probabilidade de adesão a uma crença tecnicamente correta. A escolha entre as versões depende da natureza da variável dependente: binária para respostas dicotômicas (ex.: concorda vs. discorda) e ordenada para escalas com múltiplos níveis. A formulação geral dos modelos é dada por:
+Utiliza-se regressão \textit{logit} (binária ou ordenada) para modelar a probabilidade de adesão a uma crença tecnicamente correta. A escolha entre as versões depende da natureza da variável dependente: binária para respostas dicotômicas (p.\,ex., 'concorda' vs. 'discorda') e ordenada para escalas com múltiplos níveis. A formulação geral dos modelos é dada por:
 
 \begin{equation}
 P(y_i = 1 \mid X_i) = \frac{e^{X_i \beta}}{1 + e^{X_i \beta}}
@@ -77,29 +77,31 @@ P(y_i \leq j \mid X_i) = \frac{1}{1 + e^{-(\tau_j - X_i \beta)}}
 
 
 
-As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver \autoref{apencice:variaveis_analisadas}). Os modelos foram ajustados por meio do algoritmo L-BFGS, adequado para estimação de modelos com múltiplos parâmetros.
+As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver \autoref{apencice:variaveis_analisadas}). Os modelos foram ajustados por meio do algoritmo L-BFGS, adequado para a estimação de modelos com múltiplos parâmetros.
 
-\subsection{Pressupostos, comparabilidade e inferência}\label{sec:pressupostos-inferencia}
-A opção por especificações paralelas entre itens cria uma “régua comum” de mensuração, permitindo atribuir diferenças de resultados ao conteúdo substantivo das questões e não à troca de modelo. 
+\subsection{Pressupostos, comparabilidade e inferência}
+\label{sec:pressupostos-inferencia}
 
-Nos modelos de \textit{logit ordenado}, assumimos a hipótese de \textit{chances proporcionais}. Não implementamos teste formal por item (p.\,ex., Brant); em seu lugar, realizamos uma \textit{avaliação heurística} da plausibilidade do pressuposto, verificando a \textit{ordenação dos cutpoints} retornados pelo ajuste e a \textit{estabilidade/convergência} mediante \textit{fallback} de otimizadores (\textit{lbfgs} $\rightarrow$ \textit{bfgs} $\rightarrow$ \textit{powell}). Itens com inversão de limiares ou falha de convergência foram rotulados como \textit{não estimáveis/instáveis} e excluídos de interpretação substantiva.
+A opção por especificações paralelas entre itens cria uma ``régua comum'' de mensuração, permitindo atribuir diferenças de resultados ao conteúdo substantivo das questões e não à troca de modelo.
 
-Quanto à \textit{multicolinearidade}, adotou-se mitigação estrutural (remoção de colunas constantes/raras e monitoramento da estabilidade de sinais e erros-padrão); medidas formais (p.\,ex., VIF) não foram computadas nesta versão. Os erros-padrão reportados são os \textit{padrão do estimador}. 
+Nos modelos de \textit{logit ordenado}, assumimos a hipótese das \textit{chances proporcionais}. Não implementamos teste formal por item (p.\,ex., Brant); em seu lugar, realizamos uma \textit{avaliação heurística} da plausibilidade do pressuposto, verificando a \textit{ordenação dos cutpoints} retornados pelo ajuste. Itens com inversão de limiares ou com não convergência foram rotulados como \textit{não estimáveis/instáveis} e excluídos da interpretação substantiva. Os ajustes foram realizados por \textit{L-BFGS}; quando necessário, aplicou-se \textit{fallback} para \textit{BFGS} e \textit{Powell} até a obtenção de uma solução admissível.
 
-Essas escolhas foram realizadas para privilegiar parcimônia, comparabilidade e \textit{congruência} --- no sentido de alinhar teoria e dados por meio de \textit{princípios-ponte} e modelos empiricamente admissíveis/encompassantes, conforme a metodologia proposta por \citeonline{stigum2003}.
+Quanto à \textit{multicolinearidade}, adotou-se a mitigação estrutural: remoção de colunas constantes/raras e monitoramento da estabilidade dos sinais e erros-padrão ao longo das estimativas. Medidas formais (p.\,ex., VIF) não foram computadas nesta versão. Os erros-padrão reportados são os do estimador.
 
-\section{O Conceito de Público Esclarecido}
+Essas escolhas privilegiam a parcimônia, a comparabilidade e \textit{a congruência} — no sentido de alinhar teoria e dados por meio de princípios-ponte e modelos empiricamente admissíveis/abrangentes \cite{stigum2003,hausman2008}.
+
+\section{O Conceito de público contrafactual}
 \label{sec:publico_esclarecido}
 
-Conforme fundamentado na Seção~\ref{sec:vieses_auxiliares}, define-se como \textit{público esclarecido} uma simulação contrafactual baseada nos modelos logit estimados para cada questão do questionário. A ideia central consiste em prever, para cada economista da amostra, qual seria sua resposta esperada caso não possuísse formação em Economia, mantendo-se constantes todas as demais características individuais.
+Conforme fundamentado na Seção~\ref{sec:vieses_auxiliares}, define-se ‘público contrafactual’ como uma simulação contrafactual baseada nos modelos logit estimados para cada questão do questionário. A ideia central consiste em prever, para cada economista da amostra, qual seria sua resposta esperada caso não possuísse formação em Economia, mantendo constantes todas as demais características individuais.
 
-Na prática, os modelos econométricos incluem uma variável indicadora de formação econômica como uma das regressoras explicativas. Após a estimação dos parâmetros do modelo, constrói-se um cenário contrafactual no qual todos os indivíduos que têm formação em Economia (isto é, o grupo de economistas) são simulados como se não a tivessem — mantendo-se constantes variáveis como renda, ideologia, escolaridade, gênero, idade, entre outras. A resposta média predita nesse cenário define o comportamento esperado do público esclarecido para cada item.
+Na prática, os modelos econométricos incluem uma variável indicadora de formação econômica como uma das regressoras explicativas. Após a estimação dos parâmetros do modelo, constrói-se um cenário contrafactual no qual todos os indivíduos que têm formação em Economia (isto é, o grupo de economistas) são simulados como se não a tivessem — mantendo-se constantes variáveis como renda, ideologia, escolaridade, gênero, idade, entre outras. A resposta média predita nesse cenário define o comportamento esperado do público contrafactual para cada item.
 
 A formulação matemática varia conforme a natureza da variável dependente.
 
 \subsection{Modelo Logit Binário}
 
-Para variáveis dicotômicas (ex.: concorda vs. discorda), a probabilidade contrafactual de resposta tecnicamente correta é dada por:
+Para variáveis dicotômicas (p.\,ex., 'concorda' vs. 'discorda'), a probabilidade contrafactual de resposta tecnicamente correta é dada por:
 
 \[
 \hat{Y}_i^{(\text{contrafactual})} = \mathbb{P}(Y_i = 1 \mid X_i, \text{Econ}_i = 0) = \frac{e^{X_i^\prime \beta - \beta_{\text{econ}}}}{1 + e^{X_i^\prime \beta - \beta_{\text{econ}}}}
@@ -109,7 +111,7 @@ Para variáveis dicotômicas (ex.: concorda vs. discorda), a probabilidade contr
 
 \subsection{Modelo Logit Ordenado}
 
-Para variáveis com múltiplos níveis ordenados (ex.: escalas tipo Likert), calcula-se a probabilidade predita de cada categoria e, com base nela, a média esperada:
+Para variáveis com múltiplos níveis ordenados (p.\,ex., escalas tipo Likert), calcula-se a probabilidade predita de cada categoria e, com base nelas, a média esperada:
 
 \[
 \hat{Y}_i^{(\text{contrafactual})} = \sum_{j=1}^J j \cdot \mathbb{P}(Y_i = j \mid X_i, \text{Econ}_i = 0) = \sum_{j=1}^J j \cdot \left[ \Lambda(\tau_j - X_i^\prime \beta^*) - \Lambda(\tau_{j-1} - X_i^\prime \beta^*) \right]
@@ -120,10 +122,10 @@ Para variáveis com múltiplos níveis ordenados (ex.: escalas tipo Likert), cal
 
 \bigskip
 
-Essa estratégia permite isolar o efeito marginal da formação técnica sobre a percepção dos respondentes, controlando para fatores sociais, ideológicos e cognitivos. Ao comparar as médias preditas entre o público geral, os economistas e o público esclarecido, torna-se possível avaliar empiricamente se o conhecimento técnico efetivamente corrige os vieses cognitivos previamente identificados. Essa abordagem contribui para refutar interpretações reducionistas que atribuem as divergências exclusivamente à ideologia ou à renda, reforçando a hipótese de que a racionalidade política pode ser sistematicamente afetada por déficits de formação econômica específica.
+Essa estratégia permite isolar o efeito marginal da formação técnica sobre a percepção dos respondentes, controlando para fatores sociais, ideológicos e cognitivos. Ao comparar as médias preditas entre o público geral, os economistas e o público contrafactual, torna-se possível avaliar empiricamente se o conhecimento técnico efetivamente corrige os vieses cognitivos previamente identificados. Essa abordagem contribui para refutar interpretações reducionistas que atribuem as divergências exclusivamente à ideologia ou à renda, reforçando a hipótese de que a racionalidade política pode ser sistematicamente afetada por déficits de formação econômica específica.
 
 \subsection{Natureza do contrafactual}
-O “público esclarecido” é uma construção \textit{model-based} (contrafactual estatístico) para comparação positiva entre perfis; não descreve uma intervenção real nem implica prescrição normativa. Serve para isolar a contribuição marginal da formação econômica mantendo constantes demais características, no âmbito explicativo do modelo \cite{hausman2008}.
+O “público contrafactual” é uma construção \textit{model-based} (contrafactual estatístico) para comparação positiva entre perfis; não descreve uma intervenção real nem implica prescrição normativa. Serve para isolar a contribuição marginal da formação econômica, mantendo constantes as demais características, no âmbito explicativo do modelo \cite{hausman2008}.
 
 
 
@@ -136,7 +138,7 @@ A análise empírica foi conduzida em seis etapas principais:
     
     \item ajuste de modelos \textit{logit} binário ou ordenado, conforme a natureza da variável dependente (respostas dicotômicas ou em escala Likert), com controle para variáveis sociodemográficas e ideológicas; os coeficientes estimados foram avaliados por meio de testes z para verificar sua significância estatística, replicando a estratégia utilizada por \citeonline{Systematically_Biased_Beliefs_about_Economics};
     
-    \item simulação contrafactual do \textit{público esclarecido}, por meio da predição estatística de respostas dos economistas sob a condição de não possuírem formação em Economia, mantendo constantes as demais variáveis individuais; essa simulação permite isolar o efeito marginal da variável ``formação econômica'' em diferentes perfis sociodemográficos;
+    \item simulação contrafactual do \textit{público contrafactual}, por meio da predição estatística de respostas dos economistas sob a condição de não possuírem formação em Economia, mantendo constantes as demais variáveis individuais; essa simulação permite isolar o efeito marginal da variável ``formação econômica'' em diferentes perfis sociodemográficos;
     
     \item cálculo da média das probabilidades preditas para cada grupo e geração de gráficos explicativos, com escalas padronizadas e comparações visuais diretas;
     
@@ -146,29 +148,29 @@ A análise empírica foi conduzida em seis etapas principais:
 
     % \item tratamento de multiplicidade: controle por FDR (Benjamini–Hochberg) como verificação de robustez, com foco em padrões consistentes de sinal e magnitude entre itens;
     
-    \item diagnósticos e inferência: checagens de especificação (incluindo paralelismo nos modelos ordenados) e reporte de erros-padrão robustos; justificativa de manutenção de especificações paralelas por comparabilidade entre DVs \cite{stigum2003}.
+    \item diagnósticos e inferência: checagens de especificação (com avaliação heurística do paralelismo via ordenação de limiares; não se aplicou o teste de Brant) e reporte de erros-padrão do estimador; justificativa para a manutenção de especificações paralelas por comparabilidade entre DVs \cite{stigum2003}.
 
 \end{enumerate}
 
 \section{Critério de Refutabilidade}
 
-Este estudo adota o princípio epistemológico da falseabilidade como critério de cientificidade, conforme proposto por \citeonline{popperlogic}. Em vez de buscar confirmações para as hipóteses formuladas, parte-se do pressuposto de que toda proposição científica deve ser logicamente testável e empiricamente refutável. As hipóteses centrais serão submetidas a testes estatísticos com base em modelos logit, e consideradas refutadas caso os dados empíricos revelem padrões incompatíveis com suas previsões.
+Este estudo adota o princípio epistemológico da falseabilidade como critério de cientificidade, conforme proposto por \citeonline{popperlogic}. Em vez de buscar confirmações para as hipóteses formuladas, parte-se do pressuposto de que toda proposição científica deve ser logicamente testável e empiricamente refutável. As hipóteses centrais foram submetidas a testes estatísticos com base em modelos logit, e consideradas refutadas caso os dados empíricos revelem padrões incompatíveis com suas previsões.
 
-Mais especificamente, as hipóteses serão rejeitadas nos seguintes cenários:
+Mais especificamente, as hipóteses foram rejeitadas nos seguintes cenários:
 
 \begin{enumerate}[label=\alph*)]
 
     \item Caso a formação em Economia não apresente impacto estatisticamente significativo sobre a incidência de vieses nas respostas, refuta-se a hipótese H1;
-    \item Caso não se observem diferenças sistemáticas entre as respostas do público geral e do público esclarecido simulado, refuta-se H2;
-    \item Caso variáveis estruturais como ideologia política, escolaridade ou renda não se associem de forma estatisticamente significativa à ocorrência de vieses cognitivos, refuta-se H7;
-    \item Caso as respostas do grupo controle (não economistas) não revelem padrões sistemáticos de viés (antimercado, antiestrangeiro, antitrabalho ou pessimista), refutam-se as hipóteses H3 a H6.
+    \item Caso não se observem diferenças sistemáticas entre as respostas do público geral e do público contrafactual simulado, refuta-se H2;
+    \item Caso variáveis estruturais, como ideologia política, escolaridade ou renda, não se associem de forma estatisticamente significativa à ocorrência de vieses cognitivos, refuta-se H7;
+    \item Caso as respostas do grupo de controle (não economistas) não revelem padrões sistemáticos de viés (antimercado, antiestrangeiro, antitrabalho ou pessimista), refutam-se as hipóteses H3 a H6.
     
 \end{enumerate}
 
 \subsection{Testes severos e corroboração provisória}
 As hipóteses são formuladas para enfrentar \textit{testes severos}, com resultados interpretados como corroborações provisórias sujeitas a refutação futura. O foco recai menos em confirmacionismo pontual e mais na consistência de padrões sob especificações comparáveis e princípios-ponte explícitos \cite{hausman2008,stigum2003}.
 
-Rejeita-se, portanto, qualquer pretensão de verificação definitiva: mesmo que uma hipótese não seja refutada, ela será considerada apenas corroborada de forma provisória pelos dados disponíveis. Os resultados serão interpretados com base na severidade dos testes empíricos enfrentados, e não na frequência de confirmações observadas, em consonância com a lógica da ciência proposta pelo autor.
+Rejeita-se, portanto, qualquer pretensão de verificação definitiva: mesmo que uma hipótese não seja refutada, ela será considerada apenas corroborada de forma provisória pelos dados disponíveis. Os resultados foram interpretados com base na severidade dos testes empíricos enfrentados, e não na frequência de confirmações observadas, em consonância com a lógica da ciência proposta pelo autor.
 
 % \section*{Nota de Reprodutibilidade}
 % Disponibilizamos \textit{scripts} com versões de pacotes, \texttt{seed} fixa e pipeline para replicação integral de tabelas e figuras, reforçando a transparência do confronto teoria–dados \cite{stigum2003}.
