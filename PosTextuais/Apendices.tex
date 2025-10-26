@@ -306,5 +306,45 @@
 \end{landscape}
 % ---------- FIM DA TABELA ----------
 
+\chapter{Repositório de Códigos e Dados}\label{ap:repo}
+
+\section{Visão geral}
+Este apêndice documenta os materiais de replicação do estudo: scripts de tratamento,
+modelos (logit binário e ordenado), geração de tabelas/figuras e dados anonimizados.
+
+\section{URL oficial e versão}
+Repositório: \url{https://github.com/SEU-USUARIO/SEU-REPO} \\
+Versão analisada: \texttt{v1.0-thesis} (tag no GitHub)\footnote{Fixar uma tag garante que os resultados
+desse TCC sejam reprodutíveis mesmo após evoluções do código.}
+
+\section{Como replicar}\label{ap:repo:execucao}
+\begin{enumerate}
+  \item Instale Python (>=3.10) e, opcionalmente, crie um ambiente virtual.
+  \item Instale dependências: \texttt{pip install -r requirements.txt}
+  \item Baixe os dados anonimizados da pasta \texttt{data/} do repositório.
+  \item Execute o pipeline principal: \texttt{python src/run\_analysis.py}
+  \item Saídas principais:
+        \begin{itemize}
+          \item Tabelas de resultados em \texttt{outputs/tables/}
+          \item Figuras reproduzidas em \texttt{outputs/figures/}
+          \item Logs de execução em \texttt{outputs/logs/}
+        \end{itemize}
+\end{enumerate}
+
+\section{Estrutura do repositório}
+\begin{verbatim}
+SEU-REPO/
+|-- data/                 # dados anonimizados e dicionário de variáveis
+|-- src/                  # scripts de limpeza, modelagem e geração de saídas
+|-- outputs/              # resultados reproduzíveis (tabelas/figuras/logs)
+|-- README.md             # instruções detalhadas
+|-- requirements.txt      # dependências
+\end{verbatim}
+
+\section{Observações éticas e LGPD}
+Os dados disponibilizados são estritamente anonimizados, sem identificação direta ou
+quase-identificação, em conformidade com o parecer do CEP e a LGPD.
+
+
 \end{apendicesenv}
 % ---

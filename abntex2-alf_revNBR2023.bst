@@ -33,7 +33,7 @@ ENTRY
     isbn issn journal key month note marginnote number organization
     org-short pages pagename
     publisher reprinted-from reprinted-text school
-    series subtitle section title type url urlaccessdate
+    series subtitle section title type url urlaccessdate doi
     volume year year-presented
     abnt-and-type
     abnt-doi abnt-dont-use-etal
@@ -269,9 +269,9 @@ FUNCTION {bbl.missing.year}
  if$}
 FUNCTION {bbl.monography} { "Monografia" }
 FUNCTION {bbl.mthesis} { "Disserta\c{c}\~{a}o" }
-FUNCTION {bbl.no.address} {"[S.l.]"}
-FUNCTION {bbl.no.address.no.publisher} {"[S.l.: s.n.]"}
-FUNCTION {bbl.no.publisher} {"[s.n.]"}
+FUNCTION {bbl.no.address} {"[\emph{s. l.}]"}
+FUNCTION {bbl.no.address.no.publisher} {"[\emph{s. l.: s. n.}]"}
+FUNCTION {bbl.no.publisher} {"[\emph{s. n.}]"}
 FUNCTION {bbl.number} { iso.abbreviation {"no."} {"n."} if$ }
 FUNCTION {bbl.nr} { "n." }
 FUNCTION {bbl.of} { "de" }
@@ -405,6 +405,7 @@ FUNCTION {write.entry.verbatim2}
 FUNCTION {write.entry.verbatim3}
 {
    "url" 		url 			write.field.verbatim
+   "doi"       doi             write.field.verbatim
    "urlaccessdate" 	urlaccessdate 		write.field.verbatim
    "volume" 		volume 			write.field.verbatim
    "year" 		year 			write.field.verbatim
@@ -999,6 +1000,18 @@ FUNCTION {format.url}
   if$
   "urlaccessdate" bibinfo.check output new.sentence
 }
+
+FUNCTION {format.doi}
+{ doi missing$
+    'skip$
+    { doi empty$
+        'skip$
+        { "doi: " doi * output new.sentence }
+      if$
+    }
+  if$
+}
+
 
 FUNCTION {format.conference.info}
 { conference-number empty$
@@ -1651,6 +1664,7 @@ FUNCTION {article}
   non.iso.date
   format.issn output new.block
   format.note output new.block
+  format.doi
   format.url
   fin.entry
 }
