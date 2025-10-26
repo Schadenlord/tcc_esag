@@ -310,3 +310,5 @@ TSWLatexianTemp*
 .vscode
 
 .env
+
+*.pdf
