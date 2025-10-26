@@ -308,3 +308,5 @@ TSWLatexianTemp*
 
 .venv
 .vscode
+
+.env
