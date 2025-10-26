@@ -127,7 +127,7 @@ e Socioeconômicas, Universidade do Estado de Santa Catarina, Florianópolis, 20
 ### BibTeX
 
 ```bibtex
-@mastersthesis{schaden2025racionalidade,
+@phdthesis{schaden2025racionalidade,
   author  = {Schaden, Bruno Francisco},
   title   = {Racionalidade Coletiva em Xeque: Uma Investigação Comportamental sobre Percepções Econômicas no Brasil},
   school  = {Universidade do Estado de Santa Catarina},
