@@ -308,119 +308,18 @@
 
 \chapter{Repositório de Códigos e Dados}\label{ap:repo}
 
-\section{Visão geral}
-Este apêndice documenta os materiais de \textbf{reprodutibilidade} do estudo: adaptação da SAEE ao contexto brasileiro, \textit{pipelines} de tratamento, modelos (\textit{logit} binário e \textit{logit} ordenado), geração de tabelas/figuras e o pacote de dados \textbf{anonimizados} utilizado nos resultados. As rotinas são implementadas em \textbf{Python} (e.g., \texttt{pandas}, \texttt{statsmodels}) e acompanham instruções para execução controlada.
+\section*{URL e versão}
+Repositório oficial: \url{https://github.com/Schadenlord/tcc_esag}
 
-\section{URL oficial e versão}
-Repositório (GitHub): \url{https://github.com/Schadenlord/tcc_esag}\\
-Versão analisada: \texttt{v1.0-thesis} (tag)\footnote{A tag fixa garante que os resultados descritos no TCC possam ser reproduzidos \emph{exatamente} no futuro, mesmo que o repositório continue evoluindo. Recomenda-se registrar também o \texttt{commit} específico no \texttt{README}.}
+\section*{Conteúdo e reprodutibilidade}
+Todas as instruções de instalação, execução das análises e recompilação do PDF
+estão detalhadas no \texttt{README.md} do repositório acima.
+Este apêndice registra apenas o essencial:
+fontes \LaTeX\ do TCC, \texttt{Textuais/analise/analise.ipynb} e saídas das análises.
 
-\section{Metadados essenciais (para auditoria)}
-\begin{itemize}
-  \item Projeto e ética: ``Econometria Comportamental na Política Pública: Análise de Vieses Cognitivos Políticos''. \textbf{CAAE: 89374225.9.0000.0118}. \textbf{Parecer: 7.719.326} (Res.~CNS 510/2016).
-  \item Janela de coleta: \textbf{ago–out/2025} (questionário estruturado em plataforma digital).
-  \item Amostra: \textbf{$n=183$} respostas válidas (com $n$ efetivo por item reportado nas tabelas).
-  \item Modelagem: \textit{logit} binário e \textit{logit} ordenado com controles sociodemográficos/ideológicos; estimação em \texttt{Python}.
-\end{itemize}
+\section*{Ética e LGPD}
+Os dados disponibilizados no repositório são agregados e, portanto, estritamente anonimizados, sem identificação direta, em conformidade com o parecer do CEP e com a LGPD. Dados brutos sensíveis não são publicados.
 
-\section{Como replicar}\label{ap:repo:execucao}
-
-\subsection*{Opção A — Notebook (recomendado)}
-\begin{enumerate}
-  \item Tenha \textbf{Python~$\geq$~3.10}. (Opcional) Crie um ambiente virtual:
-\begin{verbatim}
-python -m venv .venv
-# Windows PowerShell:
-.venv\Scripts\Activate.ps1
-# Linux/macOS:
-source .venv/bin/activate
-\end{verbatim}
-  \item Instale as dependências. Se existir \texttt{requirements.txt} na raiz, execute:
-\begin{verbatim}
-pip install -U pip wheel
-pip install -r requirements.txt
-\end{verbatim}
-  \noindent Caso contrário, instale o mínimo necessário:
-\begin{verbatim}
-pip install -U pip wheel
-pip install pandas statsmodels numpy matplotlib jupyter
-\end{verbatim}
-  \item Abra o notebook principal:
-\begin{verbatim}
-jupyter notebook Textuais/analise/analise.ipynb
-\end{verbatim}
-  \item Execute todas as células. As saídas serão salvas nas pastas indicadas no próprio notebook (tabelas e figuras).
-\end{enumerate}
-
-\subsection*{Opção B — Execução não interativa (script, se disponível)}
-Algumas versões podem fornecer um \texttt{runner} em \texttt{src/}. Quando presente:
-\begin{enumerate}
-  \item Configure o ambiente conforme a Opção A (dependências).
-  \item Execute:
-\begin{verbatim}
-python src/run_analysis.py
-\end{verbatim}
-  \item Verifique as pastas de \texttt{outputs} (tabelas/figuras/logs).
-\end{enumerate}
-
-\section{Estrutura do repositório (visão prática)}
-\begin{verbatim}
-tcc_esag/
-|-- PreTextuais/                 # capa, folha de rosto, resumo(s), sumário etc.
-|-- Textuais/
-|   |-- ...                      # capítulos (introdução, teoria, método, resultados, conclusão)
-|   `-- analise/
-|       |-- analise.ipynb        # notebook principal de replicação
-|       |-- data/                # dados ANONIMIZADOS e dicionário de variáveis (quando aplicável)
-|       |-- outputs/
-|       |   |-- tables/          # tabelas reproducíveis (modelos, descritas, etc.)
-|       |   `-- figures/         # figuras reproducíveis (gráficos)
-|       `-- logs/                # registros de execução (opcional)
-|-- PosTextuais/                 # apêndices, anexos e materiais adicionais
-|-- referencias.bib              # base bibliográfica (ABNT/abntex2)
-|-- abntex2-alf_revNBR2023.bst   # estilo bibliográfico utilizado (BibTeX)
-|-- tcc_pronto.tex               # arquivo principal LaTeX (entry point)
-|-- PacotesBasicos.tex           # configuração de pacotes/estilo
-|-- README.md                    # guia de compilação e reprodutibilidade
-`-- requirements.txt             # dependências Python (se presente)
-\end{verbatim}
-
-\section{Saídas e correspondência com o texto}
-As tabelas e figuras geradas no diretório \texttt{Textuais/analise/outputs/} reproduzem os resultados descritos nos capítulos de \textbf{Resultados} e \textbf{Discussão}. Cada artefato traz nomes e/ou comentários que permitem mapear o objeto no PDF (e.g., ``\texttt{tables/}'' para quadros de coeficientes; ``\texttt{figures/}'' para gráficos). Quando aplicável, o notebook inclui células com referências cruzadas (``Section--Figure/Table'') para facilitar a checagem.
-
-\section{Observações éticas e LGPD}
-Os dados disponibilizados são \textbf{estritamente anonimizados}, sem identificação direta ou quase-identificação, em conformidade com o parecer do CEP (CAAE e Parecer acima) e com a LGPD. Dados brutos sensíveis \textbf{não} são publicados. Qualquer compartilhamento adicional seguirá termo específico e aprovação ética, quando cabível.
-
-\section{Licenças e citação}
-Salvo indicação em contrário no \texttt{README.md}:
-\begin{itemize}
-  \item \textbf{Código}: licença recomendada \textit{MIT}.
-  \item \textbf{Texto/figuras do TCC}: recomendada \textit{CC BY-NC 4.0}.
-  \item \textbf{Dados anonimizados}: uso acadêmico, com citação obrigatória deste repositório e do TCC.
-\end{itemize}
-
-\noindent Exemplo de citação (Bib\TeX):
-\begin{verbatim}
-@misc{schaden2025_tcc_repo,
-  author       = {Schaden, Bruno Francisco},
-  title        = {Racionalidade Coletiva em Xeque:
-                  Uma Investigação Comportamental sobre Percepções
-                  Econômicas no Brasil},
-  year         = {2025},
-  howpublished = {Repositório GitHub},
-  note         = {Arquivos fonte LaTeX, código e saídas do TCC (UDESC/ESAG).
-                  Orientação: Marianne Zwiling Stampe.
-                  CAAE 89374225.9.0000.0118.},
-  url          = {https://github.com/Schadenlord/tcc_esag},
-  urldate      = {2025-10-26}
-}
-\end{verbatim}
-
-\section{Reprodutibilidade do PDF}
-A compilação do manuscrito utiliza \texttt{abntex2} com \texttt{BibTeX} e o estilo \texttt{abntex2-alf\_revNBR2023.bst}. Recomenda-se \texttt{latexmk} para \emph{build} automático do PDF (ver instruções no \texttt{README.md}). Todas as referências citadas no texto estão em \texttt{referencias.bib}.
-
-\bigskip
-\noindent\emph{Nota:} Em caso de divergência futura entre versões, prevalece a tag \texttt{v1.0-thesis} indicada neste apêndice.
 
 \end{apendicesenv}
 % ---
