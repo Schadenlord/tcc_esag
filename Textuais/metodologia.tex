@@ -44,6 +44,7 @@ A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de um questio
 Embora a meta amostral mínima tenha sido definida com base em parâmetros estatísticos (pelo menos 175 respondentes), a pesquisa buscou ampliar o número de observações, especialmente no grupo controle, visando maior robustez estatística para comparações com 95\% de confiança e 80\% de poder.
 
 \subsection{Tamanho amostral e composição}
+\label{sec:tamanho_amostral}
 No total, o survey obteve respostas válidas de \(n = 183\) participantes.\footnote{O \(n\) efetivo por item/modelo varia ligeiramente devido a não resposta item a item; a Tabela-Síntese Mestra (\autoref{apendice:tabela_sintese}) indica média de 181{,}8 observações por questão (mediana 183).}
 Desses, \(90{,}7\%\) (\(\approx 166\)) compuseram o grupo de controle (não economistas) e \(9{,}3\%\) (\(\approx 17\)) o grupo de economistas, definido estritamente como formação avançada em Economia com pós-graduação stricto sensu concluída (mestrado ou doutorado).
 O subgrupo de economistas é menor em relação ao controle, o que recomenda cautela na leitura de efeitos específicos desse termo, como discutido na seção de robustez e limitações (\autoref{sec:limitacao_robustez}). Em termos de transparência, os modelos ordenados consolidados no \autoref{apendice:tabela_sintese} mantêm a lista idêntica de covariáveis e reportam o \(n\) por item.
@@ -56,9 +57,9 @@ A amostragem não probabilística é apropriada ao objetivo de teste de hipótes
 
 O questionário aplicado dividiu-se em três blocos principais:
 \begin{enumerate}[label=\alph*)]
-    \item \textbf{Seção A — Características pessoais}: coleta de variáveis demográficas, socioeconômicas e ideológicas (sexo, idade, escolaridade, região, vínculo empregatício, renda familiar e autodeclaração ideológica);
-    \item \textbf{Seção B — Percepções econômicas}: proposições adaptadas da \textit{Survey of Americans and Economists on the Economy} (SAEE), contemplando os quatro vieses cognitivos principais descritos por Caplan (2007): antimercado, antiestrangeiro, antitrabalho e pessimista;
-    \item \textbf{Seção C — Políticas públicas}: questões relacionadas ao contexto brasileiro, incluindo tributação, previdência, corrupção e taxa de juros.
+    \item \textbf{Seção A — Características pessoais}: coleta de variáveis demográficas, socioeconômicas e ideológicas (sexo, idade, escolaridade, região, vínculo empregatício, renda familiar e autodeclaração ideológica) \cite{downs1957economic,kahan2012polarization};
+    \item \textbf{Seção B — Percepções econômicas}: proposições adaptadas da \textit{Survey of Americans and Economists on the Economy} (SAEE), contemplando os quatro vieses cognitivos principais descritos por Caplan (2007): antimercado, antiestrangeiro, antitrabalho e pessimista \cite{blendon1997,Systematically_Biased_Beliefs_about_Economics};
+    \item \textbf{Seção C — Políticas públicas}: questões relacionadas ao contexto brasileiro, incluindo tributação, previdência, corrupção e taxa de juros \cite{franco2017moeda,sowell2004applied,zaller1992nature}.
 \end{enumerate}
 
 As respostas foram registradas em escalas do tipo Likert (0 a 2 pontos), adaptadas conforme a nuance de cada questão. O instrumento foi submetido à revisão semântica por dois especialistas em políticas públicas e economia política e passou por um pré-teste com 15 participantes voluntários, que avaliaram a clareza, aplicabilidade e o tempo médio de resposta (cerca de 7 minutos), resultando em ajustes pontuais de redação e formato.
@@ -67,28 +68,32 @@ As respostas foram registradas em escalas do tipo Likert (0 a 2 pontos), adaptad
 
 Utiliza-se regressão \textit{logit} (binária ou ordenada) para modelar a probabilidade de adesão a uma crença tecnicamente correta. A escolha entre as versões depende da natureza da variável dependente: binária para respostas dicotômicas (p.\,ex., 'concorda' vs. 'discorda') e ordenada para escalas com múltiplos níveis. A formulação geral dos modelos é dada por:
 
-\begin{equation}
+\begin{equation}\label{eq:logit_bin}
 P(y_i = 1 \mid X_i) = \frac{e^{X_i \beta}}{1 + e^{X_i \beta}}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq:logit_ord}
 P(y_i \leq j \mid X_i) = \frac{1}{1 + e^{-(\tau_j - X_i \beta)}}
 \end{equation}
 
 
+Em \eqref{eq:logit_bin}, o termo $e^{X_i\beta}$ representa os \textit{odds} (razão de chances) do evento $y_i=1$, e a fração $\frac{e^{X_i\beta}}{1+e^{X_i\beta}}$ é a função logística que transforma \textit{odds} em probabilidade no intervalo $(0,1)$. Em \eqref{eq:logit_ord}, $P(y_i\le j\mid X_i)=\Lambda(\tau_j - X_i\beta)$ é a probabilidade \textit{cumulativa} no logit ordenado; $\tau_j$ são os \textit{cutpoints} (limiares) que particionam a escala ordinal e $\Lambda(z)=\frac{1}{1+e^{-z}}$ denota a função logística acumulada.
 
-As variáveis explicativas \(X_i\) incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver \autoref{apencice:variaveis_analisadas}). Os modelos foram ajustados por meio do algoritmo L-BFGS, adequado para a estimação de modelos com múltiplos parâmetros.
+As variáveis explicativas $X_i$ incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver \autoref{apencice:variaveis_analisadas}). Os modelos foram ajustados pelo algoritmo L-BFGS (\textit{Limited-memory Broyden–Fletcher–Goldfarb–Shanno}), um método quasi-Newton apropriado para maximizar a log-verossimilhança em problemas com múltiplos parâmetros.
 
 \subsection{Pressupostos, comparabilidade e inferência}
 \label{sec:pressupostos-inferencia}
 
 A opção por especificações paralelas entre itens cria uma ``régua comum'' de mensuração, permitindo atribuir diferenças de resultados ao conteúdo substantivo das questões e não à troca de modelo.
 
-Nos modelos de \textit{logit ordenado}, assumimos a hipótese das \textit{chances proporcionais}. Não implementamos teste formal por item (p.\,ex., Brant); em seu lugar, realizamos uma \textit{avaliação heurística} da plausibilidade do pressuposto, verificando a \textit{ordenação dos cutpoints} retornados pelo ajuste. Itens com inversão de limiares ou com não convergência foram rotulados como \textit{não estimáveis/instáveis} e excluídos da interpretação substantiva. Os ajustes foram realizados por \textit{L-BFGS}; quando necessário, aplicou-se \textit{fallback} para \textit{BFGS} e \textit{Powell} até a obtenção de uma solução admissível.
+Nos modelos de logit ordenado, assumimos a hipótese das chances proporcionais. Não implementamos teste formal por item (p.\,ex., Brant); em seu lugar, realizamos uma avaliação heurística da plausibilidade do pressuposto, verificando a ordenação dos \textit{cutpoints} retornados pelo ajuste. Itens com inversão de limiares ou com não convergência foram rotulados como não estimáveis/instáveis e excluídos da interpretação substantiva. 
+Os ajustes foram realizados por L-BFGS (Limited-memory Broyden–Fletcher–Goldfarb–Shanno); quando necessário, aplicou-se \emph{fallback} para BFGS (Broyden–Fletcher–Goldfarb–Shanno) e Powell até a obtenção de uma solução admissível. 
+Em termos operacionais, são algoritmos de otimização quasi-Newton que maximizam a log-verossimilhança dos modelos logit; o L-BFGS usa memória limitada e costuma convergir bem em problemas com muitos parâmetros.
 
-Quanto à \textit{multicolinearidade}, adotou-se a mitigação estrutural: remoção de colunas constantes/raras e monitoramento da estabilidade dos sinais e erros-padrão ao longo das estimativas. Medidas formais (p.\,ex., VIF) não foram computadas nesta versão. Os erros-padrão reportados são os do estimador.
+Quanto à multicolinearidade, adotou-se a mitigação estrutural: remoção de colunas constantes/raras e monitoramento da estabilidade dos sinais e erros-padrão ao longo das estimativas. Medidas formais (p.\,ex., VIF) não foram computadas nesta versão. Os erros-padrão reportados são os do estimador.
 
-Essas escolhas privilegiam a parcimônia, a comparabilidade e \textit{a congruência} — no sentido de alinhar teoria e dados por meio de princípios-ponte e modelos empiricamente admissíveis/abrangentes \cite{stigum2003,hausman2008}.
+Essas escolhas privilegiam a parcimônia, a comparabilidade e a congruência — no sentido de alinhar teoria e dados por meio de princípios-ponte e modelos empiricamente admissíveis/abrangentes \cite{stigum2003,hausman2008}.
+
 
 \section{O Conceito de público contrafactual}
 \label{sec:publico_esclarecido}
@@ -102,30 +107,28 @@ A formulação matemática varia conforme a natureza da variável dependente.
 \subsection{Modelo Logit Binário}
 
 Para variáveis dicotômicas (p.\,ex., 'concorda' vs. 'discorda'), a probabilidade contrafactual de resposta tecnicamente correta é dada por:
-
-\[
+\begin{equation}\label{eq:contra_bin}
 \hat{Y}_i^{(\text{contrafactual})} = \mathbb{P}(Y_i = 1 \mid X_i, \text{Econ}_i = 0) = \frac{e^{X_i^\prime \beta - \beta_{\text{econ}}}}{1 + e^{X_i^\prime \beta - \beta_{\text{econ}}}}
-\]
+\end{equation}
 
-\noindent onde $X_i$ representa o vetor de covariáveis observadas do indivíduo $i$; $\beta$ é o vetor de coeficientes estimados no modelo logit; e $\beta_{\text{econ}}$ é o coeficiente estimado da variável binária de formação econômica.
+\noindent
+onde $X_i$ representa o vetor de covariáveis observadas do indivíduo $i$; $\beta$ é o vetor de coeficientes estimados no modelo logit; e $\beta_{\text{econ}}$ é o coeficiente estimado da variável binária de formação econômica ($\text{Econ}_i\in\{0,1\}$).
 
 \subsection{Modelo Logit Ordenado}
 
 Para variáveis com múltiplos níveis ordenados (p.\,ex., escalas tipo Likert), calcula-se a probabilidade predita de cada categoria e, com base nelas, a média esperada:
 
-\[
+\begin{equation}\label{eq:contra_ord}
 \hat{Y}_i^{(\text{contrafactual})} = \sum_{j=1}^J j \cdot \mathbb{P}(Y_i = j \mid X_i, \text{Econ}_i = 0) = \sum_{j=1}^J j \cdot \left[ \Lambda(\tau_j - X_i^\prime \beta^*) - \Lambda(\tau_{j-1} - X_i^\prime \beta^*) \right]
-\]
+\end{equation}
 
-\noindent onde $J$ é o número de categorias da resposta; $\tau_j$ são os limiares (cutpoints) estimados do modelo ordenado ($j=1,\ldots,J-1$); $\Lambda(\cdot)$ é a função logística acumulada; e $\beta^* = \beta - \beta_{\text{econ}}\, d$, com $d=1$ quando se simula a ausência de formação econômica e $d=0$ para o caso observado.
+\noindent
+onde $J$ é o número de categorias da resposta; $\tau_j$ são os limiares (cutpoints) estimados do modelo ordenado ($j=1,\ldots,J-1$), com as convenções $\tau_0=-\infty$ e $\tau_J=+\infty$; $\Lambda(\cdot)$ é a função logística acumulada; e $\beta^{*} = \beta - \beta_{\text{econ}}\,d$, com $d=1$ quando se simula a ausência de formação econômica e $d=0$ para o caso observado.
 
-
-\bigskip
-
-Essa estratégia permite isolar o efeito marginal da formação técnica sobre a percepção dos respondentes, controlando para fatores sociais, ideológicos e cognitivos. Ao comparar as médias preditas entre o público geral, os economistas e o público contrafactual, torna-se possível avaliar empiricamente se o conhecimento técnico efetivamente corrige os vieses cognitivos previamente identificados. Essa abordagem contribui para refutar interpretações reducionistas que atribuem as divergências exclusivamente à ideologia ou à renda, reforçando a hipótese de que a racionalidade política pode ser sistematicamente afetada por déficits de formação econômica específica.
+Essa estratégia permite isolar o efeito marginal da formação técnica sobre a percepção dos respondentes, controlando para fatores sociais, ideológicos e cognitivos. Ao comparar as médias preditas entre o público geral, os economistas e o público contrafactual, torna-se possível avaliar empiricamente se o conhecimento técnico corrige os vieses cognitivos previamente identificados. Tal abordagem evita interpretações reducionistas que atribuem as divergências exclusivamente à ideologia ou à renda, reforçando a hipótese de que a racionalidade política pode ser afetada por déficits de formação econômica específica.
 
 \subsection{Natureza do contrafactual}
-O “público contrafactual” é uma construção \textit{model-based} (contrafactual estatístico) para comparação positiva entre perfis; não descreve uma intervenção real nem implica prescrição normativa. Serve para isolar a contribuição marginal da formação econômica, mantendo constantes as demais características, no âmbito explicativo do modelo \cite{hausman2008}.
+O ``público contrafactual'' é uma construção \textit{model-based} (contrafactual estatístico) para comparação positiva entre perfis; não descreve uma intervenção real nem implica prescrição normativa. Serve para isolar a contribuição marginal da formação econômica, mantendo constantes as demais características, no âmbito explicativo do modelo \cite{hausman2008}.
 
 
 
@@ -148,7 +151,7 @@ A análise empírica foi conduzida em seis etapas principais:
 
     % \item tratamento de multiplicidade: controle por FDR (Benjamini–Hochberg) como verificação de robustez, com foco em padrões consistentes de sinal e magnitude entre itens;
     
-    \item diagnósticos e inferência: checagens de especificação (com avaliação heurística do paralelismo via ordenação de limiares; não se aplicou o teste de Brant) e reporte de erros-padrão do estimador; justificativa para a manutenção de especificações paralelas por comparabilidade entre DVs \cite{stigum2003}.
+    \item diagnósticos e inferência: checagens de especificação (com avaliação heurística do paralelismo via ordenação de limiares; não se aplicou o teste de Brant) e reporte de erros-padrão do estimador; justificativa para a manutenção de especificações paralelas por comparabilidade entre DVs (\textit{Dependent Variables}) \cite{stigum2003}.
 
 \end{enumerate}
 
@@ -160,10 +163,10 @@ Mais especificamente, as hipóteses foram rejeitadas nos seguintes cenários:
 
 \begin{enumerate}[label=\alph*)]
 
-    \item Caso a formação em Economia não apresente impacto estatisticamente significativo sobre a incidência de vieses nas respostas, refuta-se a hipótese H1;
-    \item Caso não se observem diferenças sistemáticas entre as respostas do público geral e do público contrafactual simulado, refuta-se H2;
-    \item Caso variáveis estruturais, como ideologia política, escolaridade ou renda, não se associem de forma estatisticamente significativa à ocorrência de vieses cognitivos, refuta-se H7;
-    \item Caso as respostas do grupo de controle (não economistas) não revelem padrões sistemáticos de viés (antimercado, antiestrangeiro, antitrabalho ou pessimista), refutam-se as hipóteses H3 a H6.
+    \item caso a formação em Economia não apresente impacto estatisticamente significativo sobre a incidência de vieses nas respostas, refuta-se a hipótese H1;
+    \item caso não se observem diferenças sistemáticas entre as respostas do público geral e do público contrafactual simulado, refuta-se H2;
+    \item caso variáveis estruturais, como ideologia política, escolaridade ou renda, não se associem de forma estatisticamente significativa à ocorrência de vieses cognitivos, refuta-se H7;
+    \item caso as respostas do grupo de controle (não economistas) não revelem padrões sistemáticos de viés (antimercado, antiestrangeiro, antitrabalho ou pessimista), refutam-se as hipóteses H3 a H6.
     
 \end{enumerate}
 
