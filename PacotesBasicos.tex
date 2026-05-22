@@ -1,13 +1,34 @@
 % ----------------------------------------------------------
-% Pacotes básicos 
+% Pacotes básicos
 % ----------------------------------------------------------
+\usepackage{iftex}
 \usepackage{amsmath}							% Pacote matemático
 \usepackage{amssymb}							% Pacote matemático
 \usepackage{amsfonts}							% Pacote matemático
-%\usepackage{lmodern}							% Usa a fonte Latin Modern		
+%\usepackage{lmodern}							% Usa a fonte Latin Modern
 \usepackage{mathptmx} 							% Usa a fonte Times New Roman	 (UDESC/CCT)
-\usepackage[T1]{fontenc}						% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}						% Codificacao do documento (conversão automática dos acentos)
+\ifXeTeX
+  % XeLaTeX: fontspec com TeX Gyre Termes via nome de arquivo (tectonic baixa do bundle)
+  \usepackage{fontspec}
+  \setmainfont{texgyretermes-regular.otf}[
+    BoldFont        = texgyretermes-bold.otf,
+    ItalicFont      = texgyretermes-italic.otf,
+    BoldItalicFont  = texgyretermes-bolditalic.otf,
+    Ligatures=TeX
+  ]
+  \setsansfont{texgyreheros-regular.otf}[
+    BoldFont   = texgyreheros-bold.otf,
+    ItalicFont = texgyreheros-italic.otf,
+    Ligatures=TeX
+  ]
+  \setmonofont{texgyrecursor-regular.otf}[
+    BoldFont   = texgyrecursor-bold.otf,
+    ItalicFont = texgyrecursor-italic.otf
+  ]
+\else
+  \usepackage[T1]{fontenc}						% Selecao de codigos de fonte.
+  \usepackage[utf8]{inputenc}					% Codificacao do documento
+\fi
 \usepackage{lastpage}							% Usado pela Ficha catalográfica
 \usepackage{indentfirst}						% Indenta o primeiro parágrafo de cada seção.
 \usepackage[dvipsnames,table]{xcolor}			% Controle das cores
@@ -57,10 +78,11 @@
 
 %\numberwithin{equation}{section}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\DeclareUnicodeCharacter{2212}{\ensuremath{-}} % “−” → sinal de menos
-\DeclareUnicodeCharacter{2013}{--}             % “–” → en-dash
+% [duplicate inputenc/fontenc já carregados acima; DeclareUnicodeCharacter incompatível com XeLaTeX]
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+% \DeclareUnicodeCharacter{2013}{--}
 
 % depois de babel[brazilian] e hyperref
 \addto\extrasbrazilian{%

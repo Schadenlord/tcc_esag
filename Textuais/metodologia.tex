@@ -79,7 +79,7 @@ P(y_i \leq j \mid X_i) = \frac{1}{1 + e^{-(\tau_j - X_i \beta)}}
 
 Em \eqref{eq:logit_bin}, o termo $e^{X_i\beta}$ representa os \textit{odds} (razão de chances) do evento $y_i=1$, e a fração $\frac{e^{X_i\beta}}{1+e^{X_i\beta}}$ é a função logística que transforma \textit{odds} em probabilidade no intervalo $(0,1)$. Em \eqref{eq:logit_ord}, $P(y_i\le j\mid X_i)=\Lambda(\tau_j - X_i\beta)$ é a probabilidade \textit{cumulativa} no logit ordenado; $\tau_j$ são os \textit{cutpoints} (limiares) que particionam a escala ordinal e $\Lambda(z)=\frac{1}{1+e^{-z}}$ denota a função logística acumulada.
 
-As variáveis explicativas $X_i$ incluem escolaridade, renda, ideologia, raça, gênero, ocupação, expectativas econômicas e formação em Economia, conforme detalhado na Tabela de Codificação (ver \autoref{apencice:variaveis_analisadas}). Os modelos foram ajustados pelo algoritmo L-BFGS (\textit{Limited-memory Broyden–Fletcher–Goldfarb–Shanno}), um método quasi-Newton apropriado para maximizar a log-verossimilhança em problemas com múltiplos parâmetros.
+As variáveis explicativas $X_i$ incluem: formação em Economia (\texttt{econ}, tratamento), espectro político (ordinal $-2$ a $+2$), escolaridade (ordinal 0–6), faixa etária (ordinal 0–6), gênero (binária) e exposição econômica profissional (\texttt{trabalha\_econ}, binária). O engajamento político é testado como variável adicional em análise de sensibilidade (ver \autoref{sec:pressupostos-inferencia}). Os modelos foram ajustados pelo algoritmo L-BFGS (\textit{Limited-memory Broyden–Fletcher–Goldfarb–Shanno}), um método quasi-Newton apropriado para maximizar a log-verossimilhança em problemas com múltiplos parâmetros.
 
 \subsection{Pressupostos, comparabilidade e inferência}
 \label{sec:pressupostos-inferencia}
@@ -90,7 +90,19 @@ Nos modelos de logit ordenado, assumimos a hipótese das chances proporcionais. 
 Os ajustes foram realizados por L-BFGS (Limited-memory Broyden–Fletcher–Goldfarb–Shanno); quando necessário, aplicou-se \emph{fallback} para BFGS (Broyden–Fletcher–Goldfarb–Shanno) e Powell até a obtenção de uma solução admissível. 
 Em termos operacionais, são algoritmos de otimização quasi-Newton que maximizam a log-verossimilhança dos modelos logit; o L-BFGS usa memória limitada e costuma convergir bem em problemas com muitos parâmetros.
 
-Quanto à multicolinearidade, adotou-se a mitigação estrutural: remoção de colunas constantes/raras e monitoramento da estabilidade dos sinais e erros-padrão ao longo das estimativas. Medidas formais (p.\,ex., VIF) não foram computadas nesta versão. Os erros-padrão reportados são os do estimador.
+Quanto à multicolinearidade, adotou-se a mitigação estrutural: remoção de colunas constantes/raras, codificação ordinal em vez de dummies para escolaridade (0–6) e faixa etária (0–6), e verificação do VIF (todos abaixo de 3). Os erros-padrão reportados são os do estimador.
+
+\paragraph{Definição operacional de \texttt{econ=1}.}
+A variável tratamento codifica como \texttt{econ=1} exclusivamente portadores de mestrado ou doutorado em Economia; graduados em Economia permanecem em \texttt{econ=0} junto ao público geral. Essa definição restringe o estimando ao efeito da \emph{formação profissional avançada}, não da exposição introdutória à disciplina. A consequência é um grupo de controle heterogêneo (inclui graduados em Economia); esse fato deve ser levado em conta na interpretação de $\hat{\beta}_\texttt{econ}$.
+
+\paragraph{Pressuposto de equidistância nas ordinais.}
+As variáveis \texttt{escolaridade\_num} (0–6) e \texttt{idade\_num} (0–6) são tratadas como escalas ordinais lineares — equivalente a assumir efeito igual de cada passo unitário sobre a variável latente $y^*$. Esse pressuposto é adotado como segunda melhor opção para evitar separação perfeita gerada por dummies com $n=1$--$3$ em categorias extremas \citep{wooldridge2010}. A possibilidade de não-linearidade real (e.g., efeito U-invertido da idade) não é testada formalmente e constitui limitação reconhecida.
+
+\paragraph{Controle de contaminação profissional.}
+Inclui-se a variável binária \texttt{trabalha\_econ} (1 = trabalha com economia, finanças ou contabilidade), que captura exposição econômica profissional mesmo na ausência de formação formal. Sem esse controle, $\hat{\beta}_\texttt{econ}$ absorveria parte do efeito de exposição ocupacional, confundindo formação acadêmica com prática profissional.
+
+\paragraph{Engajamento político como mediador.}
+A variável \texttt{engajado} (1 = politicamente engajado) é potencialmente um \emph{mediador} na cadeia causal econ $\to$ engajado $\to$ opinião, e não um confundidor externo. Condicionar em mediadores subestima o efeito total de \texttt{econ} \citep{angrist2009}. Por isso, o modelo \emph{primário} exclui \texttt{engajado}; o modelo com \texttt{engajado} é reportado como análise de sensibilidade para verificar estabilidade dos coeficientes.
 
 Essas escolhas privilegiam a parcimônia, a comparabilidade e a congruência — no sentido de alinhar teoria e dados por meio de princípios-ponte e modelos empiricamente admissíveis/abrangentes \cite{stigum2003,hausman2008}.
 
@@ -139,7 +151,7 @@ A análise empírica foi conduzida em seis etapas principais:
 \begin{enumerate}[label=\alph*)]
     \item cálculo da média das respostas para cada pergunta, separando os grupos de economistas e público geral;
     
-    \item ajuste de modelos \textit{logit} binário ou ordenado, conforme a natureza da variável dependente (respostas dicotômicas ou em escala Likert), com controle para variáveis sociodemográficas e ideológicas; os coeficientes estimados foram avaliados por meio de testes z para verificar sua significância estatística, replicando a estratégia utilizada por \citeonline{Systematically_Biased_Beliefs_about_Economics};
+    \item ajuste de modelos \textit{logit} ordenado para as 53 variáveis dependentes (todas em escala Likert 0–2), com controle para variáveis sociodemográficas, ideológicas e de exposição profissional em economia (ver \autoref{sec:modelo-estatistico}); os coeficientes estimados foram avaliados por meio de testes z, replicando a estratégia de \citeonline{Systematically_Biased_Beliefs_about_Economics};
     
     \item simulação contrafactual do \textit{público contrafactual}, por meio da predição estatística de respostas dos economistas sob a condição de não possuírem formação em Economia, mantendo constantes as demais variáveis individuais; essa simulação permite isolar o efeito marginal da variável ``formação econômica'' em diferentes perfis sociodemográficos;
     
@@ -149,11 +161,48 @@ A análise empírica foi conduzida em seis etapas principais:
     
     \item interpretação e discussão dos resultados, com base nas diferenças empíricas observadas entre os grupos e suas implicações cognitivas e políticas; foram conduzidas análises complementares com e sem variáveis de controle para testar a robustez das estimativas.
 
-    % \item tratamento de multiplicidade: controle por FDR (Benjamini–Hochberg) como verificação de robustez, com foco em padrões consistentes de sinal e magnitude entre itens;
+    \item tratamento de multiplicidade: aplicação do procedimento de Benjamini-Hochberg para controle da \textit{False Discovery Rate} (FDR), com $\alpha = 0{,}05$, sobre as famílias de p-valores de \texttt{econ} e de espectro político; detalhamento em \autoref{sec:fdr_bh};
     
     \item diagnósticos e inferência: checagens de especificação (com avaliação heurística do paralelismo via ordenação de limiares; não se aplicou o teste de Brant) e reporte de erros-padrão do estimador; justificativa para a manutenção de especificações paralelas por comparabilidade entre DVs (\textit{Dependent Variables}) \cite{stigum2003}.
 
 \end{enumerate}
+
+\section{Robustez e Controle de Multiplicidade}
+\label{sec:robustez_metodo}
+
+Com 53 variáveis dependentes testadas simultaneamente, a multiplicidade de testes constitui ameaça à validade inferencial. Esta seção documenta os procedimentos adotados para tornar as conclusões robustas a essa questão e a outras fontes de instabilidade.
+
+\subsection{Correção de Benjamini-Hochberg (FDR)}
+\label{sec:fdr_bh}
+
+O procedimento de \citeonline{benjamini1995fdr} controla a \textit{False Discovery Rate} (FDR) — fração esperada de falsas descobertas entre os resultados declarados significativos. Para $m$ testes, os p-valores são ordenados em $p_{(1)} \leq \cdots \leq p_{(m)}$ e o limiar ajustado é
+\begin{equation}\label{eq:bh}
+k^{*} = \max\!\left\{k : p_{(k)} \leq \frac{k}{m}\,\alpha\right\},
+\end{equation}
+com $\alpha = 0{,}05$. O procedimento foi aplicado separadamente às famílias de p-valores de \texttt{econ} e de espectro político sobre todos os 53 itens. Resultados: nenhum efeito de \texttt{econ} sobrevive à correção BH (0 de 6 nominalmente significativos; menor $p_\mathrm{BH} = 0{,}232$); todos os 38 efeitos nominalmente significativos de espectro político sobrevivem à correção BH.
+
+\subsection{Efeitos Marginais Médios (AME)}
+\label{sec:ame}
+
+Para os seis itens com efeito nominal de \texttt{econ} ($p < 0{,}05$ sem correção de multiplicidade), calculamos o \textit{Average Marginal Effect} (AME) via diferenças finitas. Para variável dependente ordinal com categorias $\{0,1,2\}$, o AME de \texttt{econ} na categoria $j$ é
+\begin{equation}\label{eq:ame}
+\widehat{\mathrm{AME}}_j = \frac{1}{N}\sum_{i=1}^{N}
+\bigl[\hat{P}(Y_i=j \mid X_i,\,\texttt{econ}_i=1)
+     - \hat{P}(Y_i=j \mid X_i,\,\texttt{econ}_i=0)\bigr],
+\end{equation}
+mantendo as demais covariáveis em seus valores observados \cite{longFreese2014}. A variação na resposta esperada é $\Delta\bar{Y} = \sum_j j \cdot \widehat{\mathrm{AME}}_j$. Os resultados são expressos em pontos percentuais ($\Delta$\,pp) por categoria.
+
+\subsection{Intervalos de Confiança via Bootstrap Percentil}
+\label{sec:bootstrap}
+
+Para quantificar a incerteza amostral em torno de $\hat{\beta}_{\texttt{econ}}$ nos seis itens nominalmente significativos, geramos $B = 999$ amostras \textit{bootstrap} com reposição (semente~42), ajustando o logit ordenado em cada reamostragem. O número $B=999$ segue a recomendação de \citeonline{davidson2004econometric} (cap.~4, p.~170): ``\textit{power loss will very rarely be a problem when $B = 999$}''. O intervalo de 95\% foi construído pelo método BC$_0$ (percentil com correção de viés): $\mathrm{IC}_{95\%} = [q_{\alpha_{lo}},\,q_{\alpha_{hi}}]$ com quantis ajustados por $z_0 = \Phi^{-1}(\#\{\beta^*_b < \hat{\beta}\}/B)$ \cite{davidson2004econometric}. Reamostras sem variação em \texttt{econ} foram descartadas.
+
+\subsection{Comparação de Especificações}
+\label{sec:spec_comparison}
+
+Para avaliar se os efeitos de \texttt{econ} são confundidos pela ideologia, estimamos dois modelos para cada uma das 53 variáveis dependentes: o modelo completo (com espectro político) e o modelo reduzido (sem espectro político). A convergência dos coeficientes entre as duas especificações permite distinguir efeitos diretos da formação econômica de efeitos mediados por orientação ideológica. Os mesmos seis itens nominalmente significativos aparecem em ambas as especificações, indicando que o efeito de formação econômica não é mediado pelo espectro político.
+
+Como análise de sensibilidade adicional, estimamos também o modelo com \texttt{engajado} incluído como covariável. Como esse controle é um potencial mediador (ver \autoref{sec:pressupostos-inferencia}), a comparação com o modelo primário (sem \texttt{engajado}) permite quantificar a magnitude do risco de mediação: se os coeficientes de \texttt{econ} permanecem estáveis entre os dois modelos, o problema é empiricamente irrelevante nessa amostra.
 
 \section{Critério de Refutabilidade}
 
