@@ -1,0 +1,174 @@
+% Nota de figura com argumento (não existe no projeto base)
+\newcommand{\notafigv}[1]{\par\noindent{\footnotesize\textit{Nota:} #1\newline Fonte: elaboração do autor.}}
+
+\chapter{Resultados: Ideologia e Formação Econômica como Preditores Diferenciais}
+\label{capitulo_4}
+
+Os resultados revelam dois padrões associativos sobrepostos. No primeiro, o espectro político autodeclarado é o preditor mais consistente, mais robusto e mais ubíquo das 53 variáveis dependentes analisadas. No segundo, a formação econômica avançada está associada a respostas sistematicamente distintas em pontos específicos — precisamente aqueles onde o item tem componente factual mais dominante que identitária. Dois padrões, portanto, mas com escalas e abrangências distintas.
+
+Esse resultado é compatível com o que \citeonline{Sapienza2013} documentaram comparando economistas especialistas e americanos médios: tanto a orientação política quanto a formação técnica estão associadas a divergências de crenças, com padrões diferenciados conforme a natureza do item. O que se acrescenta aqui é a dimensão quantitativa desse fenômeno no contexto brasileiro e a constatação de que, quando os dois preditores coexistem, eles não se cancelam — a posição ideológica prediz a maior parte das respostas e a formação econômica prediz um subconjunto específico do resíduo não explicado pela ideologia.
+
+Este capítulo está organizado em quatro movimentos. Primeiro (\autoref{sec:perfil-amostral} e \autoref{sec:visao-panoramica}), descreve-se o padrão global: há estrutura, não ruído. Segundo (\autoref{sec:dominancia-espectro}), demonstra-se que o padrão é majoritariamente ideológico. Terceiro (\autoref{sec:formacao-economica} e \autoref{sec:itens-chave}), examina-se onde e como a formação econômica atua. Quarto (\autoref{sec:bh-virtude} e \autoref{sec:sintese-hipoteses}), extraem-se implicações sem ultrapassar o que os dados permitem.
+
+O questionário ficou aberto de 1.º de agosto de 2025 a 29 de setembro de 2025, obtendo $n = 184$ respostas válidas (91\% público geral, $n \approx 167$; 9\% economistas com pós-graduação, $n = 17$). Dos 184 respondentes, 38 não declararam posição ideológica (``Independente'' ou ``Sem opinião'') e recebem \texttt{espectro = NaN}, sendo excluídos dos modelos que incluem o controle de espectro político — o que corresponde a todos os 53 modelos. O N efetivo por modelo situa-se entre 144 e 146. Foram estimados 53 modelos de regressão ordinal — 48 pelo método de chances proporcionais (PO) e 5 pelo método Firth-Ridge para DVs com Hessiana singular —, com controle por espectro político, escolaridade, faixa etária, gênero e exposição profissional à economia. O perfil descritivo da amostra consta de \autoref{apendice:tab_descritiva_v2}.
+
+\section{Perfil Amostral}
+\label{sec:perfil-amostral}
+
+As estatísticas descritivas completas por DV e por grupo (N total, médias e desvios-padrão para \texttt{econ}=0 e \texttt{econ}=1) constam de \autoref{apendice:tab_descritiva_v2}. Em resumo: o grupo de controle inclui $n \approx 167$ respondentes e o grupo de economistas $n = 17$, com N efetivo por modelo entre 144 e 146 após exclusão de respondentes que não informaram posição ideológica (\texttt{espectro = NaN}; $n_{\text{excl}} = 38$). A distribuição por espectro político nos dois grupos é apresentada na Tabela~\ref{tab:crosstab_econ_esp} (Seção~\ref{sec:tamanho_amostral}).
+
+\section{Visão Panorâmica: O Mapa do Argumento}
+\label{sec:visao-panoramica}
+
+\begin{figure}[htbp]
+\centering
+\caption{Mapa de calor dos efeitos por bloco temático: espectro político (BH-corrigido) e formação econômica (nominal).}
+\includegraphics[width=0.95\textwidth]{Textuais/analise_v2/outputs/figures/heatmaps/bloc_heatmap.png}
+\notafigv{Cada célula indica a significância estatística do coeficiente no modelo PO ou Firth-Ridge. Azul = espectro político BH-significativo; vermelho = \texttt{econ} nominalmente significativo ($p < 0{,}05$, sem correção BH). Os 53 itens estão organizados pelos seis blocos temáticos pré-especificados.}
+\label{fig:bloc_heatmap}
+\end{figure}
+
+Antes de qualquer tabela de coeficientes, a Figura~\ref{fig:bloc_heatmap} oferece o mapa geral do argumento. Ela mostra dois padrões sobrepostos que sintetizam todo o capítulo. O espectro político (azul) aparece de modo amplo e sistemático: coloração densa em praticamente todos os blocos, com intensidade máxima em H3 (Antimercado) e H7 (Ideologia). A formação econômica (vermelho) aparece em manchas pontuais: quando o tema é politicamente carregado, o espectro domina; quando o tema tem componente factual mais dominante, a formação econômica exibe diferenças condicionais pontuais.
+
+Esse panorama antecipa o resultado central: o espectro político é o preditor dominante e persistente das percepções econômicas nesta amostra; a formação econômica prediz diferenças em pontos específicos, sem efeito discernível nos demais. A Tabela~\ref{tab:sintese_resumo} apresenta uma síntese compacta dos resultados por bloco, com os 20 itens mais informativos do conjunto.
+
+\input{Textuais/analise_v2/outputs/tables/tex/tab_sintese_resumo.tex}
+
+\section{A Dominância do Espectro Político}
+\label{sec:dominancia-espectro}
+
+\begin{figure}[htbp]
+\centering
+\caption{\textit{Forest plot} dos coeficientes de espectro político ($\hat{\beta}_{\text{esp}}$) por DV.}
+\includegraphics[width=0.95\textwidth]{Textuais/analise_v2/outputs/figures/forestplots/espectro_forest.png}
+\notafigv{Cada ponto é o coeficiente estimado de \texttt{espectro} no modelo PO (ou Firth-Ridge); barras de erro = IC95\% assintótico. Pontos coloridos = BH-significativos; pontos cinza = não significativos após BH. DVs organizadas por bloco temático. Coeficiente positivo indica que respondentes mais à direita concordam mais com a afirmação.}
+\label{fig:espectro_forest}
+\end{figure}
+
+O espectro político apresenta efeito estatisticamente significativo após correção de Benjamini-Hochberg em \textbf{34 das 53 DVs} (64\%), distribuídos de modo heterogêneo mas sistematicamente denso pelos blocos temáticos: H3-Antimercado alcança 9/9 (100\%); H7-Ideologia atinge 11/12 (92\%); H4-Antiestrangeiro, H5-Antitrabalho e H6-Pessimista apresentam taxas entre 40\% e 67\%. Apenas o bloco de Percepção Específica exibe menor densidade (2/3). A Figura~\ref{fig:espectro_forest} torna visível a estrutura: coeficientes positivos onde a direita concorda mais (déficit, reformas, produtividade), negativos onde a esquerda concorda mais (lucros excessivos, regulação, desigualdade). A magnitude típica é $|\hat{\beta}_{\text{esp}}| \in [0{,}4,\; 0{,}9]$ em log-odds.
+
+\paragraph{O filtro ideológico como mecanismo, não apenas como preditor.} O resultado não deve ser lido como simples correlação entre posição e crença. \citeonline{kahan2012polarization} chama esse fenômeno de \textit{cognição cultural}: a predisposição ideológica não apenas colore a interpretação de evidências ambíguas — ela determina quais afirmações sequer chegam a ser ponderadas de forma imparcial. Em termos de \citeonline{taber2006motivated}, o cidadão avalia argumentos congruentes com suas crenças prévias com menor ceticismo e argumentos incongruentes com ceticismo seletivo. Como em Cervantes, o problema não está apenas no objeto visto, mas na narrativa que o antecede: o moinho pode estar diante dos olhos, mas a imaginação já o converteu em gigante. Isso explica por que o efeito aparece tanto em questões factuais (déficit, produtividade) quanto em questões de valor (reformas, desigualdade): o filtro ideológico opera antes da separação entre fato e julgamento.
+
+\citeonline{zaller1992nature} oferece a moldura sistematizada: a opinião pública é recepção e aceitação seletiva de mensagens. Cidadãos aceitam mais facilmente mensagens que reforçam suas predisposições e resistem a mensagens que as contradizem, mesmo quando a informação é idêntica. A consequência direta para este estudo é que o preditor dominante observado ($\hat{\beta}_{\text{esp}}$) captura a predisposição ideológica — estruturalmente anterior à formação econômica no processo de formação de crenças — e explica a maior parte da variância nas 53 DVs.
+
+Uma advertência metodológica é necessária: causalidade reversa é plausível em parte dos itens. Em H7 especialmente (reformas, avaliação do governo, taxa Selic), economistas com formação avançada podem ter desenvolvido posições ideológicas influenciadas pela própria formação — o que não invalida o resultado, mas convida à prudência interpretativa. O preditor dominante observado é correlacional, não estrutural.
+
+\section{Formação Econômica: Sinal Substantivo sob Baixa Potência}
+\label{sec:formacao-economica}
+
+\begin{figure}[htbp]
+\centering
+\caption{\textit{Forest plot} dos coeficientes de formação econômica ($\hat{\beta}_{\texttt{econ}}$) com intervalos de confiança bootstrap BC$_0$.}
+\includegraphics[width=0.95\textwidth]{Textuais/analise_v2/outputs/figures/forestplots/econ_forest.png}
+\notafigv{Pontos coloridos = nominalmente significativos ($p < 0{,}05$), sem correção BH; pontos cinza = não significativos. IC95\% bootstrap BC$_0$ ($B=999$) para os quatro itens-chave; ICs assintóticos para os demais. Coeficiente negativo indica que economistas discordam mais da afirmação.}
+\label{fig:econ_forest}
+\end{figure}
+
+A formação econômica avançada apresenta \textbf{5 efeitos nominalmente significativos} ($p < 0{,}05$) sobre as 53 DVs. Após correção de Benjamini-Hochberg, \textbf{nenhum desses efeitos sobrevive}: o menor $p_{\text{BH}}$ é $0{,}364$. A leitura correta desse resultado não é "formação econômica não importa" — é que a amostra não tem potência para confirmar o que os sinais sugerem.
+
+Com $n_{\texttt{econ}} = 17$, o poder estatístico para detectar OR $= 2{,}0$ é apenas $28{,}2\%$ (\autoref{apendice:tab_power_v2}). Isso significa que, mesmo na presença de efeitos reais de magnitude moderada, este estudo teria probabilidade de $71{,}8\%$ de não rejeitá-los. Há sinais substantivos coerentes com a teoria; a amostra simplesmente não autoriza conclusão confirmatória ampla. Declarar isso explicitamente é virtude metodológica, não desculpa.
+
+O que os 5 efeitos nominais comunicam é a \textit{direção} do padrão associativo. Todos apontam na direção esperada segundo a literatura de consenso econômico: respondentes com pós-graduação em Economia exibem menor concordância com afirmações populistas sobre déficit e importações; exibem maior concordância com a preocupação sobre produtividade — em linha com \citeonline{Fuller2014} para o consenso econômico americano e com os vieses catalogados por \citeonline{The_Myth_of_the_Rational_Voter}. O retrodesign de \citeonline{Gelman2014} acrescenta que as magnitudes nominais estão provavelmente infladas por fator de $1{,}2$--$1{,}4\times$ (Erro Tipo M): os efeitos reais são menores, não maiores, do que os observados. Em síntese: o estudo tem poder exploratório, não confirmatório, e os 5 sinais nominais são evidência compatível com associações de magnitude moderada — indício que justifica estudo confirmatório com $n_{\texttt{econ}} \geq 120$.
+
+\section{A Correção por Multiplicidade como Virtude Epistemológica}
+\label{sec:bh-virtude}
+
+A correção de Benjamini-Hochberg \cite{benjamini1995fdr} não é mero procedimento estatístico — é o equivalente empírico de uma norma de autocrítica. Com 53 hipóteses testadas simultaneamente, a probabilidade de encontrar pelo menos um falso positivo ao nível $\alpha = 0{,}05$ sem correção seria de $1 - (1-0{,}05)^{53} \approx 93\%$. A correção BH controla a taxa de falsas descobertas: ela funciona como freio contra a tentação de transformar ruído em descoberta.
+
+A ironia metodológica é precisa: este trabalho diagnostica crenças econômicas confortáveis do eleitorado. Sem a correção por multiplicidade, o pesquisador correria o risco de confirmar sua própria hipótese preferida pela mesma lógica que critica — escolhendo, entre muitos testes, os que sustentam a narrativa desejada. \citeonline{benjamini1995fdr} fornece o mecanismo; \citeonline{popperlogic} fornece a motivação filosófica: a ciência avança pela disposição de refutar, não de confirmar. Aplicar BH é, nesse sentido, tratar a si mesmo com a mesma severidade que se aplica ao objeto de estudo.
+
+\section{Itens-Chave: Magnitude dos Efeitos e Público Contrafactual}
+\label{sec:itens-chave}
+
+Quatro itens foram selecionados a priori como ilustrativos da diversidade de mecanismos: dois com coeficiente negativo de \texttt{econ} (economistas mais céticos com afirmações populistas), um com coeficiente positivo (economistas mais preocupados com problema estrutural pouco saliente) e um que combina abertura comercial com viés antiestrangeiro.
+
+\input{Textuais/analise_v2/outputs/tables/tex/tab_ame_chave.tex}
+
+A Tabela~\ref{tab:ame_chave} quantifica a magnitude das diferenças condicionais. O $\Delta\bar{Y}$ indica a diferença esperada na escala 0--2 entre economistas e o grupo de controle, após condicionar nas demais covariáveis. Os valores nominais são: $-0{,}46$ para déficit, $-0{,}14$ para ajuda externa, $+0{,}60$ para produtividade, $+0{,}37$ para importados. Esses valores devem ser interpretados com duas ressalvas. Primeira: expressam associações condicionais, não efeitos causais da formação econômica. Segunda: dado o poder estatístico de $\approx 15$--$28\%$ para $n_{\texttt{econ}} = 17$ (dependendo do item), o retrodesign de \citeonline{Gelman2014} indica razão de exagero esperada entre $1{,}5\times$ e $2{,}5\times$ para as estimativas que atingiram significância nominal; os valores pontuais reportados são, portanto, limites superiores plausíveis da magnitude real. A direção dos efeitos (sinal de $\hat{\beta}_{\texttt{econ}}$) é mais informativa do que as magnitudes absolutas.
+
+As figuras a seguir traduzem essas diferenças no trio público--predição-contrafactual--economistas. O "contrafactual" é uma predição baseada no modelo para o cenário hipotético $\texttt{econ}=0$ nos respondentes com formação econômica; não expressa um experimento real, mas uma decomposição associativa sob as hipóteses do modelo (permutabilidade condicional não testável).
+
+\begin{figure}[htbp]
+\centering
+\caption{Médias de concordância: "O déficit federal é grande demais".}
+\includegraphics[width=0.80\textwidth]{Textuais/analise_v2/outputs/figures/counterfactual/déficit_federal_grande.png}
+\notafigv{As três barras exibem: (1) média observada do grupo de controle (\texttt{econ}=0); (2) predição \textit{in-sample} do modelo para os economistas com \texttt{econ} zerado (decomposição condicional, não contrafactual causal — fatores não observados correlacionados com a escolha de fazer pós-graduação em Economia podem explicar parte ou toda a diferença visualizada); (3) média observada dos economistas (\texttt{econ}=1).}
+\label{fig:deficit_v2}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\caption{Médias de concordância: "A produtividade está aumentando devagar demais".}
+\includegraphics[width=0.80\textwidth]{Textuais/analise_v2/outputs/figures/counterfactual/produtividade_aumentando_devagar.png}
+\notafigv{Neste item, o sinal se inverte: o grupo de economistas apresenta maior concordância com a preocupação de produtividade. A predição in-sample (barra central) quantifica a decomposição condicional associada ao preditor \texttt{econ}, condicionando nas covariáveis observadas; não implica que a formação seja a causa da diferença.}
+\label{fig:produtividade_v2}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\caption{Médias de concordância: "Produtos importados são benéficos para a economia".}
+\includegraphics[width=0.80\textwidth]{Textuais/analise_v2/outputs/figures/counterfactual/produtos_importados_benéficos.png}
+\notafigv{O grupo de economistas exibe maior endosso à abertura comercial, consistente com o consenso documentado por \citeonline{Fuller2014}. A predição in-sample (barra central) é a decomposição condicional associada ao preditor \texttt{econ} — não um efeito causal da formação; auto-seleção e variáveis não observadas contribuem para a diferença entre os grupos.}
+\label{fig:importados_v2}
+\end{figure}
+
+\paragraph{Déficit federal} (Figura~\ref{fig:deficit_v2}): o grupo de controle apresenta média de concordância $1{,}48$ com "o déficit é grande demais"; o grupo de economistas, $1{,}02$. A predição in-sample situa-se em $1{,}48$ — sugerindo, dentro das hipóteses do modelo, que a diferença está condicionalmente associada à formação econômica. A direção da diferença é consistente com o que \citeonline{Fuller2014} documentam empiricamente como posição predominante entre economistas: maior ceticismo com relação a alarmes fiscais de curto prazo, atenção à trajetória intertemporal da dívida e distinção entre déficit nominal e estrutural. Bastiat \cite{bastiat2010oqueseve} fornece um quadro intelectual para essa assimetria (o que se vê vs. o que não se vê), mas não deve ser interpretado como gabarito normativo: trata-se de referência literária que articula uma distinção analítica, não de âncora para definir qual resposta é "correta".
+
+\paragraph{Produtividade} (Figura~\ref{fig:produtividade_v2}): o sinal se inverte. O grupo de controle apresenta média de concordância mais baixa com a preocupação de produtividade ($\bar{Y} = 1{,}12$); o grupo de economistas, mais alta ($\bar{Y} = 1{,}72$). A predição contrafactual ($1{,}12$) indica que essa diferença está associada à formação econômica, não a outras covariáveis. Isso é consistente com a hipótese de que o treinamento em econometria e macroeconomia torna a fricção de produtividade mais saliente — fricção que, sem instrumentais de mensuração da produtividade total dos fatores, o cidadão racional não tem incentivos para identificar \cite{downs1957economic}.
+
+\paragraph{Produtos importados} (Figura~\ref{fig:importados_v2}): o grupo de economistas exibe média de endosso à abertura comercial mais alta ($\bar{Y} = 1{,}63$ vs $1{,}26$ do grupo de controle). A predição contrafactual ($1{,}26$) indica que a diferença está associada à formação econômica. Esse padrão é consistente com o consenso documentado por \citeonline{Fuller2014}: respondentes com formação econômica avançada tendem a posições mais favoráveis ao livre-comércio, alinhadas com a teoria das vantagens comparativas. Um padrão que Manzoni captou na ficção: diante de um preço que sobe ou de um mercado que parece hostil, o senso comum tende a preferir um culpado visível — o comerciante ganancioso, o estrangeiro oportunista — a um mecanismo impessoal de oferta e demanda.
+
+\section{Efeitos Marginais Médios do Espectro Político}
+\label{sec:ame-espectro}
+
+O espectro político é o preditor dominante em termos de frequência (34/53 DVs BH-significativas) e de magnitude dos coeficientes. Para quantificar sua escala em termos interpretáveis de probabilidade, calculam-se AMEs via primeira diferença finita discreta em dois passos representativos da escala: Centro$\to$Direita ($s=0\to1$) e Esquerda$\to$Centro ($s=-1\to0$).
+
+\input{Textuais/analise_v2/outputs/tables/tex/tab_ame_espectro_top10.tex}
+
+A Tabela~\ref{tab:ame_espectro_top10} apresenta os resultados para os 10 itens com maior $|\hat{\beta}_{\text{esp}}|$. As magnitudes são expressivas: um passo na escala ideológica em direção à direita está associado a um aumento médio de $+0{,}68$ pontos (escala 0--2) na concordância com privatização de estatais e de $+0{,}53$ pontos na avaliação de regulação excessiva. Em sentido contrário, o mesmo passo está associado a $-0{,}51$ pontos na percepção de lucros excessivos e a $-0{,}35$ pontos na avaliação do governo atual. Essas diferenças são substancialmente maiores do que os efeitos condicionais da formação econômica nos quatro itens-chave (intervalo $|\Delta\bar{Y}| \in [0{,}14;\;0{,}60]$), confirmando quantitativamente que o espectro político é o preditor de maior magnitude nesta amostra.
+
+Nota metodológica: os AMEs do espectro são baseados em modelos com $n\approx145$ observações válidas por item e não incluem intervalos de confiança bootstrap (o custo computacional com $B=999$ seria de $\approx 9.000$ estimações adicionais); os p-valores assintóticos reportados na tabela são suficientes para itens com $\hat{\beta}_{\text{esp}}$ da magnitude observada ($|\hat{\beta}|>1{,}0$, SE~$<0{,}3$).
+
+\section{Diagnósticos e Robustez}
+\label{sec:diagnosticos-resultados}
+
+\subsection{Pressupostos dos modelos}
+
+O teste de \citeonline{Brant1990} confirmou a validade do pressuposto de proporcionalidade das chances em todas as 48 DVs estimadas por PO: nenhuma falha ($p_{\min} > 0{,}32$). O VIF máximo de $2{,}1$ confirma ausência de multicolinearidade problemática. Resultados completos em \autoref{apendice:tab_brant_v2}.
+
+\subsection{Intervalos bootstrap e testes de permutação}
+
+Para os quatro itens-chave, os intervalos BC$_0$ (bootstrap, $B=999$) são detalhados em \autoref{apendice:tab_bootstrap_v2}. Os ICs para \textit{déficit federal} e \textit{produtividade} excluem zero, reforçando os efeitos nominais mesmo sob quantificação de incerteza robusta. Os testes de permutação ($P = 5.000$) confirmam: p-valores abaixo de $0{,}05$ para esses dois itens (\autoref{apendice:tab_permutation_v2}).
+
+\subsection{McFadden $R^2$ e ajuste geral}
+
+A mediana de McFadden $R^2 = 0{,}099$ indica ajuste modesto mas adequado para variáveis de opinião política — em linha com a literatura de modelos de crenças políticas \cite{mccullaghNelder1989}. Distribuição completa em \autoref{apendice:tab_gof_v2}.
+
+\section{Síntese Frente às Hipóteses H1--H7}
+\label{sec:sintese-hipoteses}
+
+\textbf{H1 — Vieses populares sistemáticos:} \textit{Corroborada}. Padrões compatíveis com vieses antimercado, antiestrangeiro, antitrabalho e pessimista são observados em múltiplos itens e blocos, persistentes sob controle de covariáveis.
+
+\textbf{H2 — Conhecimento reduz vieses:} \textit{Parcialmente corroborada, sujeita a limitação de poder}. Cinco efeitos nominais com direção correta; nenhum sobrevive a BH. A análise de poder ($28{,}2\%$) indica que o resultado nulo é previsível mesmo na presença de associações reais moderadas. Os itens de livre-comércio e produtividade oferecem a diferença condicional mais clara, consistente com a hipótese de que formação econômica está associada a respostas distintas em itens com componente factual dominante.
+
+\textbf{H3 — Viés antimercado:} \textit{Corroborada}. Taxa BH-espectro de 9/9 (100\%), confirmando clivagem sistemática entre esquerda e direita nas percepções de mercado. A formação econômica não tem efeito BH-significativo neste bloco, sugerindo que as clivagens são predominantemente valorativas e identitárias.
+
+\textbf{H4 — Viés antiestrangeiro:} \textit{Parcialmente corroborada}. Bloco H4 apresenta 5/9 DVs BH-espectro-significativas e \textit{produtos importados benéficos} emerge como o item com maior diferença condicional associada à formação ($\Delta\bar{Y} = +0{,}37$, IC-bootstrap excluindo zero). A diferença associada à formação aparece em itens de comércio; não em imigração.
+
+\textbf{H5 — Viés antitrabalho:} \textit{Parcialmente corroborada}. Bloco H5 com 6/10 DVs BH-espectro-significativas. A maior preocupação de economistas com produtividade sugere que, em itens de fricção estrutural, a formação funciona como amplificador de atenção legítima, não como mitigador de alarme infundado.
+
+\textbf{H6 — Viés pessimista:} \textit{Corroborada}. Bloco H6 com 4/10 DVs BH-espectro-significativas. Economistas são mais preocupados com produtividade estrutural do que o público leigo — inversão de sinal que revela a assimetria informacional.
+
+\textbf{H7 — Ideologia como filtro:} \textit{Fortemente corroborada}. Bloco H7 apresenta 11/12 DVs BH-espectro-significativas — a maior taxa do estudo. Reformas, avaliação do governo, taxa Selic e corrupção são percebidas através da lente ideológica, com espectro explicando a maior parcela da variância em cada item. Este é o resultado mais robusto do estudo.
+
+\begin{figure}[htbp]
+\centering
+\caption{Volcano plot: coeficiente de formação econômica vs.\ $-\log_{10}(p)$ para as 53 DVs.}
+\includegraphics[width=0.90\textwidth]{Textuais/analise_v2/outputs/figures/forestplots/volcano_econ.png}
+\notafigv{Eixo horizontal: $\hat{\beta}_{\texttt{econ}}$ (positivo = economistas concordam mais). Eixo vertical: $-\log_{10}(p)$; linha tracejada = $p = 0{,}05$. A dispersão horizontal revela a diversidade de direções; a ausência de pontos acima do limiar BH evidencia o problema de poder, não a ausência de padrão.}
+\label{fig:volcano_econ}
+\end{figure}
+
+O volcano plot (Figura~\ref{fig:volcano_econ}) encapsula o diagnóstico: efeitos nominais dispersos em ambas as direções, concentrados em magnitude pequena a moderada, nenhum sobrevivendo ao limiar BH. A distribuição sugere efeitos reais de magnitude moderada ($|\beta| \approx 0{,}5$--$0{,}9$, equivalente a OR $\approx 1{,}6$--$2{,}5$), detectáveis com $n_{\texttt{econ}} \geq 60$--$120$.
+
+A tabela síntese completa dos 53 DVs consta de \autoref{apendice:tab_sintese_v2}.

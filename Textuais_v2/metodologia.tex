@@ -1,0 +1,185 @@
+\chapter{Como Medimos a Irracionalidade Política}
+\label{capitulo_3}
+
+Todos os dados analisados neste trabalho foram coletados diretamente pelo autor deste TCC, na condição de assistente de pesquisa, e pela orientadora, como pesquisadora responsável, no âmbito do projeto intitulado \textit{"Econometria Comportamental na Política Pública: Análise de Vieses Cognitivos Políticos"}, aprovado pelo Comitê de Ética em Pesquisa com Seres Humanos da Universidade do Estado de Santa Catarina (UDESC). O projeto foi submetido e apreciado pela Plataforma Brasil, sob o número de processo \textbf{CAAE: 89374225.9.0000.0118}, tendo recebido o Parecer Consubstanciado nº 7.719.326, em conformidade com a Resolução nº 510/2016 do Conselho Nacional de Saúde e a legislação vigente sobre pesquisa com seres humanos.
+
+Os dados primários utilizados neste TCC são de autoria exclusiva dos pesquisadores, tendo sido obtidos por meio de um survey aplicado a participantes voluntários, todos maiores de 18 anos e residentes no Brasil, mediante a aceitação do Termo de Consentimento Livre e Esclarecido (TCLE). Todo o processo garantiu anonimato, sigilo das informações, ausência de coleta de dados sensíveis e a possibilidade de desistência a qualquer momento, sem prejuízo para os participantes. O armazenamento e a manipulação dos dados respeitaram integralmente as exigências da Lei Geral de Proteção de Dados Pessoais (LGPD), com acesso restrito ao autor e à orientadora da pesquisa.
+
+\section{Desenho da Pesquisa}
+
+A estratégia metodológica adotada combina três eixos principais:
+\begin{enumerate}[label=\alph*)]
+    \item uma análise histórico-teórica da persistência de crenças econômicas enviesadas, com ênfase na literatura de economia comportamental, na história do pensamento econômico e na racionalidade limitada;
+    \item adaptação da \textit{Survey of Americans and Economists on the Economy} (SAEE) para o contexto institucional e cultural brasileiro, aplicada por meio de um questionário estruturado em plataforma digital (Google Forms). O instrumento passou por revisão de especialistas em economia política e políticas públicas e foi submetido a um pré-teste com respondentes voluntários, que serviu para avaliar a clareza das perguntas, o tempo de resposta (em média, 7 minutos) e a adequação ao contexto brasileiro. Os ajustes realizados após o pré-teste garantiram a validade de conteúdo e a aplicabilidade do questionário;
+    \item aplicação de modelos de regressão ordinal (\textit{logit} ordenado e \textit{Firth-Ridge} para casos singulares) para estimar, sob controle de variáveis demográficas, socioeconômicas e ideológicas, o impacto marginal de fatores individuais na propensão a adotar crenças divergentes do consenso técnico. As análises foram conduzidas em \texttt{Python}, utilizando os pacotes \texttt{pandas}, \texttt{statsmodels} e \texttt{numpy}, assegurando a reprodutibilidade integral dos resultados.
+\end{enumerate}
+
+\subsection{Escopo inferencial e princípios-ponte}\label{sec:escopo-inferencial}
+
+Este estudo tem um propósito analítico — testar relações condicionais — e não visa estimativas descritivas de prevalência populacional. Interpretamos os coeficientes como \textit{associações condicionais} sob hipóteses explícitas de modelo, com validade externa limitada ao quadro amostral; trata-se de inferência positiva/explicativa, não causal nem normativa \cite{hausman2008}.
+
+Para ligar teoria e dados, explicitamos \textit{princípios-ponte}: (i) como cada proposição técnica é operacionalizada em variável observável; (ii) a regra de codificação e direção esperada; (iii) a expectativa de sinal. A mesma família de modelos (logit ordenado) é mantida em todos os itens para garantir \textit{comparabilidade} e reduzir arbitrariedade de especificação, em linha com a busca de congruência teoria--dados \cite{stigum2003}.
+
+\section{Coleta e Amostragem}\label{sec:coleta-amostragem}
+
+A amostragem foi do tipo não probabilística, com estratificação em dois grupos principais:
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Grupo de controle}: cidadãos sem formação avançada em Economia;
+    \item \textbf{Grupo de tratamento}: indivíduos com mestrado ou doutorado em Economia concluído.
+\end{enumerate}
+
+A coleta de dados ocorreu entre agosto e outubro de 2025, por meio de questionário estruturado em plataforma digital (\textit{Google Forms}). Três estratégias de recrutamento foram empregadas: (a) amostragem em bola de neve iniciada com respondentes-semente apresentando diversidade regional e ideológica; (b) parcerias institucionais com apoio de docentes e redes acadêmicas de Economia; (c) divulgação em redes sociais e e-mails institucionais com convite padrão explicativo.
+
+\subsection{Tamanho amostral e composição}
+\label{sec:tamanho_amostral}
+
+No total, o survey obteve $n = 184$ respostas válidas. Desses, $\approx 90{,}8\%$ ($n \approx 167$) compuseram o grupo de controle (não economistas) e $\approx 9{,}2\%$ ($n = 17$) o grupo de economistas, definido estritamente como portadores de mestrado ou doutorado em Economia concluído.
+
+O grupo de economistas é pequeno em termos absolutos — consequência direta da raridade de pós-graduados em Economia em qualquer amostra de conveniência. Essa limitação tem implicações diretas para o poder estatístico e é discutida explicitamente na Seção~\ref{sec:poder-e-retrodesign}.
+
+\paragraph{Composição ideológica dos grupos.}
+
+A Tabela~\ref{tab:crosstab_econ_esp} apresenta o cruzamento entre grupo (\texttt{econ}) e espectro político autodeclarado, excluindo os 38 respondentes que se identificaram como ``Independente'' ou ``Sem opinião'' (os quais recebem \texttt{NaN} no modelo, conforme Seção~\ref{sec:modelo-estatistico}).
+
+\input{Textuais/analise_v2/outputs/tables/tex/tab_crosstab_econ_esp.tex}
+
+O padrão merece atenção: dos 14 economistas com espectro válido, 7 (50\%) se declaram de esquerda e 1 (7\%) de extrema-esquerda — totalizando 57\% no espectro esquerdo-centro-esquerdo —, enquanto 4 (29\%) se declaram de direita e nenhum de extrema-direita. No grupo de controle, a distribuição é mais balanceada, com concentração em direita (45\%) e esquerda (28\%). Esse padrão tem duas implicações metodológicas. Primeira: a composição ideológica dos grupos é heterogênea, o que reforça a necessidade de controlar por \texttt{espectro} no modelo para isolar o componente associado à formação. Segunda: a \textit{endogeneidade} de \texttt{econ} não assume o perfil convencional de "economistas são sistematicamente mais à direita"; na amostra coletada, o grupo de economistas é predominantemente de esquerda, o que torna o estimando $\hat{\beta}_{\texttt{econ}}$ ainda mais difícil de interpretar causalmente — ele captura a diferença condicional em grupos que diferem tanto em formação quanto em composição ideológica não completamente controlada.
+
+\subsection{Âmbito de validade externa}
+
+A amostragem não probabilística é apropriada ao objetivo de teste de hipóteses sob severidade; os resultados são corroborações provisórias de relações condicionais no recorte estudado, não estimativas representativas da população brasileira. Declaramos explicitamente os limites de generalização e separamos a descrição positiva dos juízos normativos \cite{hausman2008}.
+
+\section{Instrumento de Pesquisa}
+
+O questionário aplicado dividiu-se em três blocos principais:
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Seção A — Características pessoais}: coleta de variáveis demográficas, socioeconômicas e ideológicas (sexo, faixa etária, escolaridade, vínculo empregatício, autodeclaração ideológica e nível de formação em Economia) \cite{downs1957economic,kahan2012polarization};
+    \item \textbf{Seção B — Percepções econômicas}: proposições adaptadas da \textit{Survey of Americans and Economists on the Economy} (SAEE), contemplando os quatro vieses cognitivos principais descritos por Caplan (2007): antimercado, antiestrangeiro, antitrabalho e pessimista \cite{blendon1997,Systematically_Biased_Beliefs_about_Economics};
+    \item \textbf{Seção C — Políticas públicas}: questões relacionadas ao contexto brasileiro, incluindo tributação, previdência, corrupção, taxa de juros Selic e reformas estruturais \cite{franco2017moeda,sowell2004applied,zaller1992nature}.
+\end{enumerate}
+
+As respostas foram registradas em escalas Likert de três pontos (0 = discordo totalmente, 1 = neutro/depende, 2 = concordo totalmente), o que determina a escolha do modelo estatístico ordenado.
+
+\section{Modelo Estatístico}\label{sec:modelo-estatistico}
+
+Todas as 53 variáveis dependentes são ordinais com três categorias ($j \in \{0, 1, 2\}$). Emprega-se, como modelo primário, o \textit{logit} ordenado (modelo de chances proporcionais — PO), cuja equação fundamental é:
+
+\begin{equation}\label{eq:logit_ord_v2}
+P(Y_i \leq k \mid X_i) = \Lambda\!\left(\tau_k - X_i^\prime \beta\right),
+\quad k = 0, 1,
+\end{equation}
+
+onde $\Lambda(z) = (1 + e^{-z})^{-1}$ é a função logística acumulada, $\tau_k$ são os \textit{cutpoints} (limiares) estimados ($\tau_0 < \tau_1$) e $\beta$ é o vetor de coeficientes compartilhados entre as categorias — propriedade central do modelo PO. A probabilidade de cada categoria é obtida por diferença:
+\[
+P(Y_i = k \mid X_i) = \Lambda(\tau_k - X_i^\prime \beta) - \Lambda(\tau_{k-1} - X_i^\prime \beta),
+\]
+com as convenções $\tau_{-1} = -\infty$ e $\tau_2 = +\infty$.
+
+O vetor de covariáveis $X_i$ inclui seis regressores primários:
+
+\begin{enumerate}[label=\roman*)]
+    \item \texttt{econ} — variável de tratamento, $1$ se mestrado ou doutorado em Economia concluído, $0$ caso contrário;
+    \item \texttt{espectro} — escala ordinal contínua de orientação política ($-2 =$ extrema-esquerda, $\ldots$, $+2 =$ extrema-direita); respondentes que se declaram ``Independente'' ou ``Sem opinião'' recebem \texttt{NaN} e são excluídos do modelo, preservando a interpretabilidade da escala esquerda-direita;
+    \item \texttt{escolaridade\_num} — ordinal $0$--$6$ (de Fundamental Incompleto a Pós-graduação), substituindo dummies para evitar quasi-separação perfeita em categorias com $n = 1$--$3$;
+    \item \texttt{idade\_num} — ordinal $0$--$6$ (de ``Até 18 anos'' a ``66 anos ou mais'');
+    \item \texttt{genero} — binária ($1 =$ masculino);
+    \item \texttt{trabalha\_econ} — binária ($1 =$ trabalha com economia, finanças ou contabilidade), capturando exposição profissional na ausência de formação acadêmica formal.
+\end{enumerate}
+
+\paragraph{Exclusão de \texttt{engajado} da especificação primária.}
+A variável de engajamento político é excluída do modelo primário por ser um potencial \textit{mediador} na cadeia causal \texttt{econ} $\to$ engajamento $\to$ opinião. Condicionar em mediadores subestima o efeito total de \texttt{econ} \cite{angrist2009}. O modelo com \texttt{engajado} é estimado como análise de sensibilidade.
+
+\paragraph{Definição operacional de \texttt{econ=1}.}
+A variável tratamento codifica como \texttt{econ=1} exclusivamente portadores de mestrado ou doutorado em Economia; graduados em Economia permanecem em \texttt{econ=0} junto ao público geral. Essa definição restringe o estimando ao efeito da \emph{formação profissional avançada} sobre crenças, não da exposição introdutória à disciplina. A consequência é um grupo de controle heterogêneo (inclui graduados em Economia), o que deve ser levado em conta na interpretação de $\hat{\beta}_{\texttt{econ}}$.
+
+\subsection{Tratamento de DVs Singulares: Firth-Ridge}\label{sec:firth-ridge}
+
+Cinco das 53 variáveis dependentes exibiram Hessiana singular (quasi-separação perfeita) nos modelos PO, tornando o estimador de máxima verossimilhança irrestrito numericamente instável:
+\texttt{impostos\_altos}, \texttt{corte\_impostos}, \texttt{aumento\_uso\_tecnologia}, \texttt{acordos\_comerciais\_outros} e \texttt{acha\_preços\_combustíveis}.
+
+Para esses casos, substituímos a log-verossimilhança padrão pela versão penalizada com penalização L2:
+
+\begin{equation}\label{eq:firth_ridge}
+\ell_{\text{ridge}}(\beta) = \ell(\beta) - \frac{\lambda}{2}\|\beta\|^2,
+\end{equation}
+
+com $\lambda = 0{,}1$. Essa escolha segue \citeonline{cameron2005microeconometrics} (cap.~23): para amostras com $n \approx 180$ e $p = 6$ parâmetros, $\lambda \propto p/n \approx 6/180 \approx 0{,}033$; adotamos $\lambda = 0{,}1$ como valor ligeiramente conservador que penaliza soluções extremas sem distorcer excessivamente a estimação em categorias bem identificadas. Os coeficientes dessas cinco DVs são atenuados pelo \textit{shrinkage} e não devem ser comparados diretamente às \textit{odds ratios} dos modelos PO.
+
+\section{Público Contrafactual e Efeitos Marginais Médios}
+\label{sec:publico_contrafactual}
+
+O \textit{público contrafactual} é uma construção \textit{model-based}: para cada economista da amostra ($\texttt{econ}_i = 1$), predizemos qual seria sua resposta esperada caso não possuísse formação econômica avançada ($\texttt{econ}_i = 0$), mantendo todas as demais covariáveis constantes. A resposta esperada no cenário contrafactual é:
+
+\begin{equation}\label{eq:contra_ord_v2}
+\hat{Y}_i^{(\text{cf})} = \sum_{j=0}^{2} j \cdot P(Y_i = j \mid X_i,\; \texttt{econ}_i = 0)
+= \sum_{j=0}^{2} j \cdot \bigl[\Lambda(\tau_j - X_i^\prime \beta^*) - \Lambda(\tau_{j-1} - X_i^\prime \beta^*)\bigr],
+\end{equation}
+
+onde $\beta^{*}$ denota o vetor $\beta$ com o componente de \texttt{econ} zerado. O \textit{Average Marginal Effect} (AME) de \texttt{econ} na categoria $j$ é estimado via diferenças finitas:
+
+\begin{equation}\label{eq:ame_v2}
+\widehat{\mathrm{AME}}_j = \frac{1}{N}\sum_{i=1}^{N}
+\bigl[\hat{P}(Y_i=j \mid X_i,\,\texttt{econ}_i=1)
+     - \hat{P}(Y_i=j \mid X_i,\,\texttt{econ}_i=0)\bigr],
+\end{equation}
+
+e a variação na resposta esperada é $\Delta\bar{Y} = \sum_j j \cdot \widehat{\mathrm{AME}}_j$, expressa na mesma escala 0--2 da variável dependente. Esse $\Delta\bar{Y}$ é diretamente interpretável: por exemplo, $\Delta\bar{Y} = -0{,}46$ para o item "déficit federal é grande demais" significa que os economistas, em média, concordam $0{,}46$ ponto a menos com a afirmação do que concordariam caso não tivessem a formação econômica avançada.
+
+O público contrafactual serve como \emph{régua comparativa}: quando o contrafactual se aproxima dos economistas, o mecanismo é informacional (a formação desloca a crença); quando se confunde com o público geral, prevalecem ideologia e valores. Essa construção não descreve intervenção real nem implica prescrição normativa; é inferência condicional nos termos do modelo ajustado \cite{hausman2008}.
+
+\section{Diagnósticos e Pressupostos}\label{sec:diagnosticos}
+
+\subsection{Teste de Brant (Proporcionalidade das Chances)}
+
+O modelo PO assume que os coeficientes $\beta$ são os mesmos para todos os cortes da escala ordinal (pressuposto de chances proporcionais). Para verificar esse pressuposto formalmente em cada uma das 48 DVs estimadas por PO, aplicamos o teste de \citeonline{Brant1990}, que compara os coeficientes obtidos por $K-1$ regressões logísticas binárias auxiliares. O resultado é inequívoco: \textit{nenhuma das 48 DVs falha} no teste de Brant ($p > 0{,}32$ em todas), fornecendo suporte empírico robusto ao pressuposto de proporcionalidade das chances. Os resultados detalhados constam da Tabela de Diagnósticos (\autoref{apendice:tab_brant_v2}).
+
+\subsection{Fator de Inflação de Variância (VIF)}
+
+Verificamos a multicolinearidade entre os seis regressores primários. O VIF máximo observado foi 2{,}1, abaixo do limiar convencional de 5 (e bem abaixo do limiar mais conservador de 10), indicando ausência de colinearidade problemática que pudesse inflar os erros-padrão dos coeficientes de interesse.
+
+\subsection{\textit{Goodness-of-Fit}: McFadden $R^2$}
+
+A adequação global dos modelos foi avaliada pela pseudo-$R^2$ de McFadden:
+$R^2_{McF} = 1 - \ell(\hat{\beta})/\ell(\hat{\beta}_0)$,
+onde $\ell(\hat{\beta}_0)$ é a log-verossimilhança do modelo nulo. A mediana de $R^2_{McF}$ sobre os 53 modelos é $0{,}099$. Para variáveis de opinião política, valores entre $0{,}05$ e $0{,}20$ são considerados indicativos de ajuste satisfatório \cite{mccullaghNelder1989}; nossa mediana situa-se nessa faixa, indicando que os modelos capturam associações substantivas sem superajuste.
+
+\section{Correção de Multiplicidade: Benjamini-Hochberg por Família}\label{sec:fdr_bh}
+
+Com 53 variáveis dependentes testadas, a multiplicidade de testes constitui ameaça à validade inferencial. Adotamos o procedimento de \citeonline{benjamini1995fdr}, que controla a \textit{False Discovery Rate} (FDR) — fração esperada de falsas descobertas entre os resultados declarados significativos. Para $m$ testes, os p-valores são ordenados em $p_{(1)} \leq \cdots \leq p_{(m)}$ e o limiar ajustado é:
+
+\begin{equation}\label{eq:bh_v2}
+k^{*} = \max\!\left\{k : p_{(k)} \leq \frac{k}{m}\,\alpha\right\},
+\end{equation}
+
+com $\alpha = 0{,}05$. O procedimento é aplicado \textit{separadamente} a duas famílias pré-especificadas: (i) família \texttt{econ}: os 53 p-valores do coeficiente de formação econômica; (ii) família \texttt{espectro}: os 53 p-valores do coeficiente de espectro político. A aplicação por família, e não sobre todos os 106 testes conjuntamente, reflete a distinção conceitual entre os dois preditores de interesse e é conservadoramente pré-especificada.
+
+\section{Inferência e Robustez}\label{sec:inferencia-robustez}
+
+\subsection{Bootstrap BC\texorpdfstring{$_0$}{0} para Todos os Itens}\label{sec:bootstrap_v2}
+
+O bootstrap BC$_0$ foi aplicado a \textit{todos os 53 itens} (não apenas aos quatro de interesse especial), quantificando a incerteza amostral em torno de $\hat{\beta}_{\texttt{econ}}$ com $B = 999$ reamostras com reposição (semente 42). O número $B = 999$ segue a recomendação de \citeonline{davidson2004econometric} (cap.~4): \textit{``power loss will very rarely be a problem when $B = 999$''}. O intervalo de 95\% foi construído pelo método BC$_0$ (percentil com correção de viés):
+
+\begin{equation}\label{eq:bc0}
+\mathrm{IC}_{95\%} = \bigl[q_{\alpha_{lo}},\, q_{\alpha_{hi}}\bigr],\quad
+z_0 = \Phi^{-1}\!\left(\frac{\#\{\beta^*_b < \hat{\beta}\}}{B}\right),
+\end{equation}
+
+onde $\alpha_{lo}$ e $\alpha_{hi}$ são os quantis ajustados por $z_0$ em relação ao nível nominal de 2{,}5\%. Reamostras sem variação em \texttt{econ} foram descartadas. O Apêndice H (\autoref{apendice:tab_bootstrap_v2}) reporta os resultados completos para os 53 itens; no corpo do texto discutem-se em detalhe os quatro itens pré-especificados (\textit{déficit federal grande}, \textit{gasto com ajuda externa}, \textit{produtividade aumentando devagar} e \textit{produtos importados benéficos}), que apresentam os bootstrap ICs mais informativos para a hipótese H2.
+
+\subsection{Testes de Permutação}\label{sec:permutation}
+
+Como verificação adicional de robustez, conduzimos testes de permutação ($P = 5.000$ permutações) para os mesmos quatro itens-chave. Em cada permutação, o vetor \texttt{econ} é embaralhado aleatoriamente, preservando a estrutura das demais covariáveis, e o teste-$z$ de $\hat{\beta}_{\texttt{econ}}$ é recomputado. O p-valor de permutação é a proporção de estatísticas de teste permutadas mais extremas que a observada. Resultados em \autoref{apendice:tab_permutation_v2}.
+
+\subsection{Análise de Poder e Retrodesign}\label{sec:poder-e-retrodesign}
+
+Com $n_{\texttt{econ}} = 17$ e $n_{\text{total}} = 184$, o poder estatístico para detectar um efeito de magnitude moderada é limitado. Seguindo \citeonline{whittemore1981} para a comparação ordinal de dois grupos, o poder estimado para detectar uma \textit{odds ratio} de $2{,}0$ com $\alpha = 0{,}05$ (bicaudal) é de apenas $\mathbf{28{,}2\%}$. Isso significa que, mesmo se o efeito real fosse de magnitude OR $= 2{,}0$, este estudo teria menos de 30\% de chance de rejeitá-lo com $p < 0{,}05$. A curva de poder completa consta de \autoref{apendice:tab_power_v2}.
+
+Essa limitação tem implicações interpretativas diretas, formalizadas pelo \textit{retrodesign} de \citeonline{Gelman2014}: quando o poder é baixo e múltiplas comparações são realizadas, as estimativas nominalmente significativas sofrem de (i) inflação de magnitude (Erro Tipo M: a magnitude estimada excede o valor real, provavelmente por fator de $1{,}2$--$1{,}4\times$) e (ii) risco residual de sinal errado (Erro Tipo S, embora pequeno quando há direção teórica clara). Em termos práticos, \textit{um resultado nulo após correção BH não é evidência de ausência de efeito}; é, antes, consequência previsível de poder insuficiente. Os cinco efeitos nominais de \texttt{econ} com direções consistentes à teoria de Caplan e ao consenso de Fuller \& Geide-Stevenson (\citeyear{Fuller2014}) são, nesse enquadramento, compatíveis com uma hipótese de efeito real de magnitude moderada — apenas indetetável com $n_{\texttt{econ}} = 17$.
+
+\section{Critério de Refutabilidade e Síntese Metodológica}
+
+Este estudo adota o princípio epistemológico da falseabilidade como critério de cientificidade \cite{popperlogic}. As hipóteses são submetidas a testes com estrutura de severidade: uma hipótese é considerada corroborada provisoriamente quando os dados resistem a múltiplas tentativas de refutação. Os resultados são interpretados como padrões condicionais dentro do escopo do modelo, não como leis gerais.
+
+A especificação uniforme — mesma família de modelos, mesmo conjunto de covariáveis, para todas as 53 DVs — serve como ``régua comum'' que permite (a) comparar coeficientes entre itens e blocs sem arbitrariedade de especificação, (b) contar significâncias sobre uma base de comparação estável, e (c) construir narrativa unificada sobre quando o conhecimento econômico converge ou diverge da opinião popular \cite{stigum2003}.
+
+A análise foi conduzida em \texttt{Python} com código aberto, versionado e reprodutível (ver \autoref{ap:repo}). Os dados estão anonimizados e disponíveis conforme exigências do CEP e da LGPD.

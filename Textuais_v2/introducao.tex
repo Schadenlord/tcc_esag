@@ -1,0 +1,114 @@
+
+
+\chapter{Introdução} % O Labirinto das Decisões: Como Julgamos e Escolhemos?
+
+A democracia moderna parte do pressuposto de que os eleitores são agentes racionais, capazes de avaliar as consequências econômicas de suas escolhas políticas e apoiar medidas que promovam o bem-estar coletivo \cite{downs1957economic}. No entanto, esse ideal frequentemente se choca com a realidade: vieses cognitivos e heurísticas distorcem a percepção econômica da população \cite{The_Myth_of_the_Rational_Voter,kahneman2011thinking}, influenciando a forma como ideias econômicas são compreendidas e apoiadas no debate público.
+
+Como observa \citeonline{The_Myth_of_the_Rational_Voter}, a democracia não falha por ignorar o povo, mas justamente por ouvi-lo demais. Essa inversão irônica ilustra a tese central deste estudo: os equívocos políticos não decorrem da exclusão popular, mas da incorporação acrítica de preferências coletivas — frequentemente baseadas em percepções distorcidas e reconfortantes, ainda que incompatíveis com o conhecimento econômico técnico.
+
+A literatura aponta que eleitores bem-intencionados, mas cognitivamente limitados, tendem a rejeitar consensos econômicos básicos e a endossar ideias que conflitam com noções fundamentais da teoria econômica, como a vantagem comparativa, a produtividade e os mecanismos de preços (Caplan, \citeyear{Systematically_Biased_Beliefs_about_Economics,The_Myth_of_the_Rational_Voter}). O problema vai além da falta de informação: há uma resistência ativa à revisão de crenças que reforçam identidades políticas e visões de mundo consolidadas.
+
+Essa desconexão entre conhecimento técnico e opinião pública não é nova. \citeonline{hayek_knowledge_use} já advertia que o conhecimento econômico é contraintuitivo e disperso; \citeonline{downs1957economic} sugeria que o custo de se informar é alto demais para o retorno marginal de um voto. O resultado é um eleitor racionalmente mal informado — e, portanto, um sistema político sensível à popularidade de ideias economicamente frágeis, independentemente de seus méritos técnicos.
+
+\section{A racionalidade coletiva} %(Tema e Problema de Pesquisa)
+
+O ideal democrático parte do pressuposto de que a soma das decisões individuais resulta em escolhas coletivas racionais e benéficas para a sociedade. No entanto, a prática política mostra que essa expectativa nem sempre se confirma. Mesmo indivíduos que tomam decisões prudentes em sua vida privada frequentemente apoiam propostas políticas que contrariam princípios econômicos fundamentais, contribuindo para a adoção de medidas desconectadas do conhecimento técnico acumulado na disciplina econômica \cite{The_Myth_of_the_Rational_Voter,downs1957economic}.
+
+Esse paradoxo pode ser explicado pela diferença estrutural entre os contextos de escolha no mercado e na política. Enquanto no mercado os indivíduos arcam diretamente com os custos de suas decisões, no processo eleitoral o impacto de um único voto é praticamente nulo, o que reduz o incentivo à busca por informações qualificadas. Isso leva à chamada “ignorância racional” \cite{downs1957economic}, em que o custo de se informar supera os ganhos esperados de uma decisão fundamentada.
+
+\citeonline{The_Myth_of_the_Rational_Voter} aprofunda essa análise ao argumentar que o problema não é apenas de ignorância, mas de vieses sistemáticos nas crenças dos eleitores. Muitos não apenas desconhecem conceitos econômicos básicos, como também resistem a evidências que contradizem suas intuições e convicções ideológicas. Essa racionalidade limitada gera um ciclo no qual políticos — por afinidade ou conveniência — respondem a percepções distorcidas da opinião pública, reforçando ideias populares, ainda que desalinhadas com o consenso técnico.
+
+A consequência é que democracias modernas, em vez de corrigirem equívocos cognitivos por meio do debate público, frequentemente os amplificam. Assim, preferências enviesadas passam a moldar o apoio eleitoral a determinadas políticas econômicas, criando uma assimetria persistente entre opinião popular e conhecimento especializado.
+
+\section{Problema de pesquisa}
+Este trabalho parte do seguinte problema: as divergências sistemáticas nas percepções econômicas observáveis no Brasil decorrem, sobretudo, de ideologia/identidade política ou de informação econômica (formação e literacia)? Para responder, comparamos o público geral ao “público contrafactual” e estimamos probabilidades de concordância com proposições econômicas via modelos logit binário e logit ordenado, com controles sociodemográficos. O objetivo é explicativo e não causal: identificar associações consistentes e testáveis que se ancoram no Modelo Estatístico e no público contrafactual detalhados no \autoref{capitulo_3}.
+
+
+\section{Hipóteses a Serem Testadas}
+\label{sec:hipoteses}
+
+Com base nos dados coletados e na metodologia aplicada, este estudo propõe as seguintes hipóteses, estruturadas para serem empiricamente testáveis e refutáveis:
+
+\begin{enumerate}[label=\alph*)]
+
+  \item \textbf{H1 — O público geral brasileiro exibe padrões sistemáticos de julgamento econômico que divergem das posições predominantes entre economistas com pós-graduação.}
+  O estudo testa se essa divergência é detectável e se varia com o posicionamento ideológico do respondente; \textit{não} testa os mecanismos psicológicos que a produzem (o design cross-sectional não permite identificar processos cognitivos internos, apenas diferenças observáveis entre grupos). H1 é refutada se não emergir padrão sistemático de diferença condicional entre grupos em múltiplos itens \cite{The_Myth_of_the_Rational_Voter,blendon1997}.
+
+  \item \textbf{H2 — Conhecimento econômico específico reduz a probabilidade de manifestação de vieses cognitivos.} 
+  Se a literacia econômica mitiga vieses, indivíduos com \emph{formação econômica avançada} tendem a exibir maior probabilidade de resposta tecnicamente correta, \emph{controladas} as demais covariáveis. 
+  \textit{Operacionalização única:} \texttt{econ} $\in\{0,1\}$, onde $1 =$ \emph{pós-graduação em Economia} (mestrado ou superior) e $0 =$ demais.\footnote{Adota-se um \emph{corte conservador} para mensurar “conhecimento econômico”. No Brasil, a pós-graduação stricto sensu em Economia é, em geral, \textbf{calibrada pelo Exame ANPEC}, o que padroniza nacionalmente a exposição ao núcleo técnico (micro, macro, matemática e econometria) e eleva a \emph{validade de construto}. Já a graduação é \emph{heterogênea} (carga, ênfases, qualidade) e inclui formações incompletas, gerando \emph{falsos positivos} se usada como critério. Por isso, definimos $\mathrm{econ}=1$ apenas para quem concluiu \textbf{mestrado/doutorado em Economia} (exclui \emph{lato sensu}/MBAs). O threshold é \textbf{severo} e tende a \emph{atenuar}, não inflar, efeitos de H2: eventuais erros remanescentes empurram estimativas para zero.}
+  \textit{Critério de refutação:} H2 é refutada se o coeficiente de \texttt{econ} não indicar maior acurácia e não alcançar significância de modo consistente no conjunto de itens (modelos logit/ordered logit) \cite{downs1957economic,Judgment_under_Uncertainty}.
+
+  \item \textbf{H3 — O viés antimercado está associado ao apoio a políticas intervencionistas.}
+  Se presente, eleitores com maior desconfiança em relação ao livre mercado tenderão a apoiar regulação, controle e proteção estatal. A ausência dessa correlação refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,sowell2004applied}.
+
+  \item \textbf{H4 — O viés antiestrangeiro está associado ao apoio a restrições comerciais e migratórias.}
+  Se relevante, maior preocupação com a concorrência externa implicará maior apoio a barreiras ao comércio e à imigração. A hipótese é refutada se tal padrão não emergir \cite{The_Myth_of_the_Rational_Voter,bhagwati2003free}.
+
+  \item \textbf{H5 — O viés antitrabalho está associado ao apoio a políticas que priorizam a criação direta de empregos.}
+  Se os eleitores supervalorizam “empregos” como fim em si, tenderão a apoiar propostas que desincentivam automação, realocação produtiva e reestruturação setorial. A inexistência desse padrão refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,landsburg2012armchair}.
+
+  \item \textbf{H6 — O viés pessimista leva a avaliações econômicas mais negativas do que os dados indicam.}
+  Se presente, os eleitores avaliarão o desempenho econômico nacional de forma mais negativa do que sugerem os indicadores disponíveis. A convergência entre percepção e dados refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,easterbrook2004progress}.
+
+  \item \textbf{H7 — A filiação ideológica influencia a aceitação de evidências econômicas.}
+  Se a ideologia interfere na interpretação de dados, diferentes espectros políticos exibirão respostas distintas frente a evidências empíricas, mesmo quando tecnicamente robustas. A ausência desse padrão refuta a hipótese \cite{The_Myth_of_the_Rational_Voter,kahan2012polarization}.
+
+\end{enumerate}
+
+\section{Objetivo Geral}\label{sec:objetivo-geral}
+
+Investigar os principais vieses cognitivos na percepção econômica dos eleitores brasileiros por meio da aplicação de um \textit{survey} experimental adaptado ao contexto nacional, com base na literatura de economia política comportamental.
+
+\section{Objetivos Específicos}\label{sec:objetivos-especificos}
+
+% duas frases antes das alíneas
+
+Como desdobramento do objetivo geral, definimos objetivos específicos que visam aprofundar a compreensão dos vieses cognitivos na percepção econômica dos eleitores brasileiros. Esses objetivos devem ser alcançados de forma sistemática e rigorosa, utilizando uma abordagem empírica que permita a coleta e a análise de dados relevantes. Os objetivos específicos são:
+
+\begin{enumerate}[label=\alph*)]
+    \item \label{obj:a} identificar, com base na literatura sobre economia comportamental e economia política, os principais vieses cognitivos relacionados à percepção econômica, adaptando-os ao contexto brasileiro;
+
+    \item \label{obj:b} construir e aplicar um survey experimental junto a eleitores brasileiros, inspirado na metodologia da \textit{Survey of Americans and Economists on the Economy} (SAEE), com um questionário adaptado à realidade institucional e cultural do país;
+
+    \item \label{obj:c} mapear a presença e a frequência dos vieses econômicos entre os eleitores, com base nos dados coletados, utilizando análises estatísticas e modelos empíricos apropriados;
+
+    \item \label{obj:d} identificar padrões de discrepância entre as percepções econômicas dos eleitores brasileiros e os consensos identificados na literatura econômica, investigando possíveis determinantes contextuais e cognitivos dessas diferenças;
+
+    \item \label{obj:e} explorar a associação entre a presença de vieses econômicos e variáveis sociodemográficas, educacionais e institucionais, buscando compreender fatores relacionados à formação dessas percepções.
+\end{enumerate}
+
+
+\section{Justificativa e Relevância do Estudo}
+% % deve enfatizar que o problema não é ignorância aleatória, mas crenças sistematicamente erradas, o que gera políticas ruins mesmo quando os eleitores estão bem informados.
+
+% A democracia parte do pressuposto de que os eleitores escolhem representantes e políticas que maximizam o bem-estar coletivo. No entanto, a realidade demonstra que decisões econômicas são frequentemente moldadas por crenças sistematicamente equivocadas — e não apenas por desinformação aleatória. O problema central está na presença de \textit{vieses cognitivos estruturais}, que distorcem a compreensão dos fenômenos econômicos e sustentam políticas públicas ineficazes.
+
+% A literatura em economia política comportamental mostra que esses vieses seguem padrões previsíveis. \citeonline{The_Myth_of_the_Rational_Voter} argumenta que os eleitores tendem a manter crenças enviesadas sobre comércio, mercados e tecnologia, mesmo com acesso à informação. Essas crenças favorecem o protecionismo, o intervencionismo e a tecnofobia — independentemente do nível de escolaridade. Como o custo de estar errado é diluído entre milhões de votos, não há incentivo individual para revisar crenças equivocadas \cite{downs1957economic}.
+
+% A teoria do conhecimento disperso de \citeauthoronline{hayek_knowledge_use} (\citeyear{hayek_knowledge_use}) reforça que a economia é contraintuitiva: seus efeitos de segunda ordem muitas vezes contradizem percepções imediatas. Crenças como ``importações eliminam empregos'' ou ``preços baixos reduzem salários'' ignoram mecanismos compensatórios difíceis de comunicar ao público. Diante disso, políticos tendem a validar as crenças populares — ainda que incorretas — pois confrontá-las pode significar perder eleições.
+
+% A relevância deste estudo está em investigar a dissonância entre opinião pública e conhecimento técnico, e suas implicações para a formulação de políticas. Ao analisar como vieses cognitivos moldam o debate econômico, esta pesquisa busca contribuir para o avanço da economia política comportamental, apontando caminhos possíveis de mitigação — seja por meio da educação econômica, seja pela reforma de incentivos institucionais.
+
+% Sem compreender as raízes dessa distorção entre democracia e racionalidade econômica, políticas ineficazes continuarão a se repetir. O desafio não está apenas em combater a ignorância, mas em corrigir crenças sistematicamente erradas que moldam decisões políticas e o futuro das sociedades.
+
+% A ideia democrática repousa sobre o princípio da autodeterminação informada. No entanto, o processo político moderno tem revelado uma dissonância persistente entre o conhecimento técnico acumulado pela ciência econômica e as crenças amplamente difundidas entre o eleitorado. Não se trata de ignorância aleatória, mas da presença sistemática de padrões cognitivos que distorcem a percepção da realidade econômica e conduzem à formulação de políticas públicas ineficazes \cite{The_Myth_of_the_Rational_Voter,Judgment_under_Uncertainty}. Esse descompasso tem implicações diretas sobre a qualidade das decisões coletivas e, por consequência, sobre a eficiência e a resiliência das instituições democráticas \cite{downs1957economic}.
+
+% A economia, como disciplina, apresenta uma lógica contraintuitiva: os efeitos mais relevantes de uma política frequentemente não estão nos seus resultados imediatos, mas em suas consequências de segunda ordem — uma característica destacada desde a crítica clássica de “o que se vê e o que não se vê” \cite{bastiat1859sofismas}. Quando o julgamento popular se orienta por intuições enviesadas — como associar importações à perda de empregos ou crescimento ao aumento de desigualdade — o risco não é apenas o erro individual, mas a cristalização desses erros em decisões estatais de amplo alcance \cite{landsburg2012armchair,bhagwati2003free}. Em democracias de massa, onde o custo da má escolha é socializado e o benefício do erro é politicamente rentável, as crenças econômicas equivocadas tendem não apenas a persistir, mas a ser premiadas eleitoralmente \cite{The_Myth_of_the_Rational_Voter}.
+
+% Compreender os mecanismos por meio dos quais essas distorções se consolidam é, portanto, uma exigência metodológica. A proposta deste trabalho é superar abordagens impressionistas ou normativas, testando empiricamente se determinados vieses de julgamento aparecem de forma consistente na população brasileira e como eles se associam à adesão a determinadas políticas públicas. Isso permite distinguir entre percepções legítimas e distorções cognitivas recorrentes, fornecendo evidências sobre os limites da racionalidade democrática em temas econômicos \cite{kahneman2011thinking,kahan2012polarization}.
+
+% A relevância do tema também se manifesta em termos práticos. Em um cenário global marcado por instabilidade, pressão fiscal e polarização ideológica, a adoção de políticas fundamentadas em percepções incorretas não é apenas ineficiente, mas potencialmente desastrosa. O apoio popular a soluções simples para problemas complexos — como protecionismo, subsídios insustentáveis ou expansão arbitrária do papel estatal — revela um cenário de fragilidade cognitiva institucionalizada \cite{schumpeter1976capitalism,taleb2014antifragile}. Ao investigar como essas crenças se formam, se disseminam e se legitimam, este estudo contribui para a construção de mecanismos de resiliência democrática e para o desenho de estratégias de educação econômica mais eficazes \cite{franco2022cartas, zaller1992nature}.
+
+% Em síntese, a relevância deste trabalho reside na sua capacidade de iluminar um paradoxo central da vida política contemporânea: o fato de que o voto, instrumento máximo da soberania popular, pode, quando orientado por percepções sistematicamente equivocadas, comprometer a própria racionalidade das decisões coletivas. Investigar esse fenômeno com rigor metodológico e sensibilidade interdisciplinar é condição indispensável para aperfeiçoar a governança democrática em contextos de crescente complexidade econômica e social.
+
+A ideia democrática repousa sobre o princípio da autodeterminação informada. No entanto, observa-se uma dissonância crescente entre o conhecimento técnico acumulado pela ciência econômica e as crenças amplamente difundidas entre o eleitorado. Trata-se não apenas de ignorância, mas da presença sistemática de padrões cognitivos que distorcem a percepção da realidade econômica e influenciam a formulação de políticas públicas \cite{The_Myth_of_the_Rational_Voter,Judgment_under_Uncertainty}.
+
+Esse descompasso desafia a capacidade deliberativa das democracias contemporâneas, afetando a qualidade das decisões coletivas \cite{downs1957economic}. Ao contrário do que pressupõem modelos normativos de democracia, o julgamento político do eleitor tende a ser moldado por fatores emocionais, ideológicos e cognitivos que resistem à revisão crítica \cite{kahneman2011thinking,kahan2012polarization}.
+
+Diante disso, compreender como essas crenças econômicas se formam, se consolidam e se legitimam na arena política torna-se um desafio relevante para a ciência econômica e política. A presente pesquisa busca contribuir com esse debate ao investigar, empiricamente, se determinados vieses de julgamento aparecem de forma sistemática na população brasileira e como eles se associam ao apoio a diferentes políticas públicas.
+
+A relevância do estudo é tanto teórica quanto prática. Teórica, por abordar as limitações da racionalidade democrática à luz da literatura comportamental e institucional contemporânea. Prática, por lançar luz sobre a aderência de determinadas crenças a projetos de governo, mesmo quando incompatíveis com diagnósticos técnicos. Em um cenário de crescente polarização, pressão fiscal e instabilidade institucional, a adoção de políticas fundamentadas em percepções incorretas não é apenas ineficiente, mas potencialmente desastrosa \cite{schumpeter1976capitalism,taleb2014antifragile}. Investigar esse processo contribui para o desenvolvimento de estratégias mais eficazes de resiliência democrática e educação econômica \cite{franco2022cartas,zaller1992nature}.
+
+Em síntese, este trabalho parte do paradoxo central da vida política moderna: o fato de que o voto, expressão máxima da soberania popular, pode ser guiado por percepções sistematicamente equivocadas. A superação desse paradoxo exige não apenas a denúncia dos erros, mas a construção de uma abordagem interdisciplinar rigorosa — e empiricamente fundamentada — sobre os limites e possibilidades da racionalidade democrática.
+
