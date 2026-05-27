@@ -1,0 +1,6 @@
+DV;beta_econ_ridge;se_ridge;p_ridge;mcfadden_ridge;singular;converged
+impostos_altos;-0.233;0.5982;0.6969;0.1777;True;True
+corte_impostos;-0.4546;0.646;0.4816;0.1851;True;True
+aumento_uso_tecnologia;1.9907;1.9315;0.3027;0.2191;True;True
+acordos_comerciais_outros;-1.276;1.2716;0.3156;0.1536;True;True
+acha_preços_combustíveis;-0.1231;0.7771;0.8741;0.1298;True;True

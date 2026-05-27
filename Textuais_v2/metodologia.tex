@@ -41,7 +41,7 @@ O grupo de economistas é pequeno em termos absolutos — consequência direta d
 
 A Tabela~\ref{tab:crosstab_econ_esp} apresenta o cruzamento entre grupo (\texttt{econ}) e espectro político autodeclarado, excluindo os 38 respondentes que se identificaram como ``Independente'' ou ``Sem opinião'' (os quais recebem \texttt{NaN} no modelo, conforme Seção~\ref{sec:modelo-estatistico}).
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_crosstab_econ_esp.tex}
+\input{analise/outputs/tables/tex/tab_crosstab_econ_esp.tex}
 
 O padrão merece atenção: dos 14 economistas com espectro válido, 7 (50\%) se declaram de esquerda e 1 (7\%) de extrema-esquerda — totalizando 57\% no espectro esquerdo-centro-esquerdo —, enquanto 4 (29\%) se declaram de direita e nenhum de extrema-direita. No grupo de controle, a distribuição é mais balanceada, com concentração em direita (45\%) e esquerda (28\%). Esse padrão tem duas implicações metodológicas. Primeira: a composição ideológica dos grupos é heterogênea, o que reforça a necessidade de controlar por \texttt{espectro} no modelo para isolar o componente associado à formação. Segunda: a \textit{endogeneidade} de \texttt{econ} não assume o perfil convencional de "economistas são sistematicamente mais à direita"; na amostra coletada, o grupo de economistas é predominantemente de esquerda, o que torna o estimando $\hat{\beta}_{\texttt{econ}}$ ainda mais difícil de interpretar causalmente — ele captura a diferença condicional em grupos que diferem tanto em formação quanto em composição ideológica não completamente controlada.
 

@@ -1,0 +1,56 @@
+DV;Bloc;Pergunta;N_total;N_econ0;N_econ1;media_e0;media_e1;sd_e0;sd_e1;mediana_e0;mediana_e1;diff_media
+impostos_altos;H3-Antimercado;Os impostos são muito altos;183;166;17;1.47;1.235;0.639;0.664;2.0;1.0;-0.235
+déficit_federal_grande;H7-Ideologia;O déficit federal é grande demais (Dívida pública);182;165;17;1.521;1.118;0.611;0.928;2.0;1.0;-0.404
+gasto_ajuda_externa;H4-Antiestrangeiro;O gasto com ajuda externa é alto demais;183;166;17;0.861;0.412;0.762;0.507;1.0;0.0;-0.45
+temos_imigrantes_demais;H4-Antiestrangeiro;Temos imigrantes demais;183;166;17;0.241;0.235;0.507;0.437;0.0;0.0;-0.006
+deduções_demais_empresas;H3-Antimercado;Há deduções demais para as empresas (Impostos);184;167;17;1.096;1.294;0.762;0.686;1.0;1.0;0.198
+educação_qualificação_profissional;H5-Antitrabalho;A educação e a qualificação profissional são inadequadas;183;166;17;1.482;1.706;0.639;0.47;2.0;2.0;0.224
+seguridade_social_previdência;H7-Ideologia;A seguridade social (Previdência) atende pessoas demais;184;167;17;0.832;0.647;0.682;0.606;1.0;1.0;-0.185
+mulheres_minorias_têm;H7-Ideologia;Mulheres e minorias têm vantagens demais por causa das ações afirmativas (cotas);183;166;17;0.349;0.176;0.592;0.393;0.0;0.0;-0.173
+pessoas_dão_valor;H3-Antimercado;As pessoas não dão valor ao trabalho duro;184;167;17;0.677;0.588;0.778;0.712;0.0;0.0;-0.088
+governo_regulamenta_negócios;H3-Antimercado;O governo regulamenta muito os negócios;184;167;17;1.192;0.941;0.783;0.748;1.0;1.0;-0.25
+pessoas_poupam_bastante;H3-Antimercado;As pessoas não poupam o bastante;184;167;17;1.006;0.941;0.699;0.748;1.0;1.0;-0.065
+empresas_lucram_demais;H3-Antimercado;As empresas lucram demais;183;166;17;0.512;0.706;0.711;0.849;0.0;0.0;0.194
+altos_executivos_ganham;H3-Antimercado;Altos executivos ganham demais;183;166;17;0.705;0.765;0.804;0.562;0.0;1.0;0.06
+produtividade_aumentando_devagar;H6-Pessimista;A produtividade está aumentando devagar demais;183;166;17;1.114;1.765;0.766;0.437;1.0;2.0;0.65
+tecnologia_causa_demissões;H5-Antitrabalho;A tecnologia causa demissões;183;166;17;0.434;0.588;0.617;0.507;0.0;1.0;0.155
+empresas_estão_enviando;H5-Antitrabalho;As empresas estão enviando funcionários ao estrangeiro;184;167;17;0.299;0.412;0.509;0.507;0.0;0.0;0.112
+empresas_estão_reduzindo;H5-Antitrabalho;As empresas estão reduzindo os postos de trabalho;184;167;17;0.659;0.941;0.666;0.748;1.0;1.0;0.282
+empresas_investem_suficiente;H5-Antitrabalho;As empresas não investem o suficiente em educação e qualificação profissional;183;166;17;1.084;1.294;0.766;0.686;1.0;1.0;0.21
+corte_impostos;H3-Antimercado;Corte de impostos;184;167;17;1.659;1.353;0.701;0.786;2.0;2.0;-0.306
+mulheres_força_trabalho;H3-Antimercado;Mais mulheres na força de trabalho;184;167;17;1.407;1.765;0.613;0.437;1.0;2.0;0.358
+aumento_uso_tecnologia;H5-Antitrabalho;Aumento do uso de tecnologia no trabalho;184;167;17;1.922;2.0;0.31;0.0;2.0;2.0;0.078
+acordos_comerciais_outros;H4-Antiestrangeiro;Acordos comerciais com outros países;184;167;17;1.916;1.882;0.299;0.485;2.0;2.0;-0.034
+redução_recente_postos;H5-Antitrabalho;Redução recente dos postos de trabalho em grandes empresas;183;166;17;0.524;0.235;0.62;0.437;0.0;0.0;-0.289
+algumas_pessoas_dizem;H6-Pessimista;Algumas pessoas dizem que estes são tempos economicamente instáveis por causa das novas tecnologias, da concorrência de países estrangeiros e da redução de pessoal. Olhando para os próximos 20 anos, você acha que essas mudanças serão, eventualmente, boas ou ruins para o país, ou você acha que essas mudanças não farão muita diferença?;184;167;17;1.287;1.176;0.777;0.809;1.0;1.0;-0.111
+acha_acordos_comerciais;H4-Antiestrangeiro;Você acha que os acordos comerciais entre o Brasil e outros países, por seu impacto no emprego, são bons, ruins ou indiferentes para a economia?;182;166;16;1.693;1.812;0.62;0.544;2.0;2.0;0.12
+quem_considera_maior;Percepção-Específica;Quem você considera o maior responsável pelo aumento dos preços dos combustíveis?;182;165;17;0.885;1.118;0.837;0.857;1.0;1.0;0.233
+acha_preços_combustíveis;Percepção-Específica;Você acha que os preços dos combustíveis são altos demais, baixos demais ou no nível certo?;184;167;17;1.868;1.765;0.373;0.562;2.0;2.0;-0.104
+acha_presidente_pode;Percepção-Específica;Você acha que o presidente pode fazer muito, pouco ou que está além da capacidade de ele melhorar a economia?;180;164;16;1.445;1.562;0.658;0.512;2.0;2.0;0.117
+acha_novos_postos;H5-Antitrabalho;Você acha que os novos postos de trabalho do país pagam bem ou mal?;181;164;17;0.549;0.471;0.568;0.514;1.0;0.0;-0.078
+desigualdade_entre_ricos;H6-Pessimista;A desigualdade entre ricos e pobres, comparada a 20 anos atrás, está:;183;166;17;1.355;1.118;0.831;0.928;2.0;1.0;-0.238
+últimos_20_anos;H6-Pessimista;Nos últimos 20 anos, você acha que, em geral, as rendas familiares dos brasileiros médios têm aumentado mais rapidamente do que o custo de vida, tem se mantido aproximadamente no nível do custo de vida, ou tem ficado atrás do custo de vida?;182;165;17;0.509;0.706;0.746;0.92;0.0;0.0;0.197
+pensando_apenas_salários;H6-Pessimista;Pensando apenas nos salários do trabalhador brasileiros médio, você acha que, nos últimos 20 anos, eles têm aumentado mais rapidamente do que o custo de vida, têm se mantido aproximadamente no mesmo nível do custo de vida, ou têm ficado atrás do custo de vida?;181;164;17;0.39;0.588;0.669;0.87;0.0;0.0;0.198
+algumas_pessoas_dizem_2;H6-Pessimista;Algumas pessoas dizem que, para ter uma vida confortável, a família média deve ter dois assalariados em tempo integral. Você concorda com isso, ou acha que a família média pode viver confortavelmente com apenas um assalariado em tempo integral?;183;166;17;1.265;1.294;0.615;0.588;1.0;1.0;0.029
+próximos_cinco_anos;H6-Pessimista;Nos próximos cinco anos, você acha que o padrão de vida do cidadão médio vai subir, cair ou se manter aproximadamente o mesmo?;178;161;17;0.652;0.588;0.744;0.712;0.0;0.0;-0.064
+espera_geração_seus;H6-Pessimista;"Você espera que a geração de seus filhos desfrute de um padrão de vida mais alto ou mais baixo do que a sua geração, ou acha que será aproximadamente o mesmo?
+";182;165;17;1.388;1.176;0.754;0.883;2.0;1.0;-0.211
+filhos_menos_30;H6-Pessimista;"(Se você tem filhos com menos de 30 anos) Quando eles atingirem a sua idade, você espera que eles desfrutem de um padrão de vida mais alto ou mais baixo do que o seu agora, ou espera que seja aproximadamente o mesmo?
+";138;123;15;1.504;1.267;0.67;0.799;2.0;1.0;-0.237
+reforma_previdência_necessária;H7-Ideologia;A reforma da previdência é necessária;182;165;17;1.545;1.176;0.629;0.809;2.0;1.0;-0.369
+reforma_trabalhista_necessária;H7-Ideologia;A reforma trabalhista é necessária;182;165;17;1.497;1.235;0.659;0.831;2.0;1.0;-0.262
+reforma_tributária_necessária;H7-Ideologia;A reforma tributária é necessária;182;165;17;1.806;1.941;0.454;0.243;2.0;2.0;0.135
+privatização_estatais_benéfica;H7-Ideologia;A privatização de estatais é benéfica;183;166;17;1.066;0.882;0.803;0.928;1.0;1.0;-0.184
+produtos_importados_benéficos;H4-Antiestrangeiro;Produtos importados são benéficos;182;165;17;1.285;1.588;0.613;0.618;1.0;2.0;0.303
+corrupção_principal_causa;H7-Ideologia;A corrupção é a principal causa do subdesenvolvimento;182;165;17;1.382;0.941;0.72;0.827;2.0;1.0;-0.441
+taxa_juros_selic;H7-Ideologia;A taxa de juros (SELIC) é alta demais;181;164;17;1.348;1.765;0.706;0.437;1.0;2.0;0.417
+governo_atual_sabe;H7-Ideologia;O governo atual sabe lidar com crises econômicas;182;165;17;0.467;0.941;0.694;0.899;0.0;1.0;0.475
+governo_deve_intervir;H7-Ideologia;O governo deve intervir para controlar preços;182;165;17;0.679;0.647;0.757;0.702;1.0;1.0;-0.032
+entrada_estrangeiros_mercado;H4-Antiestrangeiro;A entrada de estrangeiros no mercado de trabalho é benéfica;182;165;17;1.321;1.529;0.634;0.624;1.0;2.0;0.208
+indústria_nacional_deve;H4-Antiestrangeiro;A indústria nacional deve ser protegida;182;165;17;1.194;1.0;0.748;0.791;1.0;1.0;-0.194
+brasil_chance_virar;H6-Pessimista;O Brasil tem chance de virar potência econômica;183;166;17;1.404;1.176;0.738;0.728;2.0;1.0;-0.227
+lucros_empresariais_ocorrem;H7-Ideologia;Lucros empresariais ocorrem às custas dos trabalhadores;182;165;17;0.921;1.176;0.862;0.883;1.0;1.0;0.255
+competição_entre_empresas;H5-Antitrabalho;A competição entre empresas beneficia consumidores;182;165;17;1.794;1.882;0.449;0.332;2.0;2.0;0.088
+brasil_deveria_priorizar;H4-Antiestrangeiro;O Brasil deveria priorizar a produção interna mesmo com preços maiores;181;164;17;0.878;0.706;0.707;0.686;1.0;1.0;-0.172
+automação_prejudica_mercado;H5-Antitrabalho;A automação prejudica o mercado de trabalho;183;166;17;0.355;0.235;0.593;0.562;0.0;0.0;-0.12
+brasil_deveria_adotar;H4-Antiestrangeiro;O Brasil deveria adotar política de livre comércio com outros países;182;165;17;1.442;1.471;0.638;0.514;2.0;1.0;0.028

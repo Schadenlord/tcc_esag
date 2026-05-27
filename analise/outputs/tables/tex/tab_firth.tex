@@ -1,0 +1,35 @@
+
+% Tabela gerada automaticamente por latex_export.py
+\begingroup
+\footnotesize
+\begin{longtable}{%
+  >{\RaggedRight\arraybackslash}p{4.5cm}%
+  >{\centering\arraybackslash}p{1.4cm}%
+  >{\centering\arraybackslash}p{1.4cm}%
+  >{\centering\arraybackslash}p{1.4cm}%
+  >{\centering\arraybackslash}p{1.4cm}}
+\caption{Estimativas penalizadas (Ridge, $\lambda=0,1$) para DVs com Hessiana singular}\label{tab:firth}\\
+\toprule
+\textbf{DV} & $\hat{\beta}_\text{econ}$ & SE & $p$ & $R^2_\text{McF}$ \\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\footnotesize \textit{(continuação)}}\\\toprule
+\textbf{DV} & $\hat{\beta}_\text{econ}$ & SE & $p$ & $R^2_\text{McF}$ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\footnotesize \textit{continua na próxima página}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+  impostos\_\allowbreak{}altos & -0,233 & 0,598 & 0,697 & 0,178 \\
+  corte\_\allowbreak{}impostos & -0,455 & 0,646 & 0,482 & 0,185 \\
+  aumento\_\allowbreak{}uso\_\allowbreak{}tecnologia & 1,991 & 1,931 & 0,303 & 0,219 \\
+  acordos\_\allowbreak{}comerciais\_\allowbreak{}outros & -1,276 & 1,272 & 0,316 & 0,154 \\
+  acha\_\allowbreak{}preços\_\allowbreak{}combustíveis & -0,123 & 0,777 & 0,874 & 0,130 \\
+\bottomrule
+\end{longtable}
+\par\smallskip\noindent\begin{minipage}{\linewidth}\footnotesize\sloppy
+\noindent\textit{\textbf{Notas:}}\ Penalização L2 (Ridge, $\lambda=0{,}1$) via \texttt{scipy.optimize} sobre log-verossimilhança do logit ordenado. Aplicado às 5 DVs com Hessiana singular (separação quase-perfeita). OR não reportado como inferência formal (ver texto).
+\end{minipage}
+\endgroup
