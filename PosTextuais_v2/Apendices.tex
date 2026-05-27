@@ -91,14 +91,14 @@
 % ----------------------------------------------------------
 \label{apendice:tab_descritiva_v2}
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_descritiva.tex}
+\input{analise/outputs/tables/tex/tab_descritiva.tex}
 
 % ----------------------------------------------------------
 \chapter{Tabela Síntese: 53 DVs (Todos os Resultados)}
 % ----------------------------------------------------------
 \label{apendice:tab_sintese_v2}
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_sintese_v2.tex}
+\input{analise/outputs/tables/tex/tab_sintese_v2.tex}
 
 % AMEs dos itens-chave constam da Tabela~\ref{tab:ame_chave} no corpo do Capítulo~\ref{capitulo_4} (não replicada aqui para evitar duplicidade).
 
@@ -109,14 +109,14 @@
 
 O teste de \citeonline{Brant1990} verifica o pressuposto de proporcionalidade das chances (PO) comparando os coeficientes de $K-1$ regressões logísticas binárias auxiliares. Um p-valor pequeno indica violação do pressuposto.
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_brant.tex}
+\input{analise/outputs/tables/tex/tab_brant.tex}
 
 % ----------------------------------------------------------
 \chapter{Goodness-of-Fit: McFadden $R^2$}
 % ----------------------------------------------------------
 \label{apendice:tab_gof_v2}
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_gof.tex}
+\input{analise/outputs/tables/tex/tab_gof.tex}
 
 % ----------------------------------------------------------
 \chapter{Bootstrap BC\texorpdfstring{$_0$}{0}: Todos os 53 Itens}
@@ -125,7 +125,7 @@ O teste de \citeonline{Brant1990} verifica o pressuposto de proporcionalidade da
 
 Intervalos de confiança de 95\% pelo método bootstrap BC$_0$ (bias-corrected percentile), $B = 999$ reamostras, semente 42, para os 53 itens analisados por modelos logit ordenado (excluídas as 5 DVs com Hessiana singular, estimadas via Firth-Ridge, para as quais o bootstrap requer adaptação não implementada). Os quatro itens pré-especificados de interesse especial são indicados em destaque na tabela.
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_bootstrap_v2.tex}
+\input{analise/outputs/tables/tex/tab_bootstrap_v2.tex}
 
 % ----------------------------------------------------------
 \chapter{Testes de Permutação}
@@ -134,7 +134,7 @@ Intervalos de confiança de 95\% pelo método bootstrap BC$_0$ (bias-corrected p
 
 Testes de permutação ($P = 5.000$) para os coeficientes de \texttt{econ} nos quatro itens-chave. O p-valor de permutação é a proporção de estatísticas permutadas mais extremas que a observada.
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_permutation.tex}
+\input{analise/outputs/tables/tex/tab_permutation.tex}
 
 % ----------------------------------------------------------
 \chapter{Modelo Firth-Ridge: Cinco DVs Singulares}
@@ -143,7 +143,7 @@ Testes de permutação ($P = 5.000$) para os coeficientes de \texttt{econ} nos q
 
 Resultados para as cinco DVs com Hessiana singular no modelo PO, estimadas via regressão logística ordinal penalizada (L2, $\lambda = 0{,}1$). Os coeficientes são atenuados pelo \textit{shrinkage} e não são diretamente comparáveis às \textit{odds ratios} dos modelos PO.
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_firth.tex}
+\input{analise/outputs/tables/tex/tab_firth.tex}
 
 % ----------------------------------------------------------
 \chapter{Análise de Poder Estatístico}
@@ -152,12 +152,12 @@ Resultados para as cinco DVs com Hessiana singular no modelo PO, estimadas via r
 
 Poder estatístico estimado para detectar efeitos de diferentes magnitudes (OR) com $n_{\texttt{econ}} = 17$, $n_{\text{total}} = 184$, $\alpha = 0{,}05$ (bicaudal), seguindo \citeonline{whittemore1981}.
 
-\input{Textuais/analise_v2/outputs/tables/tex/tab_power.tex}
+\input{analise/outputs/tables/tex/tab_power.tex}
 
 \begin{figure}[htbp]
 \centering
 \caption{Curva de poder: probabilidade de rejeitar $H_0$ em função da \textit{odds ratio} real.}
-\includegraphics[width=0.80\textwidth]{Textuais/analise_v2/outputs/figures/forestplots/power_curve.png}
+\includegraphics[width=0.80\textwidth]{analise/outputs/figures/forestplots/power_curve.png}
 \nota{Linha vertical tracejada em OR $= 2{,}0$: poder $= 28{,}2\%$. Para atingir 80\% de poder com OR $= 2{,}0$, seriam necessários $n_{\texttt{econ}} \geq 120$.}
 \label{fig:power_curve_v2}
 \end{figure}
@@ -171,10 +171,10 @@ Poder estatístico estimado para detectar efeitos de diferentes magnitudes (OR) 
 Repositório oficial: \url{https://github.com/Schadenlord/tcc_esag}
 
 \section*{Conteúdo e reprodutibilidade}
-O pipeline de análise v2 está em \texttt{Textuais/analise\_v2/}, com ponto de entrada único em \texttt{run\_all.py}. Para reproduzir integralmente todas as tabelas e figuras:
+O pipeline de análise v2 está em \texttt{analise/}, com ponto de entrada único em \texttt{run\_all.py}. Para reproduzir integralmente todas as tabelas e figuras:
 
 \begin{verbatim}
-cd Textuais/analise_v2
+cd analise
 python3 run_all.py --fast
 \end{verbatim}
 
