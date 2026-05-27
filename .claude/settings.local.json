@@ -1,0 +1,63 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(**)",
+      "Write(**)",
+      "Edit(**)",
+      "Grep(**)",
+      "Glob(**)",
+      "WebFetch(domain:*)",
+      "WebSearch",
+      "TodoWrite",
+      "Bash(ssh-keygen:*)",
+      "Bash(ssh-add:*)",
+      "WebFetch(domain:www.tandfonline.com)",
+      "WebFetch(domain:www.aeaweb.org)",
+      "WebFetch(domain:journals.sagepub.com)",
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
+      "Bash(mv /home/bruno_tcc/tcc_esag/Textuais/analise_v2 /home/bruno_tcc/tcc_esag/analise && rm -rf /home/bruno_tcc/tcc_esag/analise/.git && echo \"Movido e .git interno removido\")"
+    ],
+    "defaultMode": "bypassPermissions",
+    "additionalDirectories": [
+      "/home/bruno_tcc/tcc_esag/analise"
+    ]
+  },
+  "enabledPlugins": {
+    "dbt@dbt-agent-marketplace": true,
+    "dbt-migration@dbt-agent-marketplace": true,
+    "cortex-code@snowflake-ai-kit": true,
+    "voltagent-data-ai@voltagent-subagents": true,
+    "voltagent-lang@voltagent-subagents": true,
+    "voltagent-dev-exp@voltagent-subagents": true,
+    "databricks-ai-dev-kit@databricks-ai-dev-kit": true
+  },
+  "extraKnownMarketplaces": {
+    "dbt-agent-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "dbt-labs/dbt-agent-skills"
+      }
+    },
+    "voltagent-subagents": {
+      "source": {
+        "source": "github",
+        "repo": "VoltAgent/awesome-claude-code-subagents"
+      }
+    },
+    "snowflake-ai-kit": {
+      "source": {
+        "source": "github",
+        "repo": "Snowflake-Labs/snowflake-ai-kit"
+      }
+    },
+    "databricks-ai-dev-kit": {
+      "source": {
+        "source": "github",
+        "repo": "databricks-solutions/ai-dev-kit"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true
+}
