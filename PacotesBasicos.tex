@@ -93,7 +93,15 @@
   \renewcommand{\figureautorefname}{Figura}%
 }
 
-\newcommand{\notafig}{\newline Fonte: elaboração do autor com base nos modelos da \autoref{sec:modelo-estatistico} (contrafactual da \autoref{sec:publico_esclarecido})}%
+\newcommand{\notafig}{\newline Fonte: elaboração do autor com base nos modelos da \autoref{sec:modelo-estatistico} (contrafactual da \autoref{sec:publico_contrafactual})}%
+
+% Nota de figura com argumento: Nota + texto + Fonte centralizada (fonte 10, espaçamento simples)
+\newcommand{\notafigv}[1]{%
+  \par\begingroup
+  \SingleSpacing\footnotesize\centering
+  \textit{Nota:} #1\par
+  Fonte: elaboração do autor (2025).\par
+  \endgroup}
 
 
 % Cabecalho cabeçalho somente com numeração de página 10pt
@@ -109,7 +117,7 @@
 % Citação online --- MODIFICAR ---
 \newcommand{\citeshort}[1]{\citeauthoronline{#1}~(\citeyear{#1})}
 
-\newcommand{\me}[1]{Elaborado pelo autor (#1).}
+\newcommand{\me}[1]{Fonte: Elaborado pelo autor (#1).}
 
 % Configuração do pgfplots
 \pgfplotsset{compat=newest} %compat=1.14
@@ -414,7 +422,7 @@
 	\endgroup}
 
 
-\captionstyle[\raggedright]{\raggedright}
+\captionstyle[\centering]{\centering}
 
 \makeatother
 

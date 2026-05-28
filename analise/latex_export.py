@@ -92,7 +92,8 @@ def tex_sintese_completa(df: pd.DataFrame, label: str = "tab:sintese_v2") -> str
 % Tabela gerada automaticamente por latex_export.py
 \begin{{landscape}}
 \begingroup
-\scriptsize
+\footnotesize
+\SingleSpacing
 \setlength{{\tabcolsep}}{{3.5pt}}
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{3.5cm}}%
@@ -111,20 +112,21 @@ def tex_sintese_completa(df: pd.DataFrame, label: str = "tab:sintese_v2") -> str
 \textbf{{DV}} & \textbf{{Bloc}} & $N$ & $\hat{{\beta}}_\text{{econ}}$ & $p$ (nom.) & $p$ (BH) & $p$ (Holm) & OR & $\hat{{\beta}}_\text{{esp}}$ & $p_\text{{esp}}$ & $R^2$ \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & \textbf{{Bloc}} & $N$ & $\hat{{\beta}}_\text{{econ}}$ & $p$ (nom.) & $p$ (BH) & $p$ (Holm) & OR & $\hat{{\beta}}_\text{{esp}}$ & $p_\text{{esp}}$ & $R^2$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{18.0cm}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{18.0cm}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 \end{{landscape}}
@@ -165,6 +167,7 @@ def tex_sintese_resumo(df: pd.DataFrame, n_items: int = 20, label: str = "tab:si
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
@@ -178,20 +181,21 @@ def tex_sintese_resumo(df: pd.DataFrame, n_items: int = 20, label: str = "tab:si
 \textbf{{DV}} & $\hat{{\beta}}_\text{{econ}}$ & $p$ (nom.) & $p$ (BH) & $\hat{{\beta}}_\text{{esp}}$ & $p_\text{{esp}}$ (nom.) & $R^2_\text{{McF.}}$ \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & $\hat{{\beta}}_\text{{econ}}$ & $p$ (nom.) & $p$ (BH) & $\hat{{\beta}}_\text{{esp}}$ & $p_\text{{esp}}$ (nom.) & $R^2_\text{{McF.}}$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -227,6 +231,7 @@ def tex_ame_chave(df: pd.DataFrame, label: str = "tab:ame_chave") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
@@ -238,20 +243,21 @@ def tex_ame_chave(df: pd.DataFrame, label: str = "tab:ame_chave") -> str:
 \textbf{{DV}} & $\bar{{Y}}_{{e=0}}$ & $\bar{{Y}}_{{e=1}}$ & $\Delta \bar{{Y}}$ & {cat_headers} \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & $\bar{{Y}}_{{e=0}}$ & $\bar{{Y}}_{{e=1}}$ & $\Delta \bar{{Y}}$ & {cat_headers} \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -287,6 +293,7 @@ def tex_bootstrap(df: pd.DataFrame, label: str = "tab:bootstrap_v2") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
@@ -298,20 +305,21 @@ def tex_bootstrap(df: pd.DataFrame, label: str = "tab:bootstrap_v2") -> str:
 \textbf{{DV}} & $B_\text{{válido}}$ & $\tilde{{\beta}}_\text{{econ}}$ & IC$_{{95\%}}$ BC$_0$ & $p_\text{{boot}}$ \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & $B_\text{{válido}}$ & $\tilde{{\beta}}_\text{{econ}}$ & IC$_{{95\%}}$ BC$_0$ & $p_\text{{boot}}$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -343,6 +351,7 @@ def tex_gof(df: pd.DataFrame, label: str = "tab:gof") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{0.8cm}}%
@@ -356,20 +365,21 @@ def tex_gof(df: pd.DataFrame, label: str = "tab:gof") -> str:
 \textbf{{DV}} & $N$ & $R^2_\text{{McF}}$ & $R^2_\text{{Nag}}$ & AIC & BIC & $p_\text{{LR}}$ \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & $N$ & $R^2_\text{{McF}}$ & $R^2_\text{{Nag}}$ & AIC & BIC & $p_\text{{LR}}$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -402,6 +412,7 @@ def tex_brant(df: pd.DataFrame, label: str = "tab:brant") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{0.6cm}}%
@@ -414,20 +425,21 @@ def tex_brant(df: pd.DataFrame, label: str = "tab:brant") -> str:
 \textbf{{DV}} & $K$ & $\chi^2$ & df & $p$ & PO ok? \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & $K$ & $\chi^2$ & df & $p$ & PO ok? \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -454,6 +466,7 @@ def tex_power(df: pd.DataFrame, label: str = "tab:power") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
@@ -465,20 +478,21 @@ def tex_power(df: pd.DataFrame, label: str = "tab:power") -> str:
 $n_\text{{econ}}$ & $N$ & OR & Poder & Poder (\%) \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 $n_\text{{econ}}$ & $N$ & OR & Poder & Poder (\%) \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -510,6 +524,7 @@ def tex_firth(df: pd.DataFrame, label: str = "tab:firth") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
@@ -521,20 +536,21 @@ def tex_firth(df: pd.DataFrame, label: str = "tab:firth") -> str:
 \textbf{{DV}} & $\hat{{\beta}}_\text{{econ}}$ & SE & $p$ & $R^2_\text{{McF}}$ \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & $\hat{{\beta}}_\text{{econ}}$ & SE & $p$ & $R^2_\text{{McF}}$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -566,6 +582,7 @@ def tex_interacao(df: pd.DataFrame, label: str = "tab:interacao") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
@@ -577,20 +594,21 @@ def tex_interacao(df: pd.DataFrame, label: str = "tab:interacao") -> str:
 \textbf{{DV}} & $\hat{{\beta}}_\text{{int}}$ & $p_\text{{int}}$ & AME$_\text{{econ}}$ (Q1 esp) & AME$_\text{{econ}}$ (Q3 esp) \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & $\hat{{\beta}}_\text{{int}}$ & $p_\text{{int}}$ & AME$_\text{{econ}}$ (Q1 esp) & AME$_\text{{econ}}$ (Q3 esp) \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -624,6 +642,7 @@ def tex_permutation(df: pd.DataFrame, label: str = "tab:permutation") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{4.5cm}}%
   >{{\centering\arraybackslash}}p{{1.4cm}}%
@@ -635,20 +654,21 @@ def tex_permutation(df: pd.DataFrame, label: str = "tab:permutation") -> str:
 \textbf{{DV}} & MWU $p$ & MWU $p$ (BH) & KS $p$ & Permut.\ $p$ \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & MWU $p$ & MWU $p$ (BH) & KS $p$ & Permut.\ $p$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{\linewidth}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 """
@@ -685,7 +705,8 @@ def tex_descritiva(df: pd.DataFrame, label: str = "tab:descritiva") -> str:
 % Tabela gerada automaticamente por latex_export.py
 \begin{{landscape}}
 \begingroup
-\scriptsize
+\footnotesize
+\SingleSpacing
 \setlength{{\tabcolsep}}{{3.5pt}}
 \begin{{longtable}}{{%
   >{{\RaggedRight\arraybackslash}}p{{3.5cm}}%
@@ -703,20 +724,21 @@ def tex_descritiva(df: pd.DataFrame, label: str = "tab:descritiva") -> str:
 \textbf{{DV}} & \textbf{{Bloc}} & $N$ & $n_{{e=0}}$ & $n_{{e=1}}$ & $\bar{{Y}}_{{e=0}}$ & $\bar{{Y}}_{{e=1}}$ & $\sigma_{{e=0}}$ & $\sigma_{{e=1}}$ & $\Delta\bar{{Y}}$ \\
 \midrule
 \endfirsthead
-\multicolumn{{{N}}}{{l}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continuação)}}}}\\\toprule
 \textbf{{DV}} & \textbf{{Bloc}} & $N$ & $n_{{e=0}}$ & $n_{{e=1}}$ & $\bar{{Y}}_{{e=0}}$ & $\bar{{Y}}_{{e=1}}$ & $\sigma_{{e=0}}$ & $\sigma_{{e=1}}$ & $\Delta\bar{{Y}}$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{continua na próxima página}}}}\\
+\multicolumn{{{N}}}{{r}}{{\footnotesize \textit{{(continua)}}}}\\
 \endfoot
 \bottomrule
 \endlastfoot
 {body}
 \bottomrule
 \end{{longtable}}
-\par\smallskip\noindent\begin{{minipage}}{{15.5cm}}\footnotesize\sloppy
-\noindent\textit{{\textbf{{Notas:}}}}\ {note}
+\par\smallskip\noindent\begin{{minipage}}{{15.5cm}}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{{\textbf{{Notas:}}}}\ {note}
 \end{{minipage}}
 \endgroup
 \end{{landscape}}

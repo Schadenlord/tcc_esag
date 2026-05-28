@@ -43,7 +43,7 @@ A Tabela~\ref{tab:crosstab_econ_esp} apresenta o cruzamento entre grupo (\texttt
 
 \input{analise/outputs/tables/tex/tab_crosstab_econ_esp.tex}
 
-O padrão merece atenção: dos 14 economistas com espectro válido, 7 (50\%) se declaram de esquerda e 1 (7\%) de extrema-esquerda — totalizando 57\% no espectro esquerdo-centro-esquerdo —, enquanto 4 (29\%) se declaram de direita e nenhum de extrema-direita. No grupo de controle, a distribuição é mais balanceada, com concentração em direita (45\%) e esquerda (28\%). Esse padrão tem duas implicações metodológicas. Primeira: a composição ideológica dos grupos é heterogênea, o que reforça a necessidade de controlar por \texttt{espectro} no modelo para isolar o componente associado à formação. Segunda: a \textit{endogeneidade} de \texttt{econ} não assume o perfil convencional de "economistas são sistematicamente mais à direita"; na amostra coletada, o grupo de economistas é predominantemente de esquerda, o que torna o estimando $\hat{\beta}_{\texttt{econ}}$ ainda mais difícil de interpretar causalmente — ele captura a diferença condicional em grupos que diferem tanto em formação quanto em composição ideológica não completamente controlada.
+O padrão merece atenção: dos 14 economistas com espectro válido, 7 (50\%) se declaram de esquerda e 1 (7\%) de extrema-esquerda — totalizando 57\% no espectro esquerdo-centro-esquerdo —, enquanto 4 (29\%) se declaram de direita e nenhum de extrema-direita. No grupo de controle, a distribuição é mais balanceada, com concentração em direita (45\%) e esquerda (28\%). Esse padrão tem duas implicações metodológicas. Primeira: a composição ideológica dos grupos é heterogênea, o que reforça a necessidade de controlar por \texttt{espectro} no modelo para isolar o componente associado à formação. Segunda: a \textit{endogeneidade} de \texttt{econ} não assume o perfil convencional de ``economistas são sistematicamente mais à direita''; na amostra coletada, o grupo de economistas é predominantemente de esquerda, o que torna o estimando $\hat{\beta}_{\texttt{econ}}$ ainda mais difícil de interpretar causalmente — ele captura a diferença condicional em grupos que diferem tanto em formação quanto em composição ideológica não completamente controlada.
 
 \subsection{Âmbito de validade externa}
 
@@ -123,7 +123,7 @@ onde $\beta^{*}$ denota o vetor $\beta$ com o componente de \texttt{econ} zerado
      - \hat{P}(Y_i=j \mid X_i,\,\texttt{econ}_i=0)\bigr],
 \end{equation}
 
-e a variação na resposta esperada é $\Delta\bar{Y} = \sum_j j \cdot \widehat{\mathrm{AME}}_j$, expressa na mesma escala 0--2 da variável dependente. Esse $\Delta\bar{Y}$ é diretamente interpretável: por exemplo, $\Delta\bar{Y} = -0{,}46$ para o item "déficit federal é grande demais" significa que os economistas, em média, concordam $0{,}46$ ponto a menos com a afirmação do que concordariam caso não tivessem a formação econômica avançada.
+e a variação na resposta esperada é $\Delta\bar{Y} = \sum_j j \cdot \widehat{\mathrm{AME}}_j$, expressa na mesma escala 0--2 da variável dependente. Esse $\Delta\bar{Y}$ é diretamente interpretável: por exemplo, $\Delta\bar{Y} = -0{,}46$ para o item ``déficit federal é grande demais'' significa que os economistas, em média, concordam $0{,}46$ ponto a menos com a afirmação do que concordariam caso não tivessem a formação econômica avançada.
 
 O público contrafactual serve como \emph{régua comparativa}: quando o contrafactual se aproxima dos economistas, o mecanismo é informacional (a formação desloca a crença); quando se confunde com o público geral, prevalecem ideologia e valores. Essa construção não descreve intervenção real nem implica prescrição normativa; é inferência condicional nos termos do modelo ajustado \cite{hausman2008}.
 
@@ -157,7 +157,7 @@ com $\alpha = 0{,}05$. O procedimento é aplicado \textit{separadamente} a duas 
 
 \subsection{Bootstrap BC\texorpdfstring{$_0$}{0} para Todos os Itens}\label{sec:bootstrap_v2}
 
-O bootstrap BC$_0$ foi aplicado a \textit{todos os 53 itens} (não apenas aos quatro de interesse especial), quantificando a incerteza amostral em torno de $\hat{\beta}_{\texttt{econ}}$ com $B = 999$ reamostras com reposição (semente 42). O número $B = 999$ segue a recomendação de \citeonline{davidson2004econometric} (cap.~4): \textit{``power loss will very rarely be a problem when $B = 999$''}. O intervalo de 95\% foi construído pelo método BC$_0$ (percentil com correção de viés):
+O bootstrap BC$_0$ foi aplicado a \textit{todos os 53 itens} (não apenas aos quatro de interesse especial), quantificando a incerteza amostral em torno de $\hat{\beta}_{\texttt{econ}}$ com $B = 999$ reamostras com reposição (semente 42). O número $B = 999$ segue a recomendação de \citeonline{davidson2004econometric} (cap.~4, p.~163): ``power loss will very rarely be a problem when $B = 999$''. O intervalo de 95\% foi construído pelo método BC$_0$ (percentil com correção de viés):
 
 \begin{equation}\label{eq:bc0}
 \mathrm{IC}_{95\%} = \bigl[q_{\alpha_{lo}},\, q_{\alpha_{hi}}\bigr],\quad

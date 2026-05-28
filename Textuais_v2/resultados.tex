@@ -1,5 +1,4 @@
-% Nota de figura com argumento (não existe no projeto base)
-\newcommand{\notafigv}[1]{\par\noindent{\footnotesize\textit{Nota:} #1\newline Fonte: elaboração do autor.}}
+% \notafigv movido para PacotesBasicos.tex (escopo global)
 
 \chapter{Resultados: Ideologia e Formação Econômica como Preditores Diferenciais}
 \label{capitulo_4}
@@ -23,9 +22,9 @@ As estatísticas descritivas completas por DV e por grupo (N total, médias e de
 \begin{figure}[htbp]
 \centering
 \caption{Mapa de calor dos efeitos por bloco temático: espectro político (BH-corrigido) e formação econômica (nominal).}
+\label{fig:bloc_heatmap}
 \includegraphics[width=0.95\textwidth]{analise/outputs/figures/heatmaps/bloc_heatmap.png}
 \notafigv{Cada célula indica a significância estatística do coeficiente no modelo PO ou Firth-Ridge. Azul = espectro político BH-significativo; vermelho = \texttt{econ} nominalmente significativo ($p < 0{,}05$, sem correção BH). Os 53 itens estão organizados pelos seis blocos temáticos pré-especificados.}
-\label{fig:bloc_heatmap}
 \end{figure}
 
 Antes de qualquer tabela de coeficientes, a Figura~\ref{fig:bloc_heatmap} oferece o mapa geral do argumento. Ela mostra dois padrões sobrepostos que sintetizam todo o capítulo. O espectro político (azul) aparece de modo amplo e sistemático: coloração densa em praticamente todos os blocos, com intensidade máxima em H3 (Antimercado) e H7 (Ideologia). A formação econômica (vermelho) aparece em manchas pontuais: quando o tema é politicamente carregado, o espectro domina; quando o tema tem componente factual mais dominante, a formação econômica exibe diferenças condicionais pontuais.
@@ -40,9 +39,9 @@ Esse panorama antecipa o resultado central: o espectro político é o preditor d
 \begin{figure}[htbp]
 \centering
 \caption{\textit{Forest plot} dos coeficientes de espectro político ($\hat{\beta}_{\text{esp}}$) por DV.}
+\label{fig:espectro_forest}
 \includegraphics[width=0.95\textwidth]{analise/outputs/figures/forestplots/espectro_forest.png}
 \notafigv{Cada ponto é o coeficiente estimado de \texttt{espectro} no modelo PO (ou Firth-Ridge); barras de erro = IC95\% assintótico. Pontos coloridos = BH-significativos; pontos cinza = não significativos após BH. DVs organizadas por bloco temático. Coeficiente positivo indica que respondentes mais à direita concordam mais com a afirmação.}
-\label{fig:espectro_forest}
 \end{figure}
 
 O espectro político apresenta efeito estatisticamente significativo após correção de Benjamini-Hochberg em \textbf{34 das 53 DVs} (64\%), distribuídos de modo heterogêneo mas sistematicamente denso pelos blocos temáticos: H3-Antimercado alcança 9/9 (100\%); H7-Ideologia atinge 11/12 (92\%); H4-Antiestrangeiro, H5-Antitrabalho e H6-Pessimista apresentam taxas entre 40\% e 67\%. Apenas o bloco de Percepção Específica exibe menor densidade (2/3). A Figura~\ref{fig:espectro_forest} torna visível a estrutura: coeficientes positivos onde a direita concorda mais (déficit, reformas, produtividade), negativos onde a esquerda concorda mais (lucros excessivos, regulação, desigualdade). A magnitude típica é $|\hat{\beta}_{\text{esp}}| \in [0{,}4,\; 0{,}9]$ em log-odds.
@@ -59,12 +58,12 @@ Uma advertência metodológica é necessária: causalidade reversa é plausível
 \begin{figure}[htbp]
 \centering
 \caption{\textit{Forest plot} dos coeficientes de formação econômica ($\hat{\beta}_{\texttt{econ}}$) com intervalos de confiança bootstrap BC$_0$.}
+\label{fig:econ_forest}
 \includegraphics[width=0.95\textwidth]{analise/outputs/figures/forestplots/econ_forest.png}
 \notafigv{Pontos coloridos = nominalmente significativos ($p < 0{,}05$), sem correção BH; pontos cinza = não significativos. IC95\% bootstrap BC$_0$ ($B=999$) para os quatro itens-chave; ICs assintóticos para os demais. Coeficiente negativo indica que economistas discordam mais da afirmação.}
-\label{fig:econ_forest}
 \end{figure}
 
-A formação econômica avançada apresenta \textbf{5 efeitos nominalmente significativos} ($p < 0{,}05$) sobre as 53 DVs. Após correção de Benjamini-Hochberg, \textbf{nenhum desses efeitos sobrevive}: o menor $p_{\text{BH}}$ é $0{,}364$. A leitura correta desse resultado não é "formação econômica não importa" — é que a amostra não tem potência para confirmar o que os sinais sugerem.
+A formação econômica avançada apresenta \textbf{5 efeitos nominalmente significativos} ($p < 0{,}05$) sobre as 53 DVs. Após correção de Benjamini-Hochberg, \textbf{nenhum desses efeitos sobrevive}: o menor $p_{\text{BH}}$ é $0{,}364$. A leitura correta desse resultado não é ``formação econômica não importa'' — é que a amostra não tem potência para confirmar o que os sinais sugerem.
 
 Com $n_{\texttt{econ}} = 17$, o poder estatístico para detectar OR $= 2{,}0$ é apenas $28{,}2\%$ (\autoref{apendice:tab_power_v2}). Isso significa que, mesmo na presença de efeitos reais de magnitude moderada, este estudo teria probabilidade de $71{,}8\%$ de não rejeitá-los. Há sinais substantivos coerentes com a teoria; a amostra simplesmente não autoriza conclusão confirmatória ampla. Declarar isso explicitamente é virtude metodológica, não desculpa.
 
@@ -90,29 +89,29 @@ As figuras a seguir traduzem essas diferenças no trio público--predição-cont
 
 \begin{figure}[htbp]
 \centering
-\caption{Médias de concordância: "O déficit federal é grande demais".}
-\includegraphics[width=0.80\textwidth]{analise/outputs/figures/counterfactual/déficit_federal_grande.png}
-\notafigv{As três barras exibem: (1) média observada do grupo de controle (\texttt{econ}=0); (2) predição \textit{in-sample} do modelo para os economistas com \texttt{econ} zerado (decomposição condicional, não contrafactual causal — fatores não observados correlacionados com a escolha de fazer pós-graduação em Economia podem explicar parte ou toda a diferença visualizada); (3) média observada dos economistas (\texttt{econ}=1).}
+\caption{Médias de concordância: ``O déficit federal é grande demais''.}
 \label{fig:deficit_v2}
+\includegraphics[width=0.80\textwidth]{analise/outputs/figures/counterfactual/deficit_federal_grande.png}
+\notafigv{As três barras exibem: (1) média observada do grupo de controle (\texttt{econ}=0); (2) predição \textit{in-sample} do modelo para os economistas com \texttt{econ} zerado (decomposição condicional, não contrafactual causal --- fatores não observados correlacionados com a escolha de fazer pós-graduação em Economia podem explicar parte ou toda a diferença visualizada); (3) média observada dos economistas (\texttt{econ}=1).}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\caption{Médias de concordância: "A produtividade está aumentando devagar demais".}
+\caption{Médias de concordância: ``A produtividade está aumentando devagar demais''.}
+\label{fig:produtividade_v2}
 \includegraphics[width=0.80\textwidth]{analise/outputs/figures/counterfactual/produtividade_aumentando_devagar.png}
 \notafigv{Neste item, o sinal se inverte: o grupo de economistas apresenta maior concordância com a preocupação de produtividade. A predição in-sample (barra central) quantifica a decomposição condicional associada ao preditor \texttt{econ}, condicionando nas covariáveis observadas; não implica que a formação seja a causa da diferença.}
-\label{fig:produtividade_v2}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\caption{Médias de concordância: "Produtos importados são benéficos para a economia".}
-\includegraphics[width=0.80\textwidth]{analise/outputs/figures/counterfactual/produtos_importados_benéficos.png}
-\notafigv{O grupo de economistas exibe maior endosso à abertura comercial, consistente com o consenso documentado por \citeonline{Fuller2014}. A predição in-sample (barra central) é a decomposição condicional associada ao preditor \texttt{econ} — não um efeito causal da formação; auto-seleção e variáveis não observadas contribuem para a diferença entre os grupos.}
+\caption{Médias de concordância: ``Produtos importados são benéficos para a economia''.}
 \label{fig:importados_v2}
+\includegraphics[width=0.80\textwidth]{analise/outputs/figures/counterfactual/produtos_importados_beneficos.png}
+\notafigv{O grupo de economistas exibe maior endosso à abertura comercial, consistente com o consenso documentado por \citeonline{Fuller2014}. A predição in-sample (barra central) é a decomposição condicional associada ao preditor \texttt{econ} --- não um efeito causal da formação; auto-seleção e variáveis não observadas contribuem para a diferença entre os grupos.}
 \end{figure}
 
-\paragraph{Déficit federal} (Figura~\ref{fig:deficit_v2}): o grupo de controle apresenta média de concordância $1{,}48$ com "o déficit é grande demais"; o grupo de economistas, $1{,}02$. A predição in-sample situa-se em $1{,}48$ — sugerindo, dentro das hipóteses do modelo, que a diferença está condicionalmente associada à formação econômica. A direção da diferença é consistente com o que \citeonline{Fuller2014} documentam empiricamente como posição predominante entre economistas: maior ceticismo com relação a alarmes fiscais de curto prazo, atenção à trajetória intertemporal da dívida e distinção entre déficit nominal e estrutural. Bastiat \cite{bastiat2010oqueseve} fornece um quadro intelectual para essa assimetria (o que se vê vs. o que não se vê), mas não deve ser interpretado como gabarito normativo: trata-se de referência literária que articula uma distinção analítica, não de âncora para definir qual resposta é "correta".
+\paragraph{Déficit federal} (Figura~\ref{fig:deficit_v2}): o grupo de controle apresenta média de concordância $1{,}48$ com "o déficit é grande demais"; o grupo de economistas, $1{,}02$. A predição in-sample situa-se em $1{,}48$ — sugerindo, dentro das hipóteses do modelo, que a diferença está condicionalmente associada à formação econômica. A direção da diferença é consistente com o que \citeonline{Fuller2014} documentam empiricamente como posição predominante entre economistas: maior ceticismo com relação a alarmes fiscais de curto prazo, atenção à trajetória intertemporal da dívida e distinção entre déficit nominal e estrutural. Bastiat \cite{bastiat2010oqueseve} fornece um quadro intelectual para essa assimetria (o que se vê vs. o que não se vê), mas não deve ser interpretado como gabarito normativo: trata-se de referência literária que articula uma distinção analítica, não de âncora para definir qual resposta é ``correta''.
 
 \paragraph{Produtividade} (Figura~\ref{fig:produtividade_v2}): o sinal se inverte. O grupo de controle apresenta média de concordância mais baixa com a preocupação de produtividade ($\bar{Y} = 1{,}12$); o grupo de economistas, mais alta ($\bar{Y} = 1{,}72$). A predição contrafactual ($1{,}12$) indica que essa diferença está associada à formação econômica, não a outras covariáveis. Isso é consistente com a hipótese de que o treinamento em econometria e macroeconomia torna a fricção de produtividade mais saliente — fricção que, sem instrumentais de mensuração da produtividade total dos fatores, o cidadão racional não tem incentivos para identificar \cite{downs1957economic}.
 
@@ -164,9 +163,9 @@ A mediana de McFadden $R^2 = 0{,}099$ indica ajuste modesto mas adequado para va
 \begin{figure}[htbp]
 \centering
 \caption{Volcano plot: coeficiente de formação econômica vs.\ $-\log_{10}(p)$ para as 53 DVs.}
+\label{fig:volcano_econ}
 \includegraphics[width=0.90\textwidth]{analise/outputs/figures/forestplots/volcano_econ.png}
 \notafigv{Eixo horizontal: $\hat{\beta}_{\texttt{econ}}$ (positivo = economistas concordam mais). Eixo vertical: $-\log_{10}(p)$; linha tracejada = $p = 0{,}05$. A dispersão horizontal revela a diversidade de direções; a ausência de pontos acima do limiar BH evidencia o problema de poder, não a ausência de padrão.}
-\label{fig:volcano_econ}
 \end{figure}
 
 O volcano plot (Figura~\ref{fig:volcano_econ}) encapsula o diagnóstico: efeitos nominais dispersos em ambas as direções, concentrados em magnitude pequena a moderada, nenhum sobrevivendo ao limiar BH. A distribuição sugere efeitos reais de magnitude moderada ($|\beta| \approx 0{,}5$--$0{,}9$, equivalente a OR $\approx 1{,}6$--$2{,}5$), detectáveis com $n_{\texttt{econ}} \geq 60$--$120$.

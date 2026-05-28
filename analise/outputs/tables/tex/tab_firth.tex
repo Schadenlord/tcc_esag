@@ -2,6 +2,7 @@
 % Tabela gerada automaticamente por latex_export.py
 \begingroup
 \footnotesize
+\SingleSpacing
 \begin{longtable}{%
   >{\RaggedRight\arraybackslash}p{4.5cm}%
   >{\centering\arraybackslash}p{1.4cm}%
@@ -13,12 +14,12 @@
 \textbf{DV} & $\hat{\beta}_\text{econ}$ & SE & $p$ & $R^2_\text{McF}$ \\
 \midrule
 \endfirsthead
-\multicolumn{5}{l}{\footnotesize \textit{(continuação)}}\\\toprule
+\multicolumn{5}{r}{\footnotesize \textit{(continuação)}}\\\toprule
 \textbf{DV} & $\hat{\beta}_\text{econ}$ & SE & $p$ & $R^2_\text{McF}$ \\
 \midrule
 \endhead
 \midrule
-\multicolumn{5}{r}{\footnotesize \textit{continua na próxima página}}\\
+\multicolumn{5}{r}{\footnotesize \textit{(continua)}}\\
 \endfoot
 \bottomrule
 \endlastfoot
@@ -29,7 +30,8 @@
   acha\_\allowbreak{}preços\_\allowbreak{}combustíveis & -0,123 & 0,777 & 0,874 & 0,130 \\
 \bottomrule
 \end{longtable}
-\par\smallskip\noindent\begin{minipage}{\linewidth}\footnotesize\sloppy
-\noindent\textit{\textbf{Notas:}}\ Penalização L2 (Ridge, $\lambda=0{,}1$) via \texttt{scipy.optimize} sobre log-verossimilhança do logit ordenado. Aplicado às 5 DVs com Hessiana singular (separação quase-perfeita). OR não reportado como inferência formal (ver texto).
+\par\smallskip\noindent\begin{minipage}{\linewidth}\footnotesize\sloppy\centering
+Fonte: elaboração do autor.\\
+\textit{\textbf{Notas:}}\ Penalização L2 (Ridge, $\lambda=0{,}1$) via \texttt{scipy.optimize} sobre log-verossimilhança do logit ordenado. Aplicado às 5 DVs com Hessiana singular (separação quase-perfeita). OR não reportado como inferência formal (ver texto).
 \end{minipage}
 \endgroup
