@@ -16,7 +16,10 @@
       "WebFetch(domain:www.aeaweb.org)",
       "WebFetch(domain:journals.sagepub.com)",
       "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
-      "Bash(mv /home/bruno_tcc/tcc_esag/Textuais/analise_v2 /home/bruno_tcc/tcc_esag/analise && rm -rf /home/bruno_tcc/tcc_esag/analise/.git && echo \"Movido e .git interno removido\")"
+      "Bash(mv /home/bruno_tcc/tcc_esag/Textuais/analise_v2 /home/bruno_tcc/tcc_esag/analise && rm -rf /home/bruno_tcc/tcc_esag/analise/.git && echo \"Movido e .git interno removido\")",
+      "WebFetch(domain:www.udesc.br)",
+      "Skill(claude-paper:study)",
+      "Skill(claude-paper:study:*)"
     ],
     "defaultMode": "bypassPermissions",
     "additionalDirectories": [
